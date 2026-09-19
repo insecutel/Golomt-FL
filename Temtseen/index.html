@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="mn" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <title>Happy Golomt FL — Тэмцээн &amp; Оноо</title>
+    <meta
+      name="description"
+      content="Найзуудын лиг — улирал, тэмцээн, тоглолт бүрийн тоглогчийн статистик, шагнал, шилжилт"
+    />
+
+    <meta
+      name="theme-color"
+      content="#080a0f"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="#f6f7fb"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta name="color-scheme" content="dark light" />
+
+    <!-- Favicon (emoji SVG) -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%86%3C/text%3E%3C/svg%3E"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%86%3C/text%3E%3C/svg%3E"
+    />
+
+    <!-- Share preview -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Happy Golomt FL — Тэмцээн &amp; Оноо" />
+    <meta
+      property="og:description"
+      content="Найзуудын лиг — улирал, тэмцээн, тоглогчийн статистик"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- ===== ДЭЭД ЦЭС ===== -->
+    <header class="topbar" id="topbar">
+      <div class="wrap topbar-in">
+        <a class="brand" href="#/dashboard" aria-label="Нүүр хуудас">
+          <span class="brand-icon" aria-hidden="true">🏆</span>
+          <span class="brand-text">Happy Golomt<b>FL</b></span>
+        </a>
+
+        <nav class="tabs" id="mainNav" aria-label="Үндсэн цэс">
+          <a href="#/dashboard" data-tab="dashboard">Нүүр</a>
+          <a href="#/seasons" data-tab="seasons">Улирлууд</a>
+          <a href="#/tournaments" data-tab="tournaments">Тэмцээнүүд</a>
+          <a href="#/stats" data-tab="stats">Статистик</a>
+          <a href="#/trade" data-tab="trade">Шилжилт</a>
+          <a href="#/teams" data-tab="teams">Багууд</a>
+          <a href="#/players" data-tab="players">Тоглогчид</a>
+          <a href="#/admin" data-tab="admin">Админ</a>
+        </nav>
+
+        <div class="top-right">
+          <span id="syncChip"></span>
+          <span id="userChip"></span>
+          <button
+            class="icon-btn"
+            id="themeBtn"
+            type="button"
+            title="Гэрэл / Харанхуй горим"
+            aria-label="Гэрэл эсвэл харанхуй горим солих"
+          >
+            🌙
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== ҮНДСЭН АГУУЛГА ===== -->
+    <main id="app" class="wrap" role="main"></main>
+
+    <!-- ===== ХӨЛ ===== -->
+    <footer class="foot">
+      <div class="wrap foot-in">
+        <span>© <span id="year"></span> Happy Golomt FL</span>
+        <span class="muted"
+          >HTML · CSS · JS — бүх өгөгдөл хөтчид хадгалагдана</span
+        >
+      </div>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <noscript>
+      <div class="wrap" style="padding: 40px 0; text-align: center">
+        <h2>JavaScript унтраалттай байна</h2>
+        <p class="muted">Энэ сайт ажиллахын тулд JavaScript-ийг асаана уу.</p>
+      </div>
+    </noscript>
+
+    <!-- Supabase SDK (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.3/dist/umd/supabase.js"></script>
+
+    <!-- Дараалал чухал: config → data → app -->
+        <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.3/dist/umd/supabase.js"></script>
+
+    <!-- Дараалал чухал -->
+    <script src="js/config.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/sync.js"></script>
+  </body>
+</html>
