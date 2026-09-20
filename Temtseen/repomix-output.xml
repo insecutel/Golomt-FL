@@ -1,3 +1,2924 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+css/
+  style.css
+js/
+  app.js
+  config.js
+  data.js
+  server.js
+  syn.js
+.gitignore
+index.html
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="css/style.css">
+/* ============================================================
+   Happy Golomt FL — Design System v8
+   Орчин үеийн, шилэн, градиент дизайн
+   ============================================================ */
+
+/* ============================================================
+   1. ТОКЕНУУД
+   ============================================================ */
+
+:root {
+  /* ---------- Гадаргуу ---------- */
+  --bg:          #080a0f;
+  --bg-elev:     #0d1017;
+  --surface:     #11151e;
+  --surface-2:   #171c28;
+  --surface-3:   #1f2534;
+  --surface-hi:  #262e40;
+
+  /* ---------- Текст ---------- */
+  --text:        #eef1f8;
+  --text-2:      #b6c0d4;
+  --muted:       #6f7a90;
+  --faint:       #4a5364;
+
+  /* ---------- Шугам ---------- */
+  --line:        rgba(255, 255, 255, .07);
+  --line-2:      rgba(255, 255, 255, .12);
+  --line-3:      rgba(255, 255, 255, .18);
+
+  /* ---------- Акцент ---------- */
+  --accent:      #6d8cff;
+  --accent-hi:   #8aa4ff;
+  --accent-lo:   #4a6ae0;
+  --accent-2:    #2dd47f;
+  --accent-2-lo: #1fa863;
+  --gold:        #fbbf24;
+  --gold-lo:     #d99a0a;
+  --warn:        #f5a524;
+  --danger:      #f4526a;
+  --danger-lo:   #cf3149;
+  --purple:      #a78bfa;
+  --cyan:        #22d3ee;
+
+  /* ---------- Градиент ---------- */
+  --grad-accent: linear-gradient(135deg, #6d8cff 0%, #a78bfa 100%);
+  --grad-gold:   linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  --grad-green:  linear-gradient(135deg, #2dd47f 0%, #14b8a6 100%);
+  --grad-danger: linear-gradient(135deg, #f4526a 0%, #cf3149 100%);
+  --grad-card:   linear-gradient(160deg, rgba(255,255,255,.035), rgba(255,255,255,0));
+
+  /* ---------- Сүүдэр ---------- */
+  --sh-xs: 0 1px 2px rgba(0, 0, 0, .3);
+  --sh-sm: 0 2px 6px rgba(0, 0, 0, .32);
+  --sh-md: 0 6px 18px rgba(0, 0, 0, .36);
+  --sh-lg: 0 14px 40px rgba(0, 0, 0, .45);
+  --sh-xl: 0 28px 70px rgba(0, 0, 0, .55);
+  --sh-accent: 0 8px 24px rgba(109, 140, 255, .28);
+  --sh-gold:   0 8px 24px rgba(251, 191, 36, .22);
+
+  /* ---------- Хэлбэр ---------- */
+  --r-xs: 7px;
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 18px;
+  --r-xl: 24px;
+  --r-full: 999px;
+
+  /* ---------- Хэмжээ ---------- */
+  --max: 1240px;
+  --nav-h: 68px;
+
+  /* ---------- Хөдөлгөөн ---------- */
+  --ease: cubic-bezier(.22, .8, .28, 1);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --t-fast: .14s;
+  --t: .22s;
+  --t-slow: .38s;
+}
+
+/* ============================================================
+   ГЭРЭЛ ГОРИМ
+   ============================================================ */
+
+html[data-theme="light"] {
+  --bg:          #f6f7fb;
+  --bg-elev:     #ffffff;
+  --surface:     #ffffff;
+  --surface-2:   #f3f5fa;
+  --surface-3:   #e9edf5;
+  --surface-hi:  #dfe5f0;
+
+  --text:        #0d1117;
+  --text-2:      #3d4757;
+  --muted:       #6b7688;
+  --faint:       #9aa4b5;
+
+  --line:        rgba(10, 15, 30, .07);
+  --line-2:      rgba(10, 15, 30, .11);
+  --line-3:      rgba(10, 15, 30, .16);
+
+  --accent:      #4a6ae0;
+  --accent-hi:   #6d8cff;
+  --accent-lo:   #3a55c4;
+
+  --grad-card:   linear-gradient(160deg, rgba(255,255,255,.9), rgba(255,255,255,0));
+
+  --sh-xs: 0 1px 2px rgba(20, 30, 60, .06);
+  --sh-sm: 0 2px 6px rgba(20, 30, 60, .08);
+  --sh-md: 0 6px 18px rgba(20, 30, 60, .10);
+  --sh-lg: 0 14px 40px rgba(20, 30, 60, .13);
+  --sh-xl: 0 28px 70px rgba(20, 30, 60, .17);
+  --sh-accent: 0 8px 24px rgba(74, 106, 224, .22);
+}
+
+/* ============================================================
+   2. RESET & BASE
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+* { -webkit-tap-highlight-color: transparent; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+               "Helvetica Neue", "Noto Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "cv11", "ss01";
+  font-variant-numeric: tabular-nums;
+  transition: background var(--t) var(--ease), color var(--t) var(--ease);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ---------- Арын дэвсгэрийн гэрэл ---------- */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(1000px 620px at 12% -8%,  rgba(109, 140, 255, .13), transparent 62%),
+    radial-gradient(880px 540px at 92% 4%,    rgba(167, 139, 250, .11), transparent 60%),
+    radial-gradient(760px 620px at 50% 108%,  rgba(45, 212, 127, .07), transparent 62%);
+  transition: opacity var(--t-slow) var(--ease);
+}
+
+html[data-theme="light"] body::before {
+  background:
+    radial-gradient(1000px 620px at 12% -8%, rgba(74, 106, 224, .10), transparent 62%),
+    radial-gradient(880px 540px at 92% 4%,   rgba(167, 139, 250, .08), transparent 60%),
+    radial-gradient(760px 620px at 50% 108%, rgba(45, 212, 127, .06), transparent 62%);
+}
+
+/* ---------- Скроллбар ---------- */
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--surface-hi);
+  border-radius: var(--r-full);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover { background-clip: padding-box; background-color: var(--line-3); }
+
+* { scrollbar-width: thin; scrollbar-color: var(--surface-hi) transparent; }
+
+/* ---------- Сонголт ---------- */
+::selection { background: color-mix(in srgb, var(--accent) 32%, transparent); color: var(--text); }
+
+/* ---------- Фокус ---------- */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--r-xs);
+}
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible) { outline: none; }
+
+/* ---------- Холбоос ---------- */
+a { color: var(--accent); text-decoration: none; transition: color var(--t-fast) var(--ease); }
+a:hover { color: var(--accent-hi); }
+
+/* ---------- Толгой ---------- */
+h1, h2, h3, h4 {
+  font-family: "Manrope", "Inter", system-ui, sans-serif;
+  letter-spacing: -.028em;
+  line-height: 1.18;
+  color: var(--text);
+  font-weight: 800;
+}
+h1 { font-size: clamp(1.65rem, 3.4vw, 2.35rem); margin: 0 0 8px; }
+h2 { font-size: 1.32rem; margin: 0 0 18px; }
+h3 { font-size: 1.06rem; margin: 0 0 10px; }
+h4 { font-size: .95rem; margin: 0 0 8px; }
+p  { margin: 0 0 12px; }
+b, strong { font-weight: 700; }
+code {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .86em;
+  background: var(--surface-3);
+  border: 1px solid var(--line);
+  padding: 2px 7px;
+  border-radius: var(--r-xs);
+  color: var(--text-2);
+}
+
+/* ============================================================
+   3. LAYOUT
+   ============================================================ */
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+.muted { color: var(--muted); }
+
+.section { padding: 26px 0; }
+.section > h2:first-child { margin-top: 0; }
+
+.page-head { padding: 38px 0 16px; }
+.page-head h1 { margin-bottom: 8px; }
+.page-head p {
+  color: var(--muted);
+  margin: 0;
+  font-size: .95rem;
+  max-width: 72ch;
+}
+.page-head > a:first-child {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: .88rem; font-weight: 600; color: var(--muted);
+  padding: 6px 12px 6px 8px; border-radius: var(--r-full);
+  background: var(--surface); border: 1px solid var(--line);
+  margin-bottom: 12px;
+  transition: all var(--t) var(--ease);
+}
+.page-head > a:first-child:hover {
+  color: var(--accent); border-color: var(--accent);
+  transform: translateX(-2px);
+  box-shadow: var(--sh-sm);
+}
+
+/* ============================================================
+   4. HEADER / NAV
+   ============================================================ */
+
+.topbar {
+  position: sticky; top: 0; z-index: 100;
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--line);
+  transition: box-shadow var(--t) var(--ease),
+              background var(--t) var(--ease),
+              border-color var(--t) var(--ease);
+}
+.topbar.scrolled {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .3);
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  border-bottom-color: var(--line-2);
+}
+html[data-theme="light"] .topbar.scrolled {
+  box-shadow: 0 8px 30px rgba(20, 30, 60, .10);
+}
+
+.topbar-in {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: var(--nav-h);
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/* ---------- Лого ---------- */
+.brand {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-weight: 800; font-size: 1.02rem;
+  letter-spacing: -.03em;
+  color: var(--text); text-decoration: none;
+  white-space: nowrap; flex: 0 0 auto;
+  transition: transform var(--t) var(--ease);
+}
+.brand:hover { transform: translateY(-1px); color: var(--text); }
+.brand-icon {
+  display: grid; place-items: center;
+  width: 38px; height: 38px;
+  border-radius: 12px;
+  background: var(--grad-accent);
+  font-size: 1.15rem;
+  box-shadow: var(--sh-accent);
+  flex: 0 0 38px;
+}
+.brand-text { display: inline-flex; align-items: baseline; gap: 4px; }
+.brand-text b {
+  background: var(--grad-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+}
+
+/* ---------- Цэс ---------- */
+.tabs {
+  display: flex; gap: 3px; margin-left: auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-full);
+  padding: 4px;
+  box-shadow: var(--sh-xs);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tabs::-webkit-scrollbar { display: none; }
+
+.tabs a {
+  position: relative;
+  padding: 8px 15px;
+  border-radius: var(--r-full);
+  text-decoration: none;
+  color: var(--muted);
+  font-size: .885rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color var(--t-fast) var(--ease),
+              background var(--t-fast) var(--ease),
+              transform var(--t-fast) var(--ease);
+}
+.tabs a:hover {
+  color: var(--text);
+  background: var(--surface-2);
+}
+.tabs a.active {
+  color: #fff;
+  background: var(--grad-accent);
+  box-shadow: var(--sh-accent);
+}
+html[data-theme="light"] .tabs a.active { color: #fff; }
+
+/* ---------- Баруун хэсэг ---------- */
+.top-right {
+  display: flex; align-items: center; gap: 8px;
+  margin-left: 8px; flex: 0 0 auto;
+}
+
+.icon-btn {
+  display: grid; place-items: center;
+  width: 40px; height: 40px; flex: 0 0 40px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.05rem;
+  line-height: 1;
+  transition: all var(--t) var(--ease);
+}
+.icon-btn:hover {
+  border-color: var(--accent);
+  background: var(--surface-2);
+  transform: translateY(-1px);
+  box-shadow: var(--sh-sm);
+}
+.icon-btn:active { transform: translateY(0) scale(.96); }
+
+/* ---------- Хэрэглэгчийн чип ---------- */
+.user-chip {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 4px 14px 4px 5px;
+  border-radius: var(--r-full);
+  font-size: .85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--text);
+  text-decoration: none;
+  transition: all var(--t) var(--ease);
+  max-width: 190px;
+}
+.user-chip:hover {
+  border-color: var(--accent);
+  box-shadow: var(--sh-sm);
+  transform: translateY(-1px);
+  color: var(--text);
+}
+.user-chip span:last-child { overflow: hidden; text-overflow: ellipsis; }
+.user-chip .avatar { width: 28px; height: 28px; font-size: .7rem; flex: 0 0 28px; }
+.user-chip .btn { padding: 5px 12px; font-size: .78rem; }
+
+/* ============================================================
+   5. ТОВЧ
+   ============================================================ */
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 7px;
+  padding: 10px 19px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: var(--grad-accent);
+  color: #fff;
+  font: inherit;
+  font-size: .91rem;
+  font-weight: 650;
+  letter-spacing: -.01em;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: var(--sh-accent);
+  transition: transform var(--t-fast) var(--ease),
+              box-shadow var(--t) var(--ease),
+              filter var(--t-fast) var(--ease),
+              background var(--t) var(--ease),
+              border-color var(--t) var(--ease);
+}
+.btn:hover {
+  filter: brightness(1.09);
+  transform: translateY(-1.5px);
+  box-shadow: 0 12px 30px rgba(109, 140, 255, .35);
+  color: #fff;
+}
+.btn:active { transform: translateY(0) scale(.985); }
+.btn:disabled {
+  opacity: .45; cursor: not-allowed;
+  transform: none; filter: none; box-shadow: none;
+}
+
+/* ---------- Ghost ---------- */
+.btn.ghost {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--line-2);
+  box-shadow: var(--sh-xs);
+}
+.btn.ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--surface-2);
+  box-shadow: var(--sh-sm);
+  filter: none;
+}
+
+/* ---------- Danger ---------- */
+.btn.danger {
+  background: var(--grad-danger);
+  box-shadow: 0 8px 22px rgba(244, 82, 106, .26);
+}
+.btn.danger:hover { box-shadow: 0 12px 28px rgba(244, 82, 106, .34); }
+
+/* ---------- Жижиг ---------- */
+.btn.sm {
+  padding: 7px 13px;
+  font-size: .815rem;
+  border-radius: 10px;
+  gap: 5px;
+}
+.btn.sm.ghost { box-shadow: none; }
+
+/* ---------- Дүрсэн товч ---------- */
+.btn.icon-only { padding: 9px; width: 38px; height: 38px; }
+
+/* ============================================================
+   6. BADGE / CHIP / TAG
+   ============================================================ */
+
+.badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 11px;
+  border-radius: var(--r-full);
+  font-size: .735rem;
+  font-weight: 700;
+  letter-spacing: .012em;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  line-height: 1.5;
+}
+.badge.upcoming {
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  color: var(--accent-hi);
+  border-color: color-mix(in srgb, var(--accent) 28%, transparent);
+}
+.badge.ongoing {
+  background: color-mix(in srgb, var(--warn) 16%, transparent);
+  color: var(--warn);
+  border-color: color-mix(in srgb, var(--warn) 30%, transparent);
+}
+.badge.done {
+  background: color-mix(in srgb, var(--accent-2) 15%, transparent);
+  color: var(--accent-2);
+  border-color: color-mix(in srgb, var(--accent-2) 28%, transparent);
+}
+.badge.scheduled {
+  background: var(--surface-3);
+  color: var(--muted);
+  border-color: var(--line-2);
+}
+.badge.tw-open {
+  background: color-mix(in srgb, var(--accent-2) 16%, transparent);
+  color: var(--accent-2);
+  border-color: color-mix(in srgb, var(--accent-2) 30%, transparent);
+}
+.badge.tw-upcoming {
+  background: color-mix(in srgb, var(--warn) 16%, transparent);
+  color: var(--warn);
+  border-color: color-mix(in srgb, var(--warn) 30%, transparent);
+}
+.badge.tw-closed {
+  background: var(--surface-3);
+  color: var(--muted);
+  border-color: var(--line-2);
+}
+
+/* ---------- Chip ---------- */
+.chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 11px;
+  border-radius: var(--r-full);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  font-size: .765rem;
+  font-weight: 600;
+  color: var(--text-2);
+  white-space: nowrap;
+  line-height: 1.55;
+  transition: all var(--t-fast) var(--ease);
+}
+a.chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface-2));
+}
+.chip.gold {
+  color: var(--gold);
+  border-color: color-mix(in srgb, var(--gold) 38%, transparent);
+  background: color-mix(in srgb, var(--gold) 11%, transparent);
+}
+.chip.ok {
+  color: var(--accent-2);
+  border-color: color-mix(in srgb, var(--accent-2) 38%, transparent);
+  background: color-mix(in srgb, var(--accent-2) 10%, transparent);
+}
+.chip.tpl {
+  color: var(--purple);
+  border-color: color-mix(in srgb, var(--purple) 38%, transparent);
+  background: color-mix(in srgb, var(--purple) 11%, transparent);
+}
+
+/* ---------- Tag ---------- */
+.tag {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: .74rem;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 3px 9px;
+  border-radius: var(--r-xs);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   7. КАРТ
+   ============================================================ */
+
+.card {
+  position: relative;
+  background: var(--surface);
+  background-image: var(--grad-card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 22px;
+  box-shadow: var(--sh-sm);
+  transition: transform var(--t) var(--ease),
+              border-color var(--t) var(--ease),
+              box-shadow var(--t) var(--ease);
+}
+
+/* ---------- Дарах боломжтой карт ---------- */
+a.card, .tour-card, .team-card, .player-card, .season-node, .mini-row {
+  cursor: pointer;
+}
+a.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--line-3);
+  box-shadow: var(--sh-lg);
+}
+
+/* ---------- Grid ---------- */
+.grid { display: grid; gap: 18px; }
+.g-2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.g-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.g-4 { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+
+/* ============================================================
+   8. СТАТИСТИК ХАЙРЦАГ
+   ============================================================ */
+
+.stat {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface);
+  background-image: var(--grad-card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 20px 22px;
+  box-shadow: var(--sh-sm);
+  transition: transform var(--t) var(--ease),
+              border-color var(--t) var(--ease),
+              box-shadow var(--t) var(--ease);
+}
+.stat::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2.5px;
+  background: var(--grad-accent);
+  opacity: .65;
+  transition: opacity var(--t) var(--ease);
+}
+.stat:hover {
+  transform: translateY(-3px);
+  border-color: var(--line-2);
+  box-shadow: var(--sh-lg);
+}
+.stat:hover::before { opacity: 1; }
+
+.stat .num {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 2.05rem;
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+.stat .lbl {
+  color: var(--muted);
+  font-size: .845rem;
+  font-weight: 550;
+  margin-top: 5px;
+  line-height: 1.45;
+}
+
+/* ============================================================
+   9. AVATAR / CREST
+   ============================================================ */
+
+.avatar {
+  width: 44px; height: 44px;
+  border-radius: var(--r-full);
+  display: grid; place-items: center;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: .96rem;
+  letter-spacing: -.02em;
+  color: #fff;
+  flex: 0 0 auto;
+  text-shadow: 0 1px 2px rgba(0,0,0,.28);
+  box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.18),
+              0 2px 8px rgba(0,0,0,.22);
+  user-select: none;
+}
+.avatar.lg { width: 76px; height: 76px; font-size: 1.6rem; box-shadow: inset 0 0 0 2px rgba(255,255,255,.2), 0 6px 20px rgba(0,0,0,.28); }
+.avatar.sm { width: 30px; height: 30px; font-size: .72rem; }
+
+.crest {
+  width: 46px; height: 46px;
+  border-radius: 14px;
+  display: grid; place-items: center;
+  font-size: 1.32rem;
+  flex: 0 0 auto;
+  box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.2),
+              0 2px 10px rgba(0,0,0,.24);
+  user-select: none;
+}
+.crest.xs { width: 24px; height: 24px; border-radius: 8px;  font-size: .7rem; }
+.crest.sm { width: 32px; height: 32px; border-radius: 10px; font-size: .9rem; }
+.crest.lg { width: 76px; height: 76px; border-radius: 22px; font-size: 2.15rem; }
+
+/* ============================================================
+   10. PLAYER / TEAM CARD
+   ============================================================ */
+
+.player-card, .team-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--surface);
+  background-image: var(--grad-card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 16px 18px;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: var(--sh-sm);
+  transition: transform var(--t) var(--ease),
+              border-color var(--t) var(--ease),
+              box-shadow var(--t) var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+.player-card:hover, .team-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--line-3);
+  box-shadow: var(--sh-lg);
+  color: var(--text);
+}
+.player-card .name, .team-card .name {
+  font-weight: 700;
+  font-size: .96rem;
+  letter-spacing: -.015em;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.player-card .sub, .team-card .sub {
+  font-size: .815rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-top: 2px;
+}
+
+/* ---------- Миний карт ---------- */
+.pcard { position: relative; }
+.pcard.me {
+  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  background: color-mix(in srgb, var(--accent) 6%, var(--surface));
+  background-image: var(--grad-card);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 22%, transparent), var(--sh-md);
+}
+.pcard.me::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--grad-accent);
+  border-radius: var(--r-full) 0 0 var(--r-full);
+}
+.pcard-rank {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: .98rem;
+  min-width: 26px;
+  text-align: center;
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+}
+.pcard .chip { margin-left: 5px; }
+
+/* ============================================================
+   11. ХҮСНЭГТ
+   ============================================================ */
+
+.table-wrap {
+  overflow-x: auto;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--sh-sm);
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .905rem;
+  background: transparent;
+}
+
+th, td {
+  padding: 13px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+th {
+  font-size: .715rem;
+  text-transform: uppercase;
+  letter-spacing: .075em;
+  color: var(--muted);
+  font-weight: 700;
+  background: var(--surface-2);
+  position: sticky; top: 0;
+  z-index: 1;
+  border-bottom-color: var(--line-2);
+}
+
+tbody tr {
+  transition: background var(--t-fast) var(--ease);
+}
+tbody tr:hover { background: var(--surface-2); }
+tbody tr:last-child td { border-bottom: none; }
+
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+td a { color: inherit; }
+td a:hover { color: var(--accent); }
+
+.rank-1 { color: var(--gold);      font-weight: 800; }
+.rank-2 { color: #cbd5e1;          font-weight: 800; }
+.rank-3 { color: #d97706;          font-weight: 800; }
+html[data-theme="light"] .rank-2 { color: #94a3b8; }
+
+/* ============================================================
+   12. МАТЧ МӨР
+   ============================================================ */
+
+.match-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  background: var(--surface);
+  background-image: var(--grad-card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  margin-bottom: 9px;
+  box-shadow: var(--sh-xs);
+  transition: border-color var(--t) var(--ease), box-shadow var(--t) var(--ease);
+}
+.match-row:hover {
+  border-color: var(--line-2);
+  box-shadow: var(--sh-sm);
+}
+.match-row .side {
+  display: flex; align-items: center; gap: 10px;
+  min-width: 0;
+}
+.match-row .side.right { justify-content: flex-end; }
+.match-row .side .nm {
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font-weight: 600;
+  font-size: .92rem;
+}
+.match-row .side.win .nm { font-weight: 800; color: var(--accent-2); }
+.match-row .score {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  background: var(--surface-3);
+  border: 1px solid var(--line-2);
+  padding: 6px 15px;
+  border-radius: 11px;
+  font-size: .96rem;
+  letter-spacing: .02em;
+  white-space: nowrap;
+  box-shadow: var(--sh-xs);
+}
+
+/* ============================================================
+   13. ФОРМ
+   ============================================================ */
+
+.field {
+  display: flex; flex-direction: column; gap: 7px;
+  margin-bottom: 14px;
+}
+.field label {
+  font-size: .815rem;
+  font-weight: 650;
+  color: var(--text-2);
+  letter-spacing: -.005em;
+}
+.field label .muted { font-weight: 500; }
+
+input, select, textarea {
+  width: 100%;
+  padding: 11px 14px;
+  font: inherit;
+  font-size: .92rem;
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--line-2);
+  border-radius: 11px;
+  transition: border-color var(--t-fast) var(--ease),
+              box-shadow var(--t-fast) var(--ease),
+              background var(--t-fast) var(--ease);
+  appearance: none;
+  -webkit-appearance: none;
+}
+input::placeholder, textarea::placeholder { color: var(--faint); }
+
+input:hover:not(:focus), select:hover:not(:focus), textarea:hover:not(:focus) {
+  border-color: var(--line-3);
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: var(--surface);
+  box-shadow: 0 0 0 3.5px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236f7a90' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 13px center;
+  padding-right: 38px;
+  cursor: pointer;
+}
+textarea { resize: vertical; min-height: 68px; line-height: 1.55; }
+
+input[type="date"], input[type="time"] { cursor: pointer; }
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(.55);
+  cursor: pointer;
+}
+html[data-theme="light"] input[type="date"]::-webkit-calendar-picker-indicator,
+html[data-theme="light"] input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(.35);
+}
+
+input[type="checkbox"] {
+  width: 17px; height: 17px; flex: 0 0 17px;
+  padding: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.form-row {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+}
+
+/* ---------- Check-list ---------- */
+.check-list {
+  display: flex; flex-wrap: wrap; gap: 9px;
+}
+.check-list label {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--surface-2);
+  border: 1px solid var(--line-2);
+  padding: 8px 14px;
+  border-radius: var(--r-full);
+  cursor: pointer;
+  font-size: .865rem;
+  font-weight: 600;
+  transition: all var(--t-fast) var(--ease);
+  user-select: none;
+}
+.check-list label:hover {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 7%, var(--surface-2));
+  transform: translateY(-1px);
+}
+.check-list label:has(input:checked) {
+  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  background: color-mix(in srgb, var(--accent) 13%, var(--surface-2));
+  color: var(--text);
+}
+.check-list input { width: 16px; height: 16px; flex: 0 0 16px; }
+.check-list .avatar { width: 24px; height: 24px; font-size: .64rem; }
+
+/* ---------- Remember ---------- */
+.remember {
+  display: flex; align-items: center; gap: 9px;
+  font-size: .86rem;
+  color: var(--text-2);
+  margin: 4px 0 20px;
+  cursor: pointer;
+  user-select: none;
+}
+.remember input { width: auto; flex: 0 0 auto; }
+
+/* ============================================================
+   14. PROGRESS
+   ============================================================ */
+
+.progress {
+  height: 7px;
+  border-radius: var(--r-full);
+  background: var(--surface-3);
+  overflow: hidden;
+  margin: 14px 0 16px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.2);
+}
+.progress i {
+  display: block;
+  height: 100%;
+  background: var(--grad-accent);
+  border-radius: var(--r-full);
+  transition: width var(--t-slow) var(--ease-out);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 50%, transparent);
+}
+
+/* ============================================================
+   15. BANNER
+   ============================================================ */
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  background: var(--surface);
+  background-image: var(--grad-card);
+  border: 1px solid var(--line);
+  border-left: 3.5px solid var(--muted);
+  border-radius: var(--r-md);
+  padding: 16px 20px;
+  margin-bottom: 18px;
+  box-shadow: var(--sh-sm);
+  transition: border-color var(--t) var(--ease), box-shadow var(--t) var(--ease);
+}
+.banner.open {
+  border-left-color: var(--accent-2);
+  background-image: linear-gradient(90deg, color-mix(in srgb, var(--accent-2) 7%, transparent), transparent 42%), var(--grad-card);
+}
+.banner.closed { border-left-color: var(--faint); }
+.banner b { font-size: .96rem; font-weight: 700; letter-spacing: -.01em; }
+
+/* ============================================================
+   16. АДМИН
+   ============================================================ */
+
+.admin-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.admin-bar .subtabs { margin-bottom: 0; }
+
+.subtabs {
+  display: flex; gap: 7px; flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.subtabs button {
+  padding: 9px 16px;
+  border-radius: var(--r-full);
+  cursor: pointer;
+  border: 1px solid var(--line-2);
+  background: var(--surface);
+  color: var(--muted);
+  font: inherit;
+  font-size: .865rem;
+  font-weight: 650;
+  white-space: nowrap;
+  transition: all var(--t-fast) var(--ease);
+}
+.subtabs button:hover {
+  color: var(--text);
+  border-color: var(--line-3);
+  background: var(--surface-2);
+  transform: translateY(-1px);
+}
+.subtabs button.active {
+  background: var(--grad-accent);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: var(--sh-accent);
+}
+
+/* ---------- Нууц үг харах ---------- */
+.pw-cell { display: inline-flex; align-items: center; gap: 8px; }
+.pw-cell code {
+  background: var(--surface-3);
+  padding: 3px 10px;
+  border-radius: var(--r-xs);
+  font-size: .82rem;
+}
+.pw-cell button {
+  background: none; border: none; cursor: pointer;
+  color: var(--muted);
+  font-size: .95rem;
+  padding: 4px 6px;
+  border-radius: var(--r-xs);
+  line-height: 1;
+  transition: all var(--t-fast) var(--ease);
+}
+.pw-cell button:hover { color: var(--accent); background: var(--surface-3); }
+
+/* ============================================================
+   17. SEASON CARD
+   ============================================================ */
+
+.season-card { padding: 20px; }
+.season-head {
+  display: flex; justify-content: space-between;
+  align-items: flex-start; gap: 14px; flex-wrap: wrap;
+}
+.season-title {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 1.13rem;
+  letter-spacing: -.028em;
+  color: var(--text);
+  text-decoration: none;
+  transition: color var(--t-fast) var(--ease);
+}
+.season-title:hover { color: var(--accent); }
+
+.mini-list { display: flex; flex-direction: column; gap: 9px; }
+
+.mini-row {
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  align-items: center;
+  gap: 13px;
+  padding: 11px 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  text-decoration: none;
+  color: var(--text);
+  transition: all var(--t) var(--ease);
+}
+.mini-row:hover {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 5%, var(--surface-2));
+  transform: translateX(3px);
+  box-shadow: var(--sh-sm);
+  color: var(--text);
+}
+.mini-no {
+  display: grid; place-items: center;
+  width: 36px; height: 36px;
+  border-radius: 11px;
+  background: var(--surface);
+  border: 1px solid var(--line-2);
+  font-family: "Manrope", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: .875rem;
+  color: var(--text-2);
+  flex: 0 0 36px;
+}
+.mini-main {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  gap: 2px 9px; min-width: 0;
+}
+.mini-main b { font-size: .935rem; font-weight: 700; }
+.mini-main .muted { font-size: .815rem; }
+.mini-tags {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  width: 100%; margin-top: 5px;
+}
+.mini-end { display: flex; align-items: center; gap: 6px; }
+
+/* ============================================================
+   18. TOUR CARD
+   ============================================================ */
+
+.tour-card { display: block; text-decoration: none; color: inherit; }
+.tour-card:hover { color: inherit; }
+
+.tour-head {
+  display: flex; align-items: center; gap: 11px;
+}
+.tour-head h3 {
+  margin: 0; flex: 1; min-width: 0;
+  font-size: 1.02rem;
+  font-weight: 750;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.tour-no {
+  display: grid; place-items: center;
+  width: 36px; height: 36px; flex: 0 0 36px;
+  border-radius: 11px;
+  background: var(--surface-2);
+  border: 1px solid var(--line-2);
+  font-family: "Manrope", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: .88rem;
+  color: var(--text-2);
+}
+.tour-sub { font-size: .845rem; margin-top: 9px; line-height: 1.55; }
+.tour-meta { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+.tour-champ {
+  margin-top: 12px;
+  font-size: .875rem;
+  color: var(--gold);
+  display: flex; align-items: center; gap: 6px;
+  font-weight: 600;
+}
+
+/* ============================================================
+   19. INFO LIST
+   ============================================================ */
+
+.info-list {
+  display: grid; gap: 11px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  margin-top: 16px;
+}
+.info-item {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 12px 15px;
+  transition: border-color var(--t-fast) var(--ease);
+}
+.info-item:hover { border-color: var(--line-2); }
+.info-item .k {
+  font-size: .695rem;
+  text-transform: uppercase;
+  letter-spacing: .075em;
+  color: var(--muted);
+  font-weight: 700;
+}
+.info-item .v {
+  font-weight: 700;
+  margin-top: 4px;
+  font-size: .96rem;
+  letter-spacing: -.012em;
+}
+
+/* ============================================================
+   20. TR-ROW / ASSIGN
+   ============================================================ */
+
+.tr-row {
+  display: flex; align-items: center; gap: 11px; flex-wrap: wrap;
+  padding: 12px 15px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  margin-bottom: 9px;
+  font-size: .88rem;
+  transition: all var(--t-fast) var(--ease);
+}
+.tr-row:hover { border-color: var(--line-2); background: var(--surface-3); }
+
+.assign-row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  margin-bottom: 9px;
+  transition: border-color var(--t-fast) var(--ease);
+}
+.assign-row:hover { border-color: var(--line-2); }
+.assign-row select { max-width: 230px; }
+
+/* ============================================================
+   21. BRACKET
+   ============================================================ */
+
+.bracket { display: grid; gap: 18px; }
+.bracket-stage {
+  border-left: 3px solid var(--line-2);
+  padding-left: 18px;
+  position: relative;
+}
+.bracket-stage::before {
+  content: '';
+  position: absolute;
+  left: -3px; top: 0;
+  width: 3px; height: 28px;
+  background: var(--grad-accent);
+  border-radius: var(--r-full);
+}
+.bracket-stage h4 {
+  margin: 0 0 10px;
+  font-size: .755rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .085em;
+  font-weight: 700;
+}
+
+/* ============================================================
+   22. AWARD
+   ============================================================ */
+
+.award-card {
+  display: flex; align-items: flex-start; gap: 14px;
+}
+.award-icon {
+  width: 48px; height: 48px; flex: 0 0 48px;
+  display: grid; place-items: center;
+  border-radius: 14px;
+  font-size: 1.5rem;
+  background: color-mix(in srgb, var(--gold) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--gold) 32%, transparent);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--gold) 16%, transparent);
+}
+.award-title {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  font-size: .98rem;
+}
+
+/* ============================================================
+   23. LOGIN
+   ============================================================ */
+
+.login-wrap {
+  min-height: 68vh;
+  display: grid;
+  place-items: center;
+  padding: 48px 0;
+}
+.login-wrap.gate {
+  min-height: calc(100vh - 180px);
+  padding: 32px 0;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  background: var(--surface);
+  background-image: var(--grad-card);
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-xl);
+  padding: 38px 32px 32px;
+  box-shadow: var(--sh-xl);
+  overflow: hidden;
+}
+.login-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--grad-accent);
+}
+.login-wrap.gate .login-card {
+  box-shadow: var(--sh-xl), 0 0 0 1px color-mix(in srgb, var(--accent) 14%, transparent);
+  animation: gateIn var(--t-slow) var(--ease-out);
+}
+
+.login-card .lock {
+  display: grid; place-items: center;
+  width: 62px; height: 62px;
+  margin: 0 auto 18px;
+  border-radius: 20px;
+  background: var(--grad-accent);
+  font-size: 1.85rem;
+  box-shadow: var(--sh-accent);
+}
+.login-card h1 {
+  text-align: center;
+  font-size: 1.42rem;
+  margin: 0 0 8px;
+  letter-spacing: -.035em;
+}
+.login-card .sub {
+  text-align: center;
+  color: var(--muted);
+  font-size: .885rem;
+  margin: 0 0 26px;
+}
+.login-card input {
+  background: var(--bg-elev);
+  border-color: var(--line-2);
+}
+.login-card input:focus {
+  background: var(--surface);
+}
+
+.login-error {
+  color: var(--danger);
+  font-size: .865rem;
+  font-weight: 650;
+  min-height: 1.35em;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.pw-wrap { position: relative; }
+.pw-wrap input { padding-right: 48px; }
+.pw-toggle {
+  position: absolute;
+  right: 6px; top: 50%;
+  transform: translateY(-50%);
+  background: none; border: none;
+  cursor: pointer;
+  font-size: 1.02rem;
+  padding: 8px 10px;
+  border-radius: 9px;
+  color: var(--muted);
+  line-height: 1;
+  transition: all var(--t-fast) var(--ease);
+}
+.pw-toggle:hover { color: var(--text); background: var(--surface-3); }
+
+/* ============================================================
+   24. PERF (тоглолтын стат)
+   ============================================================ */
+
+.perf-box {
+  margin-top: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface-2);
+  overflow: hidden;
+  transition: border-color var(--t) var(--ease);
+}
+.perf-box[open] { border-color: var(--line-2); }
+.perf-box > summary {
+  cursor: pointer; list-style: none;
+  display: flex; align-items: center; gap: 9px; flex-wrap: wrap;
+  padding: 13px 16px;
+  font-weight: 700;
+  font-size: .885rem;
+  user-select: none;
+  transition: background var(--t-fast) var(--ease);
+}
+.perf-box > summary::-webkit-details-marker { display: none; }
+.perf-box > summary::before {
+  content: '▸';
+  color: var(--muted);
+  font-size: .9rem;
+  transition: transform var(--t) var(--ease);
+}
+.perf-box[open] > summary::before { content: '▾'; }
+.perf-box > summary:hover { background: var(--surface-3); color: var(--accent); }
+
+.perf-form { padding: 0 16px 18px; }
+.perf-team { margin-bottom: 18px; }
+.perf-team-head {
+  display: flex; align-items: center; gap: 9px;
+  margin-bottom: 10px;
+  font-size: .91rem;
+  flex-wrap: wrap;
+}
+.perf-grid {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--surface);
+}
+.perf-grid-head, .perf-grid-row {
+  display: grid; align-items: center; gap: 7px;
+  padding: 8px 12px;
+}
+.perf-grid-head {
+  background: var(--surface-2);
+  font-size: .685rem;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--muted);
+  font-weight: 700;
+}
+.perf-grid-row {
+  border-top: 1px solid var(--line);
+  font-size: .875rem;
+  transition: background var(--t-fast) var(--ease);
+}
+.perf-grid-row:hover { background: var(--surface-2); }
+.perf-grid-row.on {
+  background: color-mix(in srgb, var(--accent) 7%, transparent);
+}
+.perf-grid .c { text-align: center; }
+.perf-name {
+  display: flex; align-items: center; gap: 9px;
+  min-width: 0; overflow: hidden;
+}
+.perf-name b {
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font-weight: 700; font-size: .9rem;
+}
+.perf-grid input[type="number"] {
+  padding: 6px 8px;
+  text-align: center;
+  border-radius: 9px;
+  font-size: .875rem;
+  background: var(--surface-2);
+}
+.perf-grid input[type="checkbox"] {
+  width: 17px; height: 17px; margin: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+/* ============================================================
+   25. FILTER BAR
+   ============================================================ */
+
+.filter-bar {
+  display: flex; gap: 14px; flex-wrap: wrap;
+  align-items: flex-end;
+  background: var(--surface);
+  background-image: var(--grad-card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 16px 18px;
+  box-shadow: var(--sh-sm);
+}
+.filter-bar .field { margin-bottom: 0; }
+
+/* ============================================================
+   26. COMPARE
+   ============================================================ */
+
+.compare-card { padding: 20px; }
+.cmp-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 14px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 14px;
+}
+.cmp-name {
+  display: inline-flex; align-items: center; gap: 9px;
+  color: inherit; text-decoration: none; min-width: 0;
+  font-weight: 650;
+}
+.cmp-name b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cmp-name:hover b { color: var(--accent); }
+.cmp-vs {
+  color: var(--faint);
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: .78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  flex: 0 0 auto;
+}
+.cmp-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.cmp-row:last-child { border-bottom: none; }
+.cmp-v {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-size: 1.02rem;
+  text-align: right;
+  letter-spacing: -.02em;
+  transition: color var(--t-fast) var(--ease);
+}
+.cmp-row .cmp-v:last-child { text-align: left; }
+.cmp-v.win { color: var(--accent-2); font-weight: 800; }
+.cmp-k {
+  font-size: .71rem;
+  text-transform: uppercase;
+  letter-spacing: .055em;
+  color: var(--muted);
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+}
+.cmp-block + .cmp-block {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.cmp-tpl {
+  font-size: .765rem;
+  font-weight: 800;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: 10px;
+  display: flex; align-items: center; gap: 6px;
+}
+
+/* ============================================================
+   27. TPL TABS
+   ============================================================ */
+
+.tpl-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.tpl-tab {
+  padding: 8px 16px;
+  border-radius: var(--r-full);
+  cursor: pointer;
+  border: 1px solid var(--line-2);
+  background: var(--surface);
+  color: var(--muted);
+  font: inherit;
+  font-size: .86rem;
+  font-weight: 650;
+  transition: all var(--t-fast) var(--ease);
+}
+.tpl-tab:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+.tpl-tab.active {
+  background: var(--grad-accent);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: var(--sh-accent);
+}
+.tpl-tab .muted { opacity: .78; font-weight: 500; }
+
+/* ============================================================
+   28. TPL EDITOR
+   ============================================================ */
+
+.tpl-card { margin-bottom: 18px; }
+.tpl-head {
+  display: flex; align-items: center; gap: 11px; flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.tpl-head .tpl-icon {
+  width: 58px; flex: 0 0 58px;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 9px 6px;
+}
+.tpl-head .tpl-name {
+  flex: 1; min-width: 170px;
+  font-weight: 700;
+  font-size: .97rem;
+}
+
+.tpl-fields {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+.tpl-row-head, .tpl-row {
+  display: grid;
+  grid-template-columns: minmax(115px, 1.2fr) minmax(115px, 1.4fr) 64px 100px 44px;
+  gap: 9px; align-items: center;
+  padding: 8px 12px;
+}
+.tpl-row-head {
+  background: var(--surface);
+  font-size: .665rem;
+  text-transform: uppercase;
+  letter-spacing: .075em;
+  color: var(--muted);
+  font-weight: 700;
+}
+.tpl-row { border-top: 1px solid var(--line); }
+.tpl-row input {
+  padding: 7px 10px;
+  font-size: .86rem;
+  border-radius: 9px;
+}
+.tpl-row .tf-icon { text-align: center; padding: 7px 4px; }
+.tpl-row .tf-lower {
+  display: flex; align-items: center; gap: 7px;
+  font-size: .775rem;
+  color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+}
+.tpl-row .tf-lower input { width: auto; }
+.tpl-row .btn { padding: 5px 10px; font-size: .77rem; }
+
+.tpl-ratio {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line-2);
+}
+.tpl-ratio h4 {
+  margin: 0 0 10px;
+  font-size: .74rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  font-weight: 700;
+}
+
+/* ============================================================
+   29. TRADE
+   ============================================================ */
+
+.trade-card { margin-bottom: 16px; }
+.trade-head {
+  display: flex; justify-content: space-between;
+  align-items: flex-start; gap: 14px; flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.trade-teams { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.trade-team {
+  display: inline-flex; align-items: center; gap: 10px;
+  color: inherit; text-decoration: none; min-width: 0;
+}
+.trade-team-txt { display: flex; flex-direction: column; line-height: 1.3; min-width: 0; }
+.trade-team-txt b { font-size: .94rem; font-weight: 750; }
+.trade-team-txt .muted { font-size: .765rem; }
+.trade-team:hover b { color: var(--accent); }
+.trade-arrow {
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 1.15rem;
+  flex: 0 0 auto;
+}
+
+.trade-body {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+  margin-bottom: 12px;
+}
+.trade-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 6px 0;
+}
+.trade-lbl {
+  font-size: .74rem;
+  font-weight: 750;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  line-height: 1.6;
+}
+.trade-items { display: flex; gap: 7px; flex-wrap: wrap; }
+
+.trade-note {
+  font-size: .855rem;
+  color: var(--text-2);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+.trade-foot {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 14px; flex-wrap: wrap;
+}
+
+.trade-grid {
+  display: grid; gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+}
+.trade-col {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 16px;
+}
+.trade-col h4 { margin: 0 0 12px; font-size: .94rem; font-weight: 750; }
+.trade-sub {
+  font-size: .705rem !important;
+  margin: 0 0 9px !important;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: .075em;
+  color: var(--muted);
+}
+.trade-col .check-list label { font-size: .835rem; padding: 7px 11px; }
+.trade-col .check-list .avatar { width: 22px; height: 22px; font-size: .6rem; }
+
+.counter-box {
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface-2);
+  overflow: hidden;
+}
+.counter-box > summary {
+  cursor: pointer; list-style: none;
+  padding: 12px 16px;
+  font-weight: 700;
+  font-size: .87rem;
+  user-select: none;
+  transition: background var(--t-fast) var(--ease);
+}
+.counter-box > summary::-webkit-details-marker { display: none; }
+.counter-box > summary::before { content: '▸ '; color: var(--muted); }
+.counter-box[open] > summary::before { content: '▾ '; }
+.counter-box > summary:hover { color: var(--accent); background: var(--surface-3); }
+.counter-form { padding: 0 16px 18px; }
+
+.pick-disabled { opacity: .48; cursor: not-allowed; }
+.pick-disabled input { pointer-events: none; }
+
+/* ============================================================
+   30. PMINI
+   ============================================================ */
+
+.pmini-wrap {
+  display: flex; flex-direction: column; gap: 3px;
+  min-width: 0;
+}
+.pmini {
+  display: block;
+  font-size: .79rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   31. TOAST
+   ============================================================ */
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translate(-50%, 28px) scale(.94);
+  max-width: min(92vw, 460px);
+  background: var(--surface-3);
+  color: var(--text);
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-md);
+  padding: 14px 22px;
+  font-size: .9rem;
+  font-weight: 650;
+  box-shadow: var(--sh-xl);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 300;
+  text-align: center;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: opacity var(--t) var(--ease),
+              transform var(--t) var(--ease-out);
+}
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+.toast.err {
+  border-color: color-mix(in srgb, var(--danger) 55%, transparent);
+  color: var(--danger);
+  box-shadow: var(--sh-xl), 0 0 0 1px color-mix(in srgb, var(--danger) 18%, transparent);
+}
+.toast.ok {
+  border-color: color-mix(in srgb, var(--accent-2) 55%, transparent);
+  color: var(--accent-2);
+  box-shadow: var(--sh-xl), 0 0 0 1px color-mix(in srgb, var(--accent-2) 18%, transparent);
+}
+
+/* ============================================================
+   32. FOOTER
+   ============================================================ */
+
+.foot {
+  border-top: 1px solid var(--line);
+  margin-top: 64px;
+  padding: 28px 0 34px;
+  font-size: .85rem;
+  color: var(--muted);
+  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--surface) 55%, transparent));
+}
+.foot-in {
+  display: flex; justify-content: space-between;
+  gap: 14px; flex-wrap: wrap;
+  align-items: center;
+}
+
+/* ============================================================
+   33. ХУУЧИН КЛАССУУД (нийцтэй байдал)
+   ============================================================ */
+
+.season-line {
+  display: flex; gap: 14px; overflow-x: auto;
+  padding: 4px 0 14px;
+  scrollbar-width: thin;
+}
+.season-node {
+  flex: 0 0 178px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 16px;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: var(--sh-sm);
+  transition: all var(--t) var(--ease);
+}
+.season-node:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--sh-lg); }
+.season-node .node-round { font-size: 1.55rem; font-weight: 800; line-height: 1; }
+.season-node .node-title { font-weight: 700; font-size: .92rem; margin-top: 7px; }
+.season-node .node-date  { font-size: .77rem; color: var(--muted); margin-top: 3px; }
+.season-node .node-champ {
+  display: flex; align-items: center; gap: 6px;
+  font-size: .77rem; margin-top: 9px;
+  color: var(--gold); font-weight: 700;
+}
+
+.profile-actions { display: flex; gap: 9px; flex-wrap: wrap; }
+
+/* ============================================================
+   34. АНИМЭЙШН
+   ============================================================ */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes gateIn {
+  from { opacity: 0; transform: translateY(20px) scale(.97); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes pulseSoft {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: .55; }
+}
+
+#app > * {
+  animation: fadeUp var(--t-slow) var(--ease-out) both;
+}
+#app > *:nth-child(1) { animation-delay: 0ms; }
+#app > *:nth-child(2) { animation-delay: 45ms; }
+#app > *:nth-child(3) { animation-delay: 90ms; }
+#app > *:nth-child(4) { animation-delay: 130ms; }
+#app > *:nth-child(5) { animation-delay: 165ms; }
+#app > *:nth-child(6) { animation-delay: 195ms; }
+#app > *:nth-child(7) { animation-delay: 220ms; }
+#app > *:nth-child(n+8) { animation-delay: 245ms; }
+
+.grid > * {
+  animation: fadeUp var(--t-slow) var(--ease-out) both;
+}
+.grid > *:nth-child(1) { animation-delay: 0ms; }
+.grid > *:nth-child(2) { animation-delay: 40ms; }
+.grid > *:nth-child(3) { animation-delay: 80ms; }
+.grid > *:nth-child(4) { animation-delay: 115ms; }
+.grid > *:nth-child(5) { animation-delay: 145ms; }
+.grid > *:nth-child(6) { animation-delay: 170ms; }
+.grid > *:nth-child(n+7) { animation-delay: 195ms; }
+
+/* ============================================================
+   35. LOCKED (нэвтрэх хаалт)
+   ============================================================ */
+
+body.locked .tabs { display: none; }
+body.locked .foot-in span:last-child { display: none; }
+body.locked .top-right { margin-left: auto; }
+
+/* ============================================================
+   36. RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1080px) {
+  .wrap { padding: 0 20px; }
+  .tabs a { padding: 7px 12px; font-size: .85rem; }
+}
+
+@media (max-width: 900px) {
+  :root { --nav-h: 60px; }
+
+  .topbar-in { flex-wrap: wrap; gap: 12px; padding: 10px 0 0; }
+  .brand-text { display: none; }
+  .brand-icon { width: 36px; height: 36px; flex: 0 0 36px; font-size: 1.05rem; }
+
+  .tabs {
+    order: 3;
+    width: 100%;
+    margin: 0 0 10px;
+    border-radius: var(--r-md);
+    padding: 4px;
+    justify-content: flex-start;
+  }
+  .tabs a { padding: 7px 13px; font-size: .84rem; }
+
+  .top-right { margin-left: auto; }
+  .user-chip span:last-child { display: none; }
+  .user-chip { padding: 4px; }
+  .user-chip .avatar { width: 30px; height: 30px; }
+
+  .page-head { padding: 26px 0 12px; }
+  .section { padding: 20px 0; }
+  .card { padding: 18px; border-radius: var(--r-md); }
+  .stat { padding: 17px 18px; }
+  .stat .num { font-size: 1.8rem; }
+
+  .grid { gap: 14px; }
+  .g-2, .g-3, .g-4 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+}
+
+@media (max-width: 720px) {
+  .wrap { padding: 0 15px; }
+  body { font-size: 14.5px; }
+
+  h1 { font-size: 1.55rem; }
+  h2 { font-size: 1.18rem; }
+  .page-head { padding: 22px 0 10px; }
+
+  .card { padding: 16px; }
+  .stat { padding: 15px 16px; }
+  .stat .num { font-size: 1.65rem; }
+
+  .match-row {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 9px;
+    padding: 14px;
+  }
+  .match-row .side,
+  .match-row .side.right { justify-content: center; }
+  .match-row .score { margin: 0 auto; }
+
+  .mini-row { grid-template-columns: 32px 1fr; }
+  .mini-end { grid-column: 2; justify-content: flex-start; }
+  .mini-no { width: 32px; height: 32px; flex: 0 0 32px; }
+
+  .perf-grid { overflow-x: auto; }
+  .perf-grid-head, .perf-grid-row { min-width: 580px; }
+  .perf-form { padding: 0 12px 16px; }
+
+  .tpl-fields { overflow-x: auto; }
+  .tpl-row-head, .tpl-row { min-width: 590px; }
+  .tpl-head .tpl-name { min-width: 100%; }
+
+  .trade-row { grid-template-columns: 1fr; gap: 5px; }
+  .trade-lbl { font-size: .695rem; }
+  .trade-teams { gap: 8px; }
+  .trade-team-txt b { font-size: .87rem; }
+
+  .cmp-k { font-size: .65rem; }
+  .cmp-v { font-size: .93rem; }
+
+  .login-card { padding: 30px 22px 26px; border-radius: var(--r-lg); }
+  .login-card .lock { width: 54px; height: 54px; font-size: 1.6rem; border-radius: 17px; }
+
+  .admin-bar { gap: 12px; }
+  .subtabs { gap: 6px; }
+  .subtabs button { padding: 7px 13px; font-size: .82rem; }
+
+  .filter-bar { padding: 14px; gap: 12px; }
+  .filter-bar .field { width: 100%; }
+
+  .trade-col { padding: 14px; }
+  .info-list { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+
+  .toast { bottom: 18px; padding: 12px 18px; font-size: .86rem; }
+}
+
+@media (max-width: 460px) {
+  .wrap { padding: 0 13px; }
+  .brand-icon { width: 34px; height: 34px; flex: 0 0 34px; }
+  .icon-btn { width: 36px; height: 36px; flex: 0 0 36px; font-size: .98rem; }
+
+  .stat .num { font-size: 1.5rem; }
+  .avatar { width: 40px; height: 40px; font-size: .88rem; }
+  .avatar.lg { width: 64px; height: 64px; font-size: 1.35rem; }
+  .crest.lg { width: 64px; height: 64px; font-size: 1.8rem; }
+
+  .btn { padding: 9px 15px; font-size: .875rem; }
+  .btn.sm { padding: 6px 11px; font-size: .79rem; }
+
+  .pcard-rank { display: none; }
+  .trade-arrow { transform: rotate(90deg); }
+}
+
+/* ============================================================
+   37. ХҮРТЭХ БОЛОМЖГҮЙ БАЙДАЛ
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   38. ПРИНТ
+   ============================================================ */
+
+@media print {
+  .topbar, .foot, .toast, .btn, .icon-btn, .subtabs, .admin-bar { display: none !important; }
+  body { background: #fff; color: #000; }
+  body::before { display: none; }
+  .card, .stat, .table-wrap { box-shadow: none; border-color: #ccc; }
+}
+
+/* ============================================================
+   v8.1 — ЗАСВАР
+   1) Чекбокс бүх газар зөв харагдана
+   2) .mini-row давхцал арилна
+   ============================================================ */
+
+/* ============================================================
+   1. ЧЕКБОКС — бүх газар нэгдсэн загвар
+   ============================================================ */
+
+input[type="checkbox"],
+.check-list input,
+.remember input,
+.perf-grid input[type="checkbox"],
+.tpl-row .tf-lower input,
+.tpl-row input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  max-width: 18px;
+  flex: 0 0 18px;
+  margin: 0;
+  padding: 0;
+  border: 1.5px solid var(--line-3);
+  border-radius: 5px;
+  background-color: var(--surface-2);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 12px;
+  cursor: pointer;
+  vertical-align: middle;
+  box-shadow: none;
+  transition: background-color var(--t-fast) var(--ease),
+              border-color var(--t-fast) var(--ease),
+              box-shadow var(--t-fast) var(--ease),
+              transform var(--t-fast) var(--ease);
+}
+
+input[type="checkbox"]:hover,
+.check-list input:hover,
+.remember input:hover,
+.perf-grid input[type="checkbox"]:hover,
+.tpl-row .tf-lower input:hover {
+  border-color: var(--accent);
+  background-color: color-mix(in srgb, var(--accent) 10%, var(--surface-2));
+}
+
+input[type="checkbox"]:active,
+.check-list input:active,
+.remember input:active { transform: scale(.9); }
+
+input[type="checkbox"]:focus-visible,
+.check-list input:focus-visible,
+.remember input:focus-visible,
+.perf-grid input[type="checkbox"]:focus-visible,
+.tpl-row .tf-lower input:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3.5px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+input[type="checkbox"]:checked,
+.check-list input:checked,
+.remember input:checked,
+.perf-grid input[type="checkbox"]:checked,
+.tpl-row .tf-lower input:checked {
+  background-color: var(--accent);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+  border-color: transparent;
+}
+
+input[type="checkbox"]:disabled,
+.check-list input:disabled,
+.tpl-row .tf-lower input:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+  background-color: var(--surface-3);
+  border-color: var(--line-2);
+  transform: none;
+}
+input[type="checkbox"]:disabled:checked { background-image: none; }
+
+/* check-list дотор бага зэрэг жижиг */
+.check-list input {
+  width: 17px; height: 17px;
+  min-width: 17px; max-width: 17px;
+  flex: 0 0 17px;
+  background-size: 11px 11px;
+}
+
+/* perf-grid дотор */
+.perf-grid input[type="checkbox"] {
+  width: 18px; height: 18px;
+  min-width: 18px; max-width: 18px;
+  flex: 0 0 18px;
+}
+
+/* ============================================================
+   2. MINI-ROW — давхцал арилгах
+   ============================================================ */
+
+.mini-row {
+  grid-template-columns: 36px minmax(0, 1fr);
+  align-items: start;
+}
+
+.mini-main {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.mini-tags {
+  min-width: 0;
+}
+
+.mini-end {
+  grid-column: 2;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.tag {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.tag.gold {
+  color: var(--gold);
+  border-color: color-mix(in srgb, var(--gold) 38%, transparent);
+  background: color-mix(in srgb, var(--gold) 11%, transparent);
+}
+
+/* ---------- Мобайл ---------- */
+@media (max-width: 720px) {
+  .mini-row { grid-template-columns: 32px minmax(0, 1fr); }
+  .mini-end { grid-column: 2; margin-top: 7px; }
+}
+
+/* ============================================================
+   v8.2 — Cloud sync төлөвийн чип
+   ============================================================ */
+
+.sync-chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 6px 12px;
+  border-radius: var(--r-full);
+  border: 1px solid var(--line-2);
+  background: var(--surface);
+  color: var(--muted);
+  font: inherit;
+  font-size: .78rem;
+  font-weight: 650;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all var(--t-fast) var(--ease);
+}
+.sync-chip:hover { transform: translateY(-1px); box-shadow: var(--sh-sm); }
+.sync-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: currentColor; flex: 0 0 7px;
+}
+.sync-chip.sync-ok   { color: var(--accent-2); border-color: color-mix(in srgb, var(--accent-2) 35%, transparent); }
+.sync-chip.sync-wait { color: var(--warn);     border-color: color-mix(in srgb, var(--warn) 35%, transparent); }
+.sync-chip.sync-err  { color: var(--danger);   border-color: color-mix(in srgb, var(--danger) 35%, transparent); }
+.sync-chip.sync-off  { color: var(--faint); }
+.sync-chip.sync-wait .sync-dot { animation: pulseSoft 1.1s ease-in-out infinite; }
+.sync-chip.sync-err  .sync-dot { animation: pulseSoft .8s ease-in-out infinite; }
+
+@media (max-width: 900px) { .sync-txt { display: none; } .sync-chip { padding: 6px 10px; } }
+
+/* ============================================================
+   SYNC CHIP — синк төлөв
+   ============================================================ */
+
+.sync-chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 6px 12px;
+  border-radius: var(--r-full);
+  border: 1px solid var(--line-2);
+  background: var(--surface);
+  color: var(--muted);
+  font: inherit;
+  font-size: .78rem;
+  font-weight: 650;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all var(--t-fast) var(--ease);
+}
+.sync-chip:hover { transform: translateY(-1px); box-shadow: var(--sh-sm); }
+
+.sync-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: currentColor; flex: 0 0 7px;
+}
+
+.sync-chip.sync-ok   { color: var(--accent-2); border-color: color-mix(in srgb, var(--accent-2) 35%, transparent); }
+.sync-chip.sync-wait { color: var(--warn);     border-color: color-mix(in srgb, var(--warn) 35%, transparent); }
+.sync-chip.sync-err  { color: var(--danger);   border-color: color-mix(in srgb, var(--danger) 35%, transparent); }
+.sync-chip.sync-off  { color: var(--faint); }
+
+.sync-chip.sync-wait .sync-dot { animation: pulseSoft 1.1s ease-in-out infinite; }
+.sync-chip.sync-err  .sync-dot { animation: pulseSoft .8s ease-in-out infinite; }
+
+@media (max-width: 900px) {
+  .sync-txt { display: none; }
+  .sync-chip { padding: 6px 10px; }
+}
+
+/* ============================================================
+   v8.3 — Тоглоом тус бүрийн шилдгүүд (топ карт)
+   ============================================================ */
+
+.tpl-tops-grid {
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  align-items: start;
+}
+
+.tpl-top-card {
+  padding: 18px 18px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Толгой ---------- */
+.tpl-top-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.tpl-top-head h3 {
+  margin: 0;
+  font-size: .98rem;
+  font-weight: 750;
+  letter-spacing: -.02em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tpl-top-icon {
+  display: grid;
+  place-items: center;
+  width: 34px; height: 34px;
+  flex: 0 0 34px;
+  border-radius: 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--line-2);
+  font-size: 1.05rem;
+}
+
+/* ---------- Жагсаалт ---------- */
+.tpl-top-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
+}
+
+/* ---------- Нэг мөр ---------- */
+.tpl-top {
+  display: grid;
+  grid-template-columns: 24px 34px minmax(0, 1fr);
+  align-items: center;
+  gap: 11px;
+  padding: 10px 12px;
+  border-radius: 11px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color var(--t-fast) var(--ease),
+              background var(--t-fast) var(--ease),
+              transform var(--t-fast) var(--ease);
+}
+.tpl-top:hover {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 6%, var(--surface-2));
+  transform: translateX(2px);
+  color: var(--text);
+}
+.tpl-top .avatar {
+  width: 34px; height: 34px;
+  font-size: .78rem;
+  flex: 0 0 34px;
+}
+
+/* ---------- Байр ---------- */
+.tpl-top-rank {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+/* ---------- Нэр + стат ---------- */
+.tpl-top-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.tpl-top-name {
+  font-weight: 700;
+  font-size: .93rem;
+  letter-spacing: -.012em;
+  line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---------- Стат мөр ---------- */
+.tpl-top-stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  font-size: .775rem;
+  color: var(--muted);
+  line-height: 1.35;
+}
+.tpl-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.tpl-stat-ic {
+  font-size: .85rem;
+  line-height: 1;
+}
+.tpl-stat.ratio {
+  color: var(--accent);
+  font-weight: 600;
+}
+.tpl-stat.ratio b {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -.02em;
+}
+.tpl-stat-lbl {
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  opacity: .8;
+}
+.tpl-stat.mvp {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ---------- Бүх жагсаалт товч ---------- */
+.tpl-top-more {
+  margin-top: 12px;
+  align-self: flex-start;
+}
+
+/* ---------- Мобайл ---------- */
+@media (max-width: 720px) {
+  .tpl-tops-grid {
+    grid-template-columns: 1fr;
+  }
+  .tpl-top {
+    grid-template-columns: 22px 32px minmax(0, 1fr);
+    gap: 9px;
+    padding: 9px 11px;
+  }
+  .tpl-top .avatar {
+    width: 32px; height: 32px;
+    font-size: .74rem;
+    flex: 0 0 32px;
+  }
+  .tpl-top-name { font-size: .89rem; }
+  .tpl-top-stats { font-size: .73rem; gap: 4px 8px; }
+  .tpl-top-rank { font-size: .92rem; }
+}
+
+@media (max-width: 460px) {
+  .tpl-top-stats { gap: 3px 7px; font-size: .7rem; }
+  .tpl-stat-ic { font-size: .8rem; }
+}
+
+/* ============================================================
+   v8.4 — Шагналын титэл (нэрний хажууд)
+   ============================================================ */
+
+.aw-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 6px;
+  min-width: 0;
+}
+
+.aw-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 9px;
+  border-radius: var(--r-full);
+  font-size: .695rem;
+  font-weight: 700;
+  line-height: 1.55;
+  letter-spacing: .005em;
+  white-space: nowrap;
+  max-width: 100%;
+  background: color-mix(in srgb, var(--gold) 13%, transparent);
+  border: 1px solid color-mix(in srgb, var(--gold) 36%, transparent);
+  color: var(--gold);
+  transition: transform var(--t-fast) var(--ease),
+              background var(--t-fast) var(--ease);
+}
+.aw-badge:hover {
+  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--gold) 20%, transparent);
+}
+.aw-badge .aw-ic {
+  font-size: .8rem;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+.aw-badge .aw-tx {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 130px;
+}
+.aw-badge.aw-more {
+  background: var(--surface-2);
+  border-color: var(--line-2);
+  color: var(--muted);
+  font-weight: 800;
+}
+
+/* ---------- Хүснэгтийн нүдэн доторх тоглогч ---------- */
+.cell-player {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+  min-width: 0;
+  max-width: 100%;
+}
+.cell-player .avatar { flex: 0 0 auto; }
+
+.cell-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.cell-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.cell-body .aw-badges { margin-top: 3px; }
+
+/* ---------- Нүүрний топ 3 (tpl-top) ---------- */
+.tpl-top-name { display: block; }
+.tpl-top-body .aw-badges { margin-top: 4px; gap: 3px; }
+.tpl-top-body .aw-badge {
+  font-size: .655rem;
+  padding: 1px 7px;
+}
+.tpl-top-body .aw-badge .aw-tx { max-width: 96px; }
+
+/* ---------- Мобайл ---------- */
+@media (max-width: 720px) {
+  .aw-badge { font-size: .665rem; padding: 2px 8px; }
+  .aw-badge .aw-tx { max-width: 104px; }
+  .cell-body .aw-badge .aw-tx { max-width: 90px; }
+}
+
+/* ============================================================
+   v8.5 — Титэл: давтамж + шатлал
+   ============================================================ */
+
+/* ---------- Тоо (×N) ---------- */
+.aw-n {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: .72rem;
+  letter-spacing: -.01em;
+  padding: 0 4px;
+  margin-left: 1px;
+  border-radius: var(--r-xs);
+  background: color-mix(in srgb, var(--gold) 22%, transparent);
+  line-height: 1.5;
+}
+
+/* ---------- Шатлал ---------- */
+
+/* 🥉 1 удаа — энгийн */
+.aw-badge.t1 { }
+
+/* 🥈 2 удаа — гэрэлтэй хүрээ */
+.aw-badge.t2 {
+  border-width: 1.5px;
+  border-color: color-mix(in srgb, var(--gold) 55%, transparent);
+  background: color-mix(in srgb, var(--gold) 16%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold) 12%, transparent);
+}
+.aw-badge.t2 .aw-n {
+  background: color-mix(in srgb, var(--gold) 32%, transparent);
+}
+
+/* 🥇 3-4 удаа — алтлаг сүүдэр */
+.aw-badge.t3 {
+  border-width: 1.5px;
+  border-color: color-mix(in srgb, var(--gold) 75%, transparent);
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--gold) 20%, transparent),
+    color-mix(in srgb, var(--gold) 11%, transparent));
+  box-shadow: 0 2px 12px color-mix(in srgb, var(--gold) 26%, transparent);
+  color: var(--gold);
+}
+.aw-badge.t3 .aw-n {
+  background: color-mix(in srgb, var(--gold) 42%, transparent);
+  color: #fff;
+}
+
+/* 👑 5+ удаа — домогт (shimmer) */
+.aw-badge.t4 {
+  position: relative;
+  overflow: hidden;
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    linear-gradient(120deg, #fbbf24, #f59e0b, #fde68a, #f59e0b, #fbbf24) border-box;
+  background-size: 100% 100%, 300% 100%;
+  color: var(--gold);
+  box-shadow: 0 3px 16px color-mix(in srgb, var(--gold) 34%, transparent);
+  animation: awShine 5s linear infinite;
+}
+.aw-badge.t4::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.28), transparent);
+  animation: awSweep 3.4s ease-in-out infinite;
+  pointer-events: none;
+}
+.aw-badge.t4 .aw-n {
+  background: var(--grad-gold);
+  color: #1a1305;
+  font-weight: 800;
+}
+@keyframes awShine {
+  0%   { background-position: 0 0, 0% 50%; }
+  100% { background-position: 0 0, 300% 50%; }
+}
+@keyframes awShine {
+  0%   { background-position: 0 0, 0% 50%; }
+  100% { background-position: 0 0, 300% 50%; }
+}
+@keyframes awSweep {
+  0%        { left: -100%; }
+  55%, 100% { left: 160%; }
+}
+
+/* ---------- Compact горим ---------- */
+.aw-badge .aw-ic { flex: 0 0 auto; }
+.aw-badges .aw-badge:has(.aw-ic:only-child) { padding: 2px 8px; }
+
+/* ---------- Хүснэгтэн доторх титэл бага зэрэг жижиг ---------- */
+.cell-body .aw-badge {
+  font-size: .665rem;
+  padding: 1px 7px;
+}
+.cell-body .aw-n { font-size: .665rem; padding: 0 3px; }
+.cell-body .aw-badge .aw-tx { max-width: 108px; }
+
+/* ---------- tpl-top дотор бүр жижиг ---------- */
+.tpl-top-body .aw-badge {
+  font-size: .645rem;
+  padding: 1px 7px;
+}
+.tpl-top-body .aw-n { font-size: .645rem; padding: 0 3px; }
+.tpl-top-body .aw-badge .aw-tx { max-width: 88px; }
+
+/* ---------- Хөдөлгөөн багасгах ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .aw-badge.t4 { animation: none; }
+  .aw-badge.t4::after { display: none; }
+}
+
+/* ---------- Мобайл ---------- */
+@media (max-width: 720px) {
+  .aw-badge { font-size: .665rem; padding: 2px 8px; }
+  .aw-badge .aw-tx { max-width: 100px; }
+  .aw-n { font-size: .665rem; }
+}
+
+/* ============================================================
+   v8.6 — Дүрс сонгох (emoji picker)
+   ============================================================ */
+
+/* ---------- Талбар ---------- */
+.icon-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-input {
+  flex: 0 0 auto;
+  width: 96px;
+  text-align: center;
+  font-size: 1.35rem;
+  line-height: 1.3;
+  padding: 8px 10px;
+  letter-spacing: .04em;
+}
+
+.icon-pick {
+  flex: 0 0 auto;
+  padding: 9px 13px;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+/* ---------- Шуурхай мөр ---------- */
+.icon-quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 9px;
+}
+.iq {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--line-2);
+  background: var(--surface-2);
+  font-size: 1.08rem;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform var(--t-fast) var(--ease),
+              border-color var(--t-fast) var(--ease),
+              background var(--t-fast) var(--ease);
+}
+.iq:hover {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface-2));
+  transform: translateY(-2px) scale(1.06);
+}
+.iq:active { transform: scale(.94); }
+
+/* ---------- Панел ---------- */
+.icon-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  display: none;
+  place-items: center;
+  padding: 18px;
+  background: color-mix(in srgb, var(--bg) 74%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.icon-panel.open {
+  display: grid;
+  animation: fadeUp .22s var(--ease-out);
+}
+
+.icon-panel-inner {
+  width: 100%;
+  max-width: 580px;
+  max-height: 84vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh-xl);
+  overflow: hidden;
+}
+
+.icon-panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--line);
+  flex: 0 0 auto;
+}
+.icon-panel-head b { font-size: .98rem; }
+
+.icon-panel-body {
+  overflow-y: auto;
+  padding: 16px 20px 22px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ---------- Категори ---------- */
+.icon-cat { margin-bottom: 18px; }
+.icon-cat:last-child { margin-bottom: 0; }
+
+.icon-cat-name {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--muted);
+  font-weight: 750;
+  margin-bottom: 9px;
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  gap: 6px;
+}
+
+.ig {
+  aspect-ratio: 1;
+  border-radius: 11px;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform var(--t-fast) var(--ease),
+              border-color var(--t-fast) var(--ease),
+              background var(--t-fast) var(--ease);
+}
+.ig:hover {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface-2));
+  transform: translateY(-2px) scale(1.07);
+}
+.ig:active { transform: scale(.92); }
+
+/* ---------- Хүснэгтэн дэх дүрс ---------- */
+td .aw-badge { vertical-align: middle; }
+
+/* ---------- Мобайл ---------- */
+@media (max-width: 720px) {
+  .icon-panel { padding: 10px; }
+  .icon-panel-inner { max-height: 88vh; border-radius: var(--r-lg); }
+  .icon-panel-body { padding: 14px 16px 18px; }
+  .icon-grid { grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); gap: 5px; }
+  .ig { font-size: 1.15rem; border-radius: 9px; }
+  .iq { width: 33px; height: 33px; font-size: 1rem; }
+  .icon-input { width: 82px; font-size: 1.2rem; }
+}
+
+@media (max-width: 460px) {
+  .icon-grid { grid-template-columns: repeat(auto-fill, minmax(38px, 1fr)); }
+  .ig { font-size: 1.08rem; }
+}
+</file>
+
+<file path="js/app.js">
 /* ============================================================
    app.js — v7
    + Багийн ахлагч · хэлэлцээрийн систем
@@ -114,50 +3035,6 @@
   function tplChip(tpl, extra) {
     if (!tpl) return '';
     return `<span class="chip tpl">${esc(tpl.icon || '')} ${esc(tpl.name)}${extra ? ' · ' + esc(extra) : ''}</span>`;
-  }
-
-   /* ---------- 🏅 Шагналын титэл (давтамж нэгтгэсэн) ---------- */
-
-     function tplChip(tpl, extra) {
-    if (!tpl) return '';
-    return `<span class="chip tpl">${esc(tpl.icon || '')} ${esc(tpl.name)}${extra ? ' · ' + esc(extra) : ''}</span>`;
-  }
-
-  /* ---------- 🎯 Тэмцээний чипүүд ---------- */
-
-  /** Тэмцээний товч чипүүд (тоглоом · газар · төрөл · стат загвар) */
-  function tourChips(t) {
-    if (!t) return '';
-    const tpl = DB.templateOf(t.id);
-    const parts = [];
-
-    if (t.game)   parts.push(`<span class="chip">🎮 ${esc(t.game)}</span>`);
-    if (t.place)  parts.push(`<span class="chip">📍 ${esc(t.place)}</span>`);
-    if (t.format) parts.push(`<span class="chip">🏷 ${esc(t.format)}</span>`);
-    if (tpl)      parts.push(tplChip(tpl));
-
-    return parts.join('');
-  }
-
-  /* ---------- 📋 Улирлын карт доторх мөр ---------- */
-
-  /** Жижиг тэмцээний мөр (seasonCards дотор ашиглагдана) */
-  function miniTour(t) {
-    const champ = t.status === 'done' ? DB.team(DB.championOf(t.id)) : null;
-    return `
-      <a class="mini-row" href="#/tournament/${esc(t.id)}">
-        <span class="mini-no">${t.isFinal ? '🏆' : esc(t.no || '•')}</span>
-        <span class="mini-main">
-          <b>${esc(t.title)}</b>
-          <span class="muted">📅 ${esc(fmtShort(t.date))} ${esc(t.time || '')}</span>
-          <span class="mini-tags">
-            ${tourChips(t)}
-            <span class="tag">🏟 ${(t.entrants || []).length} баг</span>
-            ${champ ? `<span class="tag gold">🥇 ${esc(champ.name)}</span>` : ''}
-          </span>
-        </span>
-        <span class="mini-end">${statusBadge(t.status)}</span>
-      </a>`;
   }
 
    /* ---------- 🏅 Шагналын титэл (давтамж нэгтгэсэн) ---------- */
@@ -493,7 +3370,7 @@
       </a>`).join('')}</div>`;
   }
 
-    function awardsBlock(awards) {
+  function awardsBlock(awards) {
     if (!awards.length) return '<p class="muted">Шагнал бүртгэгдээгүй.</p>';
     return `<div class="grid g-3">${awards.map(a => {
       const owner = DB.awardOwner(a);
@@ -509,89 +3386,6 @@
         </div>
       </div>`;
     }).join('')}</div>`;
-  }
-
-  /* ---------- ⬇️ ЭНИЙГ НЭМНЭ ---------- */
-
-  /* ============================================================
-     🏅 ШАГНАЛЫН ДЭЛГЭЦ (профайл дээр тод)
-     ============================================================ */
-
-  /** Нэг шагналын карт */
-  function awardItem(a, held) {
-    const owner  = DB.awardOwner(a);
-    const traded = held || (a.ownerId && a.playerId && a.ownerId !== a.playerId);
-
-    return `
-      <div class="awd-item ${traded ? 'traded' : ''}">
-        <span class="awd-ic">${esc(a.icon || '🏅')}</span>
-        <div class="awd-body">
-          <div class="awd-name">${esc(a.title)}</div>
-          ${a.note ? `<div class="awd-note">${esc(a.note)}</div>` : ''}
-          <div class="awd-meta">
-            <span>📅 ${esc(fmtDate(a.date))}</span>
-            ${traded && owner ? `<span class="awd-owner">👑 ${esc(owner.name)}</span>` : ''}
-          </div>
-        </div>
-      </div>`;
-  }
-
-  /** Тоглогчийн шагналын бүтэн панел (хүлээн авсан + эзэмшилд) */
-  function awardShowcase(p, st) {
-    if (!p) return '';
-
-    const given = (st.awards || []).slice()
-      .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
-    const held  = st.awardsHeld || [];
-    const total = given.length;
-    const all   = total + held.length;
-
-    const groups   = _awGroups(p.id);
-    const topCount = groups.length ? groups[0].count : 0;
-
-    return `
-      <section class="section" id="awards">
-        <div class="awd-panel">
-          <div class="awd-head">
-            <div class="awd-head-l">
-              <span class="awd-crown">🏅</span>
-              <div>
-                <h2 class="awd-title">Шагнал &amp; Титэм</h2>
-                <p class="awd-sub">
-                  Нийт <b>${total}</b> шагнал
-                  ${groups.length ? ` · <b>${groups.length}</b> төрөл` : ''}
-                  ${topCount > 1 ? ` · хамгийн олон <b>${topCount}×</b>` : ''}
-                  ${held.length ? ` · эзэмшилд <b>${held.length}</b>` : ''}
-                </p>
-              </div>
-            </div>
-            ${all ? `<span class="awd-count">${all}</span>` : ''}
-          </div>
-
-          ${!all ? `
-            <div class="awd-empty">
-              <span>🎯</span>
-              <p>Одоогоор шагнал алга — тоглолтоо үргэлжлүүлээрэй!</p>
-            </div>` : `
-
-            ${total ? `
-              <div class="awd-group">
-                <div class="awd-group-name">🏅 Хүлээн авсан (${total})</div>
-                <div class="awd-grid">
-                  ${given.map(a => awardItem(a, false)).join('')}
-                </div>
-              </div>` : ''}
-
-            ${held.length ? `
-              <div class="awd-group">
-                <div class="awd-group-name">👑 Эзэмшилд байгаа (${held.length})</div>
-                <div class="awd-grid">
-                  ${held.map(a => awardItem(a, true)).join('')}
-                </div>
-              </div>` : ''}
-          `}
-        </div>
-      </section>`;
   }
 
   function playerMatchHistory(matches, team, limit) {
@@ -1465,7 +4259,12 @@
           </a>`).join('')}</div>`
       : '<p class="muted">Багт тоглогч байхгүй.</p>';
 
-    /* heldHtml хэрэггүй болсон */
+    const heldHtml = st.awardsHeld.length ? `
+      <section class="section">
+        <h2>👑 Миний эзэмшилд байгаа шагналууд (${st.awardsHeld.length})</h2>
+        ${awardsBlock(st.awardsHeld)}
+      </section>` : '';
+
     return `
       <div class="page-head">
         <h1>👤 Миний профайл</h1>
@@ -1483,13 +4282,6 @@
           </div>
         </section>` : ''}
 
-      ${awardShowcase(p, st)}
-
-      <section class="section">
-        <h2>🏆 Миний титэлүүд (${st.titles.length})</h2>
-        ${titlesBlock(st.titles)}
-      </section>
-
       ${perfSection(p.id, '🎮 Тоглолтын статистик (хувийн)')}
 
       <section class="section">
@@ -1501,6 +4293,18 @@
         <h2>📆 Жилээр (баг)</h2>
         ${yearRows}
       </section>
+
+      <section class="section">
+        <h2>🏆 Миний титэлүүд (${st.titles.length})</h2>
+        ${titlesBlock(st.titles)}
+      </section>
+
+      <section class="section">
+        <h2>🏅 Миний шагналууд (${st.awards.length})</h2>
+        ${awardsBlock(st.awards)}
+      </section>
+
+      ${heldHtml}
 
       ${team ? `<section class="section"><h2>👥 Миний баг — ${esc(team.name)}</h2>${rosterHtml}</section>` : ''}
 
@@ -2470,7 +5274,7 @@
             ${isMe ? '<span class="chip ok">👤 чи</span>' : ''}
             ${DB.accountOf(p.id) ? '<span class="chip ok">🔑 Бүртгэлтэй</span>' : ''}
             ${st.titles.length ? `<span class="chip gold">🏆 ${st.titles.length} титэл</span>` : ''}
-                      ${st.awards.length ? `<button class="chip gold" type="button" data-action="goto-awards" style="cursor:pointer">🏅 ${st.awards.length} шагнал ↓</button>` : ''}
+            ${st.awards.length ? `<span class="chip gold">🏅 ${st.awards.length} шагнал</span>` : ''}
             ${st.awardsHeld.length ? `<span class="chip gold">👑 ${st.awardsHeld.length} эзэмшилд</span>` : ''}
           </div>
           ${awardBadges(p.id, { max: 6 })}
@@ -2482,7 +5286,12 @@
         </a>` : '<span class="badge tw-closed">🆓 Чөлөөт тоглогч</span>'}
       </div>`;
 
-     /* heldHtml хувьсагч хэрэггүй болсон — awardShowcase дотроо багтсан */
+    const heldHtml = st.awardsHeld.length ? `
+      <section class="section">
+        <h2>👑 Эзэмшилд байгаа шагналууд (${st.awardsHeld.length})</h2>
+        ${awardsBlock(st.awardsHeld)}
+      </section>` : '';
+
     return `
       <div class="page-head">
         <a href="#/players" style="text-decoration:none">← Бүх тоглогч</a>
@@ -2492,13 +5301,6 @@
       ${meBanner}
 
       <section class="section">${header}</section>
-
-      ${awardShowcase(p, st)}
-
-      <section class="section">
-        <h2>🏆 Титэлүүд (${st.titles.length})</h2>
-        ${titlesBlock(st.titles)}
-      </section>
 
       ${perfSection(p.id, '🎮 Тоглолтын статистик')}
 
@@ -2534,12 +5336,29 @@
           </table></div>` : '<p class="muted">Тоглолт бүртгэгдээгүй.</p>'}
       </section>
 
+      <section class="section">
+        <h2>🏆 Титэлүүд (${st.titles.length})</h2>
+        ${titlesBlock(st.titles)}
+      </section>
+
+      <section class="section">
+        <h2>🏅 Шагналууд (${st.awards.length})</h2>
+        ${awardsBlock(st.awards)}
+      </section>
+
+      ${heldHtml}
+
       <section class="section"><h2>🔄 Шилжилтийн түүх</h2>${trHtml}</section>
       <section class="section"><h2>⚔️ Багийн тоглолтууд</h2>${playerMatchHistory(st.matches, team, 10)}</section>
 
       <section class="section">
         <a class="btn ghost" href="#/players">← Бүх тоглогчийн жагсаалт</a>
       </section>`;
+  }
+
+  function notFound(msg) {
+    return `<div class="page-head"><h1>😕 ${esc(msg)}</h1>
+      <p><a href="#/dashboard">← Нүүр хуудас</a></p></div>`;
   }
 
   /* ============================================================
@@ -3839,16 +6658,6 @@
       render(); return;
     }
 
-        /* ---- Профайл: шагнал руу гүйлгэх ---- */
-    if (a === 'goto-awards') {
-      const el = document.getElementById('awards');
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      return;
-    }
-
-    /* ---- Профайл: загварын шүүлт ---- */
-    if (a === 'perf-tpl') { perfTpl = el.dataset.tpl || 'all'; render(); return; }
-
     /* ---- Профайл: загварын шүүлт ---- */
     if (a === 'perf-tpl') { perfTpl = el.dataset.tpl || 'all'; render(); return; }
 
@@ -4836,3 +7645,2591 @@
     }
   }
 })();
+</file>
+
+<file path="js/config.js">
+/* ============================================================
+   config.js — Cloud sync тохиргоо
+   ⚠️ anon key нь НИЙТИЙН зориулалттай (RLS хамгаална)
+   ============================================================ */
+
+window.LEAGUE_CONFIG = {
+
+  /* Supabase → Project Settings → API → Project URL */
+  supabaseUrl: 'https://rsllkdbsjiqucmzdzydd.supabase.co/rest/v1/',
+
+  /* Supabase → Project Settings → API → anon public */
+  supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJzbGxrZGJzamlxdWNtemR6eWRkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk3NjU2MzMsImV4cCI6MjEwNTM0MTYzM30.7IaT-EzVE-jOwabsq6MBPjLyk8ONKOHjUGn4anD5uLI',
+
+  /* Лигийн ID — САНАМСАРГҮЙ, давтагдашгүй мөр байх ёстой.
+     Жишээ: 'golomt-fl-2026-a7f3k9x2'  ← өөрийнхөөрөө соль!
+     Энэ нь таны лигийг бусдаас тусгаарлана. */
+  leagueId: 'golomt-fl-main-CHANGE-ME-9f3k2'
+
+};
+</file>
+
+<file path="js/data.js">
+/* ============================================================
+   data.js — v7
+   + Багийн ахлагч · хэлэлцээрийн систем (хүсэлт/эсрэг санал)
+   + Шагналын эзэмшил (ownerId)
+   ============================================================ */
+
+window.DB = (function () {
+
+  const KEY         = 'nzuud_cup_v7';
+  const OLD_KEYS    = ['nzuud_cup_v6','nzuud_cup_v5','nzuud_cup_v4','nzuud_cup_v3','nzuud_cup_v2','nzuud_cup'];
+  const SESSION_KEY = 'nzuud_cup_session';
+
+  const PALETTE = ['#2563eb','#7c3aed','#db2777','#ea580c',
+                   '#059669','#0891b2','#ca8a04','#dc2626'];
+
+  const GAMES   = ['Mobile Legends','Футзал','Футбол','Сагсан бөмбөг','Волейбол','Ширээний теннис','Бадминтон'];
+  const FORMATS = ['Round Robin','Хоёр багийн тулаан','Групп + Плейофф','Хасагдсан (Knockout)','Цаг хязгаартай'];
+  const PLACES  = ['Голомт Талбай','Спортын Төв Ордон','Сургуулийн Заал','Гадаа талбай','Паркийн талбай'];
+
+  const DEFAULT_TEMPLATES = [
+    {
+      id: 'tpl_esport',
+      name: 'Esport (MOBA / Shooter)',
+      icon: '🎮',
+      fields: [
+        { key: 'kills',   label: 'Алалт',   icon: '⚔️' },
+        { key: 'deaths',  label: 'Үхэл',    icon: '💀', lower: true },
+        { key: 'assists', label: 'Тусламж', icon: '🤝' }
+      ],
+      ratio: { label: 'KDA', num: ['kills', 'assists'], den: 'deaths' }
+    },
+    {
+      id: 'tpl_basket',
+      name: 'Сагсан бөмбөг',
+      icon: '🏀',
+      fields: [
+        { key: 'points',    label: 'Оноо',   icon: '🏀' },
+        { key: 'rebounds',  label: 'Самбар', icon: '🙌' },
+        { key: 'assists',   label: 'Ассист', icon: '🎯' },
+        { key: 'steals',    label: 'Хулгай', icon: '✋' },
+        { key: 'blocks',    label: 'Хаалт',  icon: '🛡️' },
+        { key: 'turnovers', label: 'Алдаа',  icon: '❌', lower: true }
+      ],
+      ratio: { label: 'PIR', num: ['points', 'rebounds', 'assists'], den: 'turnovers' }
+    },
+    {
+      id: 'tpl_football',
+      name: 'Хөлбөмбөг',
+      icon: '⚽',
+      fields: [
+        { key: 'goals',   label: 'Гол',     icon: '⚽' },
+        { key: 'assists', label: 'Ассист',  icon: '🎯' },
+        { key: 'saves',   label: 'Хаалт',   icon: '🧤' },
+        { key: 'fouls',   label: 'Зөрчил',  icon: '🟨', lower: true }
+      ],
+      ratio: { label: 'G+A', num: ['goals', 'assists'], den: null }
+    },
+    {
+      id: 'tpl_volley',
+      name: 'Волейбол',
+      icon: '🏐',
+      fields: [
+        { key: 'points', label: 'Оноо',  icon: '🏐' },
+        { key: 'aces',   label: 'Эйс',   icon: '🎯' },
+        { key: 'blocks', label: 'Хаалт', icon: '🛡️' },
+        { key: 'errors', label: 'Алдаа', icon: '❌', lower: true }
+      ],
+      ratio: null
+    },
+    {
+      id: 'tpl_racket',
+      name: 'Ширээний теннис / Бадминтон',
+      icon: '🏓',
+      fields: [
+        { key: 'setsWon',  label: 'Хожсон сет',   icon: '✅' },
+        { key: 'setsLost', label: 'Хожгосон сет', icon: '❌', lower: true }
+      ],
+      ratio: null
+    }
+  ];
+
+  function guessTemplateId(game) {
+    const g = String(game || '').toLowerCase();
+    if (!g) return 'tpl_esport';
+    if (/mobile|legend|dota|lol|league|valorant|cs\s*go|counter|pubg|free\s*fire|esport|moba|shooter|game/.test(g)) return 'tpl_esport';
+    if (/сагсан|basket/.test(g)) return 'tpl_basket';
+    if (/футзал|хөлбөмбөг|football|futsal|soccer/.test(g)) return 'tpl_football';
+    if (/волейбол|volley/.test(g)) return 'tpl_volley';
+    if (/теннис|бадминтон|tennis|badminton|пинг/.test(g)) return 'tpl_racket';
+    return 'tpl_esport';
+  }
+
+  /* ============================================================
+     ЖИЖИГ ТУСЛАХУУД
+     ============================================================ */
+
+  function uid(prefix) {
+    return prefix + '_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+  }
+
+  const pad = n => String(n).padStart(2, '0');
+
+  function todayIso() {
+    const d = new Date();
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  }
+
+  function nowIso() {
+    const d = new Date();
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+  }
+
+  function addDays(iso, n) {
+    const d = new Date(iso + 'T00:00:00');
+    d.setDate(d.getDate() + n);
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  }
+
+  function diffDays(fromIso, toIso) {
+    return Math.round((new Date(toIso + 'T00:00:00') - new Date(fromIso + 'T00:00:00')) / 86400000);
+  }
+
+  function strHash(str) {
+    let x = 0;
+    for (let i = 0; i < str.length; i++) x = (x * 31 + str.charCodeAt(i)) % 100003;
+    return x;
+  }
+
+  function clone(o) { return JSON.parse(JSON.stringify(o)); }
+
+  function DEFAULT_USERS() {
+    return [{ id: 'u_admin', username: 'admin', password: 'admin123',
+              name: 'Админ', role: 'admin', playerId: null }];
+  }
+
+  function ratioOf(tpl, tot) {
+    if (!tpl || !tpl.ratio) return null;
+    const num = Array.isArray(tpl.ratio.num) ? tpl.ratio.num : [];
+    if (!num.length) return null;
+    const up = num.reduce((s, k) => s + (Number(tot[k]) || 0), 0);
+    if (!tpl.ratio.den) return up;
+    const dn = Number(tot[tpl.ratio.den]) || 0;
+    return up / Math.max(1, dn);
+  }
+
+  function maxFor(key) {
+    switch (key) {
+      case 'setsWon': case 'setsLost': return 4;
+      case 'deaths': case 'turnovers': case 'fouls': case 'errors': return 7;
+      case 'saves': case 'blocks': case 'steals': return 6;
+      case 'points': return 26;
+      case 'rebounds': return 14;
+      default: return 13;
+    }
+  }
+
+  /* ============================================================
+     СЕСС
+     ============================================================ */
+
+  function writeSession(userId, days) {
+    const raw = JSON.stringify({ userId, exp: days ? Date.now() + days * 86400000 : 0 });
+    try {
+      if (days) {
+        localStorage.setItem(SESSION_KEY, raw);
+        sessionStorage.removeItem(SESSION_KEY);
+      } else {
+        sessionStorage.setItem(SESSION_KEY, raw);
+        localStorage.removeItem(SESSION_KEY);
+      }
+    } catch (e) { console.warn('Сесс хадгалж чадсангүй:', e); }
+  }
+
+  function readSession() {
+    let raw = null;
+    try { raw = localStorage.getItem(SESSION_KEY) || sessionStorage.getItem(SESSION_KEY); }
+    catch (e) { return null; }
+    if (!raw) return null;
+
+    let s = null;
+    try { s = JSON.parse(raw); } catch (e) { return null; }
+    if (!s || !s.userId) return null;
+    if (s.exp && s.exp < Date.now()) { clearSession(); return null; }
+    return s;
+  }
+
+  function clearSession() {
+    try {
+      localStorage.removeItem(SESSION_KEY);
+      sessionStorage.removeItem(SESSION_KEY);
+    } catch (e) {}
+  }
+
+  /* ============================================================
+     АНХНЫ (ДЕМО) ӨГӨГДӨЛ
+     ============================================================ */
+
+  function seed() {
+    const year = new Date().getFullYear();
+
+    const teams = [
+      { id: 'tm1', name: 'Алтан Арслан',  icon: '🦁', color: '#f59e0b', captainId: 'p1' },
+      { id: 'tm2', name: 'Хар Луу',       icon: '🐉', color: '#ef4444', captainId: 'p3' },
+      { id: 'tm3', name: 'Цэнхэр Чоно',   icon: '🐺', color: '#3b82f6', captainId: 'p5' },
+      { id: 'tm4', name: 'Ногоон Бүргэд', icon: '🦅', color: '#22c55e', captainId: 'p7' }
+    ];
+
+    const players = [
+      { id:'p1', name:'Бат-Эрдэнэ', nick:'Bat',  color:PALETTE[0], teamId:'tm1', joined:`${year}-01-05` },
+      { id:'p2', name:'Тэмүүлэн',   nick:'Temu', color:PALETTE[1], teamId:'tm1', joined:`${year}-01-05` },
+      { id:'p3', name:'Ананд',      nick:'Ana',  color:PALETTE[2], teamId:'tm2', joined:`${year}-01-05` },
+      { id:'p4', name:'Содном',     nick:'Sod',  color:PALETTE[3], teamId:'tm2', joined:`${year}-01-05` },
+      { id:'p5', name:'Номин',      nick:'Nom',  color:PALETTE[4], teamId:'tm3', joined:`${year}-01-05` },
+      { id:'p6', name:'Хүслэн',     nick:'Hus',  color:PALETTE[5], teamId:'tm1', joined:`${year}-01-05` },
+      { id:'p7', name:'Ганбат',     nick:'Gana', color:PALETTE[6], teamId:'tm4', joined:`${year}-01-05` },
+      { id:'p8', name:'Оюун',       nick:'Oyu',  color:PALETTE[7], teamId:'tm4', joined:`${year}-01-05` }
+    ];
+
+    const START = ['02-01','04-05','06-07','08-09'];
+    const seasons = [1, 2, 3, 4].map(r => ({
+      id: 's' + r,
+      year, round: r,
+      title: `${r}-р улирал`,
+      note: `${r}-р улирал — 6 жижиг тэмцээн`,
+      startDate: `${year}-${START[r - 1]}`,
+      gapDays: 7,
+      defPlace:  PLACES[r % PLACES.length],
+      defGame:   GAMES[(r - 1) % GAMES.length],
+      defFormat: FORMATS[0]
+    }));
+
+    const PL = ['Спортын Төв Ордон','Голомт Талбай','Сургуулийн Заал','Голомт Талбай','Гадаа талбай','Спортын Төв Ордон'];
+    const GM = ['Mobile Legends','Mobile Legends','Футзал','Сагсан бөмбөг','Волейбол','Футзал'];
+    const FM = ['Хасагдсан (Knockout)','Round Robin','Round Robin','Round Robin','Round Robin','Round Robin'];
+    const ALL = ['tm1','tm2','tm3','tm4'];
+
+    const tournaments = [];
+    seasons.forEach((s, si) => {
+      for (let i = 0; i < 6; i++) {
+        tournaments.push({
+          id: `t${si + 1}_${i + 1}`,
+          year, seasonId: s.id, isFinal: false, no: i + 1,
+          title: `${i + 1}-р тэмцээн`,
+          date: addDays(s.startDate, i * s.gapDays),
+          time: '18:00',
+          place: PL[i], game: GM[i], format: FM[i],
+          templateId: guessTemplateId(GM[i]),
+          status: si < 2 ? 'done' : (si === 2 && i === 0 ? 'ongoing' : 'upcoming'),
+          entrants: ALL.slice(),
+          note: ''
+        });
+      }
+    });
+
+    tournaments.push({
+      id: 'tf', year, seasonId: null, isFinal: true, no: 0,
+      title: 'Их тэмцээн — Финал',
+      date: `${year}-11-20`, time: '18:00',
+      place: 'Спортын Төв Ордон', game: 'Mobile Legends', format: 'Хасагдсан (Knockout)',
+      templateId: 'tpl_esport',
+      status: 'upcoming', entrants: [],
+      note: 'Улирлын шилдэг багууд шалгарч оролцоно'
+    });
+
+    const RR = [
+      ['tm1','tm2'], ['tm3','tm4'], ['tm1','tm3'],
+      ['tm2','tm4'], ['tm1','tm4'], ['tm2','tm3']
+    ];
+
+    const matches = [];
+    tournaments.filter(t => t.status === 'done').forEach((t, ti) => {
+      RR.forEach(([h, a], i) => {
+        const hs = (ti * 3 + i * 2) % 5;
+        const as = (ti * 2 + i * 3 + 1) % 4;
+        matches.push({
+          id: uid('m'), tournamentId: t.id, stage: 'Round Robin',
+          homeTeamId: h, awayTeamId: a,
+          homeScore: hs, awayScore: as,
+          winnerTeamId: hs > as ? h : (as > hs ? a : null),
+          status: 'done', perfs: []
+        });
+      });
+    });
+
+    const transfers = [
+      { id: 'tr1', playerId: 'p6', fromTeamId: 'tm3', toTeamId: 'tm1',
+        date: addDays(`${year}-04-05`, 21), year, note: 'Шилжилтийн цонх' }
+    ];
+
+    const awards = [
+      { id:'aw1', playerId:'p1', ownerId:'p1', icon:'🥇', title:'1-р улирлын MVP',
+        note:'Хамгийн тогтвортой тоглолт', date:`${year}-04-10` },
+      { id:'aw2', playerId:'p6', ownerId:'p6', icon:'⭐', title:'Шилдэг шилжилт',
+        note:'Шинэ багтаа шууд нөлөөлсөн', date:`${year}-05-01` },
+      { id:'aw3', playerId:'p3', ownerId:'p3', icon:'🔥', title:'Шилдэг довтлогч',
+        note:'Хамгийн олон оноо', date:`${year}-04-12` },
+
+      /* --- Давтамж харуулах демо --- */
+      { id:'aw4', playerId:'p1', ownerId:'p1', icon:'🥇', title:'2-р улирлын MVP',
+        note:'Дараалан хоёр дахь', date:`${year}-06-15` },
+      { id:'aw5', playerId:'p1', ownerId:'p1', icon:'🥇', title:'3-р улирлын MVP',
+        note:'Гурав дахь', date:`${year}-08-20` },
+      { id:'aw6', playerId:'p1', ownerId:'p1', icon:'🏆', title:'Жилийн MVP',
+        note:'Улирлын их аварга', date:`${year}-12-01` },
+      { id:'aw7', playerId:'p2', ownerId:'p2', icon:'⭐', title:'1-р улирлын шилдэг шилжилт',
+        note:'', date:`${year}-04-11` },
+      { id:'aw8', playerId:'p2', ownerId:'p2', icon:'⭐', title:'2-р улирлын шилдэг шилжилт',
+        note:'', date:`${year}-06-16` }
+    ];
+
+    const teamAtSeed = (pid, date) => {
+      const p = players.find(x => x.id === pid);
+      const evs = transfers
+        .filter(t => t.playerId === pid)
+        .sort((a, b) => (a.date || '').localeCompare(b.date || ''));
+      if (!evs.length) return p ? p.teamId : null;
+      let team = evs[0].fromTeamId || null;
+      for (const e of evs) {
+        if ((e.date || '') <= (date || '')) team = e.toTeamId || null;
+        else break;
+      }
+      return team;
+    };
+
+    const tplOf = id => DEFAULT_TEMPLATES.find(t => t.id === id) || DEFAULT_TEMPLATES[0];
+
+    matches.forEach(m => {
+      const t = tournaments.find(x => x.id === m.tournamentId);
+      const date = t ? t.date : '';
+      const tpl  = tplOf(t ? t.templateId : 'tpl_esport');
+      m.perfs = [];
+
+      [m.homeTeamId, m.awayTeamId].forEach(tid => {
+        players.forEach(p => {
+          if (teamAtSeed(p.id, date) !== tid) return;
+          const rec = { playerId: p.id, teamId: tid, templateId: tpl.id, mvp: false, note: '' };
+          tpl.fields.forEach(f => {
+            rec[f.key] = strHash(m.id + '|' + p.id + '|' + f.key) % maxFor(f.key);
+          });
+          m.perfs.push(rec);
+        });
+      });
+
+      if (m.perfs.length) {
+        let best = m.perfs[0], bestV = -Infinity;
+        m.perfs.forEach(x => {
+          const v = ratioOf(tpl, x);
+          const score = v == null ? (x[Object.keys(x)[4]] || 0) : v;
+          if (score > bestV) { bestV = score; best = x; }
+        });
+        best.mvp = true;
+      }
+    });
+
+    /* ---------- Демо хэлэлцээрийн хүсэлт ---------- */
+    const tradeRequests = [{
+      id: 'trq_demo1',
+      fromTeamId: 'tm2', toTeamId: 'tm1',
+      fromCaptainId: 'p3', toCaptainId: 'p1',
+      offerPlayers: ['p4'], offerAwards: [],
+      wantPlayers: ['p2'], wantAwards: [],
+      note: 'Манай багт довтлогч хэрэгтэй байна. Содномыг санал болгож байна.',
+      status: 'pending', parentId: null, counterId: null, reason: '',
+      createdAt: nowIso(), resolvedAt: null
+    }];
+
+    const users = [
+      ...DEFAULT_USERS(),
+      { id:'u_bat', username:'bat', password:'bat123',
+        name:'Бат-Эрдэнэ', role:'player', playerId:'p1' },
+      { id:'u_ana', username:'ana', password:'ana123',
+        name:'Ананд', role:'player', playerId:'p3' }
+    ];
+
+    return {
+      version: 7,
+      settings: {
+        title: 'Happy Golomt FL',
+        theme: 'null',
+        winPoints: 3,
+        drawPoints: 1,
+        lossPoints: 0,
+        subPerSeason: 6,
+        transferGapDays: 3,
+        transferDays: 7,
+         transferOverride: null,
+        finalQualifiers: 4,
+        loginRequired: true,
+        awardBadgeMode: 'owned',      // 'owned' | 'received' | 'off'
+        awardBadgeStyle: 'group',     // 'each' | 'group' | 'compact'
+        awardBadgeMax: 3,             // хамгийн ихдээ хэдэн титэл
+        awardBadgeMerge: '',          // нэгтгэх түлхүүр үгс (таслалаар)
+        recentIcons: ['🏅','🥇','⭐','🔥','👑'],   // сүүлд хэрэглэсэн дүрсүүд
+        statTemplates: clone(DEFAULT_TEMPLATES),
+        users
+      },
+      teams, players, seasons, tournaments, matches, transfers, awards, tradeRequests
+    };
+  }
+
+  /* ============================================================
+     CLOUD SYNC — Supabase
+     ============================================================ */
+
+  const SYNC = {
+    cfg: null,
+    client: null,
+    ready: false,
+    status: 'off',      // off | connecting | online | error
+    msg: '',
+    ver: 0,             // серверээс мэдэх version
+    dirty: false,       // push хүлээж буй өөрчлөлт
+    pushTimer: null,
+    pollTimer: null,
+    pulling: false,
+    pushing: false,
+    channel: null,
+    listeners: [],
+    retry: 0
+  };
+
+  function saveLocal() {
+    try { localStorage.setItem(KEY, JSON.stringify(API.state)); }
+    catch (e) {
+      console.error(e);
+      alert('Хадгалж чадсангүй! Хөтчийн сан хүрэлцэхгүй байж магадгүй.');
+    }
+  }
+
+  function syncEnabled() {
+    const c = window.LEAGUE_CONFIG;
+    return !!(c && c.supabaseUrl && c.supabaseKey && c.leagueId &&
+              String(c.leagueId).indexOf('CHANGE-ME') === -1);
+  }
+
+  function syncInfo() {
+    return {
+      status: SYNC.status, msg: SYNC.msg,
+      ready: SYNC.ready, dirty: SYNC.dirty, ver: SYNC.ver
+    };
+  }
+
+  function syncNotify(reason) {
+    SYNC.listeners.forEach(fn => {
+      try { fn(reason, syncInfo()); } catch (e) { console.error(e); }
+    });
+  }
+
+  function syncSet(status, msg) {
+    if (SYNC.status === status && SYNC.msg === (msg || '')) return;
+    SYNC.status = status;
+    SYNC.msg = msg || '';
+    syncNotify('status');
+  }
+
+  function syncOnChange(fn) {
+    if (typeof fn !== 'function') return () => {};
+    SYNC.listeners.push(fn);
+    return () => { SYNC.listeners = SYNC.listeners.filter(x => x !== fn); };
+  }
+
+  function syncInit() {
+    if (!syncEnabled()) { syncSet('off', 'Синк тохируулаагүй'); return; }
+    if (!window.supabase || typeof window.supabase.createClient !== 'function') {
+      syncSet('error', 'Supabase SDK ачаалагдаагүй'); return;
+    }
+    const c = window.LEAGUE_CONFIG;
+    SYNC.cfg = c;
+    try {
+      SYNC.client = window.supabase.createClient(c.supabaseUrl, c.supabaseKey, {
+        auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false }
+      });
+    } catch (e) {
+      console.warn('[sync] init:', e);
+      syncSet('error', 'Холбогдож чадсангүй');
+      return;
+    }
+    SYNC.ready = true;
+    syncSet('connecting', 'Холбогдож байна…');
+    syncPull(true);
+    syncSubscribe();
+    syncStartPolling();
+  }
+
+  async function syncPull(initial) {
+    if (!SYNC.ready || SYNC.pulling) return;
+    SYNC.pulling = true;
+    try {
+      /* 1) Хөнгөн шалгалт — зөвхөн version */
+      const vres = await SYNC.client
+        .from('league')
+        .select('version')
+        .eq('id', SYNC.cfg.leagueId)
+        .maybeSingle();
+      if (vres.error) throw vres.error;
+
+      /* Мөр байхгүй → локал датаг байршуулна */
+      if (!vres.data) { await syncPush(true); return; }
+
+      const ver = Number(vres.data.version) || 0;
+
+      /* Өөрчлөлт алга */
+      if (ver === SYNC.ver) { syncSet('online', 'Синк хийгдсэн'); return; }
+
+      /* Локалд илгээгээгүй өөрчлөлт байвал — эхлээд түүнийгээ илгээнэ */
+      if (SYNC.dirty && !initial) { syncSchedulePush(0); return; }
+
+      /* 2) Бүтэн датаг татах */
+      const dres = await SYNC.client
+        .from('league')
+        .select('data,version')
+        .eq('id', SYNC.cfg.leagueId)
+        .maybeSingle();
+      if (dres.error) throw dres.error;
+      if (!dres.data || !dres.data.data) { await syncPush(true); return; }
+
+      API.state = dres.data.data;
+      SYNC.ver   = Number(dres.data.version) || 0;
+      SYNC.dirty = false;
+      API.migrate();
+      saveLocal();
+      syncSet('online', 'Шинэчлэгдлээ');
+      syncNotify('remote');
+
+    } catch (e) {
+      console.warn('[sync] pull:', e);
+      syncSet('error', 'Серверт холбогдсонгүй');
+    } finally {
+      SYNC.pulling = false;
+    }
+  }
+
+  function syncSchedulePush(delay) {
+    if (!SYNC.ready) return;
+    SYNC.dirty = true;
+    syncSet('connecting', 'Хадгалж байна…');
+    clearTimeout(SYNC.pushTimer);
+    SYNC.pushTimer = setTimeout(() => syncPush(true),
+      typeof delay === 'number' ? delay : 1100);
+  }
+
+  async function syncPush(force) {
+    if (!SYNC.ready || SYNC.pushing) return { ok: false };
+    SYNC.pushing = true;
+    try {
+      const u = API.currentUser();
+      const payload = {
+        id: SYNC.cfg.leagueId,
+        data: API.state,
+        updated_by: u ? (u.username || u.name || 'user') : 'system'
+      };
+
+      const res = await SYNC.client
+        .from('league')
+        .upsert(payload, { onConflict: 'id' })
+        .select('version')
+        .maybeSingle();
+      if (res.error) throw res.error;
+
+      SYNC.ver   = Number(res.data && res.data.version) || (SYNC.ver + 1);
+      SYNC.dirty = false;
+      SYNC.retry = 0;
+      syncSet('online', 'Хадгалагдлаа');
+      return { ok: true };
+
+    } catch (e) {
+      console.warn('[sync] push:', e);
+      SYNC.retry++;
+      syncSet('error', 'Хадгалж чадсангүй — дахин оролдоно');
+      const wait = Math.min(30000, 2000 * SYNC.retry);
+      clearTimeout(SYNC.pushTimer);
+      SYNC.pushTimer = setTimeout(() => syncPush(true), wait);
+      return { ok: false };
+    } finally {
+      SYNC.pushing = false;
+    }
+  }
+
+  function syncStartPolling() {
+    clearInterval(SYNC.pollTimer);
+    SYNC.pollTimer = setInterval(() => {
+      if (!SYNC.ready) return;
+      if (SYNC.dirty || SYNC.pushing || SYNC.pulling) return;
+      if (document.hidden) return;            // таб идэвхгүй бол алгасна
+      syncPull();
+    }, 15000);
+  }
+
+  function syncSubscribe() {
+    if (!SYNC.ready || SYNC.channel) return;
+    try {
+      SYNC.channel = SYNC.client
+        .channel('lg-' + SYNC.cfg.leagueId)
+        .on('postgres_changes',
+          { event: '*', schema: 'public', table: 'league',
+            filter: 'id=eq.' + SYNC.cfg.leagueId },
+          () => { if (!SYNC.dirty && !SYNC.pushing) syncPull(); })
+        .subscribe();
+    } catch (e) { console.warn('[sync] subscribe:', e); }
+  }
+
+  /* Таб руу буцаж ирэхэд шалгах */
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden && SYNC.ready && !SYNC.dirty) syncPull();
+  });
+
+  /* ============================================================
+     ҮНДСЭН API
+     ============================================================ */
+
+  const API = {
+    state: null,
+
+    GAMES, FORMATS, PLACES,
+    guessTemplateId, ratioOf,
+
+    load() {
+      let data = null;
+      try {
+        let raw = localStorage.getItem(KEY);
+        if (!raw) {
+          for (const k of OLD_KEYS) {
+            raw = localStorage.getItem(k);
+            if (raw) break;
+          }
+        }
+        if (raw) data = JSON.parse(raw);
+      } catch (e) { console.warn('Өгөгдөл уншиж чадсангүй:', e); }
+
+      this.state = data || seed();
+      this.migrate();
+
+      /* Локалд шууд хадгална */
+      saveLocal();
+
+      /* Сервертэй холбогдох (асинхрон — UI хүлээхгүй) */
+      syncInit();
+
+      return this.state;
+    },
+
+    migrate() {
+      const s = this.state;
+      const def = seed();
+      s.settings = s.settings || {};
+      const ds = def.settings;
+
+      ['title','theme','winPoints','drawPoints','lossPoints','subPerSeason',
+       'transferGapDays','transferDays','finalQualifiers','loginRequired',
+       'awardBadgeMode','awardBadgeStyle','awardBadgeMax','awardBadgeMerge'].forEach(k => {
+              /* Сүүлд хэрэглэсэн дүрсүүд */
+      if (!Array.isArray(s.settings.recentIcons)) {
+        s.settings.recentIcons = ['🏅','🥇','⭐','🔥','👑'];
+      }
+      s.settings.recentIcons = s.settings.recentIcons
+        .filter(x => typeof x === 'string' && x.trim())
+        .slice(0, 12);
+        if (s.settings[k] === undefined || s.settings[k] === null) s.settings[k] = ds[k];
+      });
+      if (s.settings.transferOverride === undefined) s.settings.transferOverride = null;
+
+      if (s.settings.adminPass) {
+        const legacy = String(s.settings.adminPass);
+        s.settings.users = Array.isArray(s.settings.users) ? s.settings.users : DEFAULT_USERS();
+        const a = s.settings.users.find(u => u.username === 'admin') || s.settings.users[0];
+        if (a) a.password = legacy;
+        delete s.settings.adminPass;
+      }
+      if (!Array.isArray(s.settings.users) || !s.settings.users.length) {
+        s.settings.users = DEFAULT_USERS();
+      }
+
+      ['teams','players','tournaments','matches','transfers','awards','tradeRequests'].forEach(k => {
+        if (!Array.isArray(s[k])) s[k] = [];
+      });
+      if (!Array.isArray(s.seasons)) s.seasons = [];
+
+      /* v2 → v3 */
+      if ((s.version || 2) < 3) {
+        const byKey = {};
+        const out = [];
+        s.tournaments.forEach(t => {
+          if (t.isFinal) {
+            out.push({ ...t, seasonId: null, no: 0,
+              place: t.place || '', game: t.game || '',
+              format: t.format || 'Хасагдсан (Knockout)' });
+            return;
+          }
+          const k = `${t.year}_${t.round}`;
+          if (!byKey[k]) {
+            const sid = uid('s');
+            byKey[k] = sid;
+            s.seasons.push({
+              id: sid, year: t.year, round: t.round,
+              title: t.title || `${t.round}-р улирал`, note: '',
+              startDate: t.date, gapDays: 7,
+              defPlace: '', defGame: '', defFormat: 'Round Robin'
+            });
+          }
+          out.push({ ...t, seasonId: byKey[k], no: t.no || 1,
+            place: t.place || '', game: t.game || '',
+            format: t.format || 'Round Robin' });
+        });
+        s.tournaments = out;
+        s.version = 3;
+      }
+
+      /* v3 → v4 */
+      if ((s.version || 3) < 4) {
+        s.settings.users.forEach(u => {
+          if (!u.role) u.role = 'admin';
+          if (u.playerId === undefined) u.playerId = null;
+        });
+        s.version = 4;
+      }
+
+      /* v4 → v5 */
+      if ((s.version || 4) < 5) {
+        s.matches.forEach(m => { if (!Array.isArray(m.perfs)) m.perfs = []; });
+        s.version = 5;
+      }
+
+      /* v5 → v6: стат загвар */
+      if ((s.version || 5) < 6) {
+        s.settings.statTemplates = clone(DEFAULT_TEMPLATES);
+
+        if (Array.isArray(s.settings.statFields) && s.settings.statFields.length) {
+          const tpl = s.settings.statTemplates.find(t => t.id === 'tpl_esport');
+          if (tpl) {
+            const byKey = {};
+            s.settings.statFields.forEach(f => { if (f && f.key) byKey[f.key] = f; });
+            tpl.fields = tpl.fields.map(f => {
+              const o = byKey[f.key];
+              return o ? { ...f, label: o.label || f.label, icon: o.icon || f.icon } : f;
+            });
+          }
+        }
+        delete s.settings.statFields;
+
+        s.tournaments.forEach(t => {
+          if (!t.templateId) t.templateId = guessTemplateId(t.game);
+        });
+        s.matches.forEach(m => {
+          const t = s.tournaments.find(x => x.id === m.tournamentId);
+          const tid = (t && t.templateId) || 'tpl_esport';
+          (m.perfs || []).forEach(r => { if (!r.templateId) r.templateId = tid; });
+        });
+
+        s.version = 6;
+      }
+
+      /* v6 → v7: ахлагч + шагналын эзэмшил + хэлэлцээр */
+      if ((s.version || 6) < 7) {
+        s.teams.forEach(t => { if (t.captainId === undefined) t.captainId = null; });
+        s.awards.forEach(a => { if (!a.ownerId) a.ownerId = a.playerId || null; });
+        if (!Array.isArray(s.tradeRequests)) s.tradeRequests = [];
+        s.version = 7;
+      }
+
+      /* ---------- Талбаруудыг үргэлж нөхөх ---------- */
+      s.settings.users.forEach(u => {
+        if (!u.role) u.role = 'admin';
+        if (u.playerId === undefined) u.playerId = null;
+      });
+
+      if (!Array.isArray(s.settings.statTemplates) || !s.settings.statTemplates.length) {
+        s.settings.statTemplates = clone(DEFAULT_TEMPLATES);
+      }
+      s.settings.statTemplates = s.settings.statTemplates
+        .filter(t => t && t.id)
+        .map(t => ({
+          id: String(t.id),
+          name: String(t.name || t.id),
+          icon: String(t.icon || '🏅'),
+          fields: (Array.isArray(t.fields) ? t.fields : [])
+            .filter(f => f && f.key)
+            .map(f => ({
+              key: String(f.key),
+              label: String(f.label || f.key),
+              icon: String(f.icon || ''),
+              lower: !!f.lower
+            })),
+          ratio: (t.ratio && Array.isArray(t.ratio.num) && t.ratio.num.length)
+            ? {
+                label: String(t.ratio.label || 'Үзүүлэлт'),
+                num: t.ratio.num.map(String),
+                den: t.ratio.den ? String(t.ratio.den) : null
+              }
+            : null
+        }))
+        .filter(t => t.fields.length);
+      if (!s.settings.statTemplates.length) {
+        s.settings.statTemplates = clone(DEFAULT_TEMPLATES);
+      }
+
+      s.seasons.forEach(x => {
+        if (typeof x.round !== 'number') x.round = 1;
+        if (!x.title) x.title = `${x.round}-р улирал`;
+        if (x.gapDays === undefined) x.gapDays = 7;
+        if (!x.startDate) x.startDate = '';
+        if (x.defPlace === undefined)  x.defPlace = '';
+        if (x.defGame === undefined)   x.defGame = '';
+        if (x.defFormat === undefined) x.defFormat = 'Round Robin';
+      });
+
+      s.tournaments.forEach(t => {
+        if (t.isFinal === undefined) t.isFinal = false;
+        if (t.year === undefined) t.year = new Date().getFullYear();
+        if (t.seasonId === undefined) t.seasonId = null;
+        if (t.no === undefined || t.no === null) t.no = t.isFinal ? 0 : 1;
+        if (t.place === undefined)  t.place = '';
+        if (t.game === undefined)   t.game = '';
+        if (t.format === undefined) t.format = '';
+        if (!Array.isArray(t.entrants)) t.entrants = [];
+        if (!t.templateId) t.templateId = guessTemplateId(t.game);
+        if (!s.settings.statTemplates.some(x => x.id === t.templateId)) {
+          t.templateId = s.settings.statTemplates[0].id;
+        }
+      });
+
+      s.matches.forEach(m => {
+        if (!Array.isArray(m.perfs)) m.perfs = [];
+        m.perfs = m.perfs.filter(x => x && x.playerId);
+      });
+
+      s.awards.forEach(x => {
+        if (!x.id) x.id = uid('aw');
+        if (!x.icon) x.icon = '🏅';
+        if (!x.date) x.date = todayIso();
+        if (!x.ownerId) x.ownerId = x.playerId || null;
+      });
+
+      s.players.forEach(p => {
+        if (p.teamId === undefined) p.teamId = null;
+        if (!p.color) p.color = PALETTE[0];
+      });
+
+      /* Ахлагчийн бүртгэлийг шалгах */
+      s.teams.forEach(t => {
+        if (t.captainId === undefined) t.captainId = null;
+        if (t.captainId) {
+          const p = s.players.find(x => x.id === t.captainId);
+          if (!p || p.teamId !== t.id) t.captainId = null;
+        }
+      });
+
+      /* Хэлэлцээрийн талбарууд */
+      s.tradeRequests = s.tradeRequests.filter(r => r && r.id && r.fromTeamId && r.toTeamId);
+      s.tradeRequests.forEach(r => {
+        if (!Array.isArray(r.offerPlayers)) r.offerPlayers = [];
+        if (!Array.isArray(r.offerAwards))  r.offerAwards  = [];
+        if (!Array.isArray(r.wantPlayers))  r.wantPlayers  = [];
+        if (!Array.isArray(r.wantAwards))   r.wantAwards   = [];
+        if (!r.status) r.status = 'pending';
+        if (!r.createdAt) r.createdAt = nowIso();
+        if (r.parentId === undefined) r.parentId = null;
+        if (r.counterId === undefined) r.counterId = null;
+        if (r.reason === undefined) r.reason = '';
+        if (r.resolvedAt === undefined) r.resolvedAt = null;
+      });
+    },
+
+    save() {
+      saveLocal();
+      syncSchedulePush();
+    },
+
+    reset(useDemo) {
+      const prev = this.state;
+      const keepUsers =
+        (prev && prev.settings && Array.isArray(prev.settings.users) && prev.settings.users.length)
+          ? prev.settings.users
+          : DEFAULT_USERS();
+
+      [KEY, ...OLD_KEYS].forEach(k => localStorage.removeItem(k));
+
+      if (useDemo) {
+        this.state = seed();
+        this.state.settings.users = keepUsers;
+      } else {
+        this.state = {
+          version: 7,
+          settings: {
+            title: 'Happy Golomt FL', theme: 'null',
+            winPoints: 3, drawPoints: 1, lossPoints: 0,
+            subPerSeason: 6, transferGapDays: 3, transferDays: 7,
+            transferOverride: null, finalQualifiers: 4,
+            loginRequired: true,
+            awardBadgeMode: 'owned', awardBadgeStyle: 'group',
+            awardBadgeMax: 3, awardBadgeMerge: '',
+            recentIcons: ['🏅','🥇','⭐','🔥','👑'],
+            statTemplates: clone(DEFAULT_TEMPLATES),
+            users: keepUsers
+          },
+          teams: [], players: [], seasons: [], tournaments: [],
+          matches: [], transfers: [], awards: [], tradeRequests: []
+        };
+      }
+      this.save();
+      return this.state;
+    },
+
+    uid, nowIso,
+
+    /* ============================================================
+       CLOUD SYNC (гадаад)
+       ============================================================ */
+
+    sync: {
+      enabled:  () => syncEnabled(),
+      info:     () => syncInfo(),
+      onChange: (fn) => syncOnChange(fn),
+      pull:     () => syncPull(true),
+      push:     () => syncPush(true),
+      status:   () => SYNC.status
+    },
+
+    /* ============================================================
+       СТАТ ЗАГВАР
+       ============================================================ */
+
+    statTemplates() {
+      const t = this.state && this.state.settings && this.state.settings.statTemplates;
+      return (Array.isArray(t) && t.length) ? t : DEFAULT_TEMPLATES;
+    },
+
+    statTemplate(id) {
+      return API.statTemplates().find(t => t.id === id) || null;
+    },
+
+    templateIdOf(tournamentId) {
+      const t = API.tournament(tournamentId);
+      if (!t) return API.statTemplates()[0].id;
+      const id = t.templateId || guessTemplateId(t.game);
+      return API.statTemplate(id) ? id : API.statTemplates()[0].id;
+    },
+
+    templateOf(tournamentId) {
+      return API.statTemplate(API.templateIdOf(tournamentId)) || API.statTemplates()[0];
+    },
+
+    fieldsOf(tournamentId) {
+      const t = API.templateOf(tournamentId);
+      return t ? t.fields : [];
+    },
+
+    saveTemplates(list) {
+      if (!Array.isArray(list) || !list.length) {
+        return { ok: false, msg: 'Дор хаяж 1 загвар үлдэх ёстой' };
+      }
+      this.state.settings.statTemplates = clone(list);
+      const ids = list.map(t => t.id);
+      const first = ids[0];
+      this.state.tournaments.forEach(t => {
+        if (!ids.includes(t.templateId)) t.templateId = first;
+      });
+      this.save();
+      return { ok: true };
+    },
+
+    /* ============================================================
+       НЭВТРЭЛТ
+       ============================================================ */
+
+    login(username, password, rememberDays) {
+      const uname = String(username || '').trim().toLowerCase();
+      const pass  = String(password || '');
+      if (!uname || !pass) return null;
+
+      const u = (this.state.settings.users || []).find(
+        x => String(x.username).toLowerCase() === uname && String(x.password) === pass
+      );
+      if (!u) return null;
+
+      writeSession(u.id, Number(rememberDays) || 0);
+      return { id: u.id, username: u.username, name: u.name || u.username,
+               role: u.role || 'admin', playerId: u.playerId || null };
+    },
+
+    logout()  { clearSession(); },
+    session() { return readSession(); },
+
+    currentUser() {
+      const s = readSession();
+      if (!s) return null;
+      const u = (this.state.settings.users || []).find(x => x.id === s.userId);
+      if (!u) { clearSession(); return null; }
+      return u;
+    },
+
+    currentPlayer() {
+      const u = this.currentUser();
+      if (!u || !u.playerId) return null;
+      return this.player(u.playerId);
+    },
+
+    isAdmin() {
+      const u = this.currentUser();
+      return !!u && (u.role || 'admin') !== 'player';
+    },
+
+    loginRequired() {
+      return this.state.settings.loginRequired !== false;
+    },
+
+    addUser(username, password, name) {
+      const uname = String(username || '').trim();
+      const pass  = String(password || '').trim();
+      const dname = String(name || '').trim() || uname;
+
+      if (!uname)           return { ok: false, msg: 'Хэрэглэгчийн нэр хоосон' };
+      if (uname.length < 3) return { ok: false, msg: 'Нэр дор хаяж 3 тэмдэгт' };
+      if (/\s/.test(uname)) return { ok: false, msg: 'Нэрт зай байж болохгүй' };
+      if (pass.length < 4)  return { ok: false, msg: 'Нууц үг дор хаяж 4 тэмдэгт' };
+
+      const users = this.state.settings.users || (this.state.settings.users = []);
+      if (users.some(u => String(u.username).toLowerCase() === uname.toLowerCase())) {
+        return { ok: false, msg: `"${uname}" нэр аль хэдийн байна` };
+      }
+      users.push({ id: uid('u'), username: uname, password: pass,
+                   name: dname, role: 'admin', playerId: null });
+      this.save();
+      return { ok: true };
+    },
+
+    createAccount(playerId, username, password, name) {
+      const p = this.player(playerId);
+      if (!p) return { ok: false, msg: 'Тоглогч олдсонгүй' };
+      if (this.accountOf(playerId)) return { ok: false, msg: 'Энэ тоглогчид бүртгэл байна' };
+
+      const uname = String(username || '').trim().toLowerCase();
+      const pass  = String(password || '').trim();
+
+      if (uname.length < 3) return { ok: false, msg: 'Нэр дор хаяж 3 тэмдэгт' };
+      if (/\s/.test(uname)) return { ok: false, msg: 'Нэрт зай байж болохгүй' };
+      if (pass.length < 4)  return { ok: false, msg: 'Нууц үг дор хаяж 4 тэмдэгт' };
+
+      const users = this.state.settings.users || (this.state.settings.users = []);
+      if (users.some(u => String(u.username).toLowerCase() === uname)) {
+        return { ok: false, msg: `"${uname}" нэр аль хэдийн байна` };
+      }
+      const u = { id: uid('u'), username: uname, password: pass,
+                  name: name || p.name, role: 'player', playerId };
+      users.push(u);
+      this.save();
+      return { ok: true, userId: u.id };
+    },
+
+    accountOf(playerId) {
+      return (this.state.settings.users || []).find(u => u.playerId === playerId) || null;
+    },
+
+    setPassword(id, newPass) {
+      const pass = String(newPass || '').trim();
+      if (pass.length < 4) return { ok: false, msg: 'Нууц үг дор хаяж 4 тэмдэгт' };
+      const u = (this.state.settings.users || []).find(x => x.id === id);
+      if (!u) return { ok: false, msg: 'Хэрэглэгч олдсонгүй' };
+      u.password = pass;
+      this.save();
+      return { ok: true };
+    },
+
+    changeOwnPassword(userId, current, next) {
+      const u = (this.state.settings.users || []).find(x => x.id === userId);
+      if (!u) return { ok: false, msg: 'Бүртгэл олдсонгүй' };
+      if (String(u.password) !== String(current)) return { ok: false, msg: 'Одоогийн нууц үг буруу' };
+      const np = String(next || '').trim();
+      if (np.length < 4) return { ok: false, msg: 'Нууц үг дор хаяж 4 тэмдэгт' };
+      u.password = np;
+      this.save();
+      return { ok: true };
+    },
+
+    renameUser(id, username, name) {
+      const uname = String(username || '').trim();
+      if (uname.length < 3) return { ok: false, msg: 'Нэр дор хаяж 3 тэмдэгт' };
+      const users = this.state.settings.users || [];
+      if (users.some(u => u.id !== id && String(u.username).toLowerCase() === uname.toLowerCase())) {
+        return { ok: false, msg: 'Ийм нэртэй хэрэглэгч байна' };
+      }
+      const u = users.find(x => x.id === id);
+      if (!u) return { ok: false, msg: 'Хэрэглэгч олдсонгүй' };
+      u.username = uname;
+      u.name = String(name || '').trim() || uname;
+      this.save();
+      return { ok: true };
+    },
+
+    deleteUser(id) {
+      const me = this.currentUser();
+      if (me && me.id === id) return { ok: false, msg: 'Өөрийн бүртгэлээ устгаж болохгүй' };
+
+      const users = this.state.settings.users || [];
+      const u = users.find(x => x.id === id);
+      if (!u) return { ok: false, msg: 'Хэрэглэгч олдсонгүй' };
+
+      const admins = users.filter(x => (x.role || 'admin') !== 'player');
+      if ((u.role || 'admin') !== 'player' && admins.length <= 1) {
+        return { ok: false, msg: 'Дор хаяж 1 админ үлдэх ёстой' };
+      }
+      this.state.settings.users = users.filter(x => x.id !== id);
+      this.save();
+      return { ok: true };
+    },
+
+    /* ============================================================
+       ХАЙЛТ
+       ============================================================ */
+
+    team:       id => API.state.teams.find(t => t.id === id),
+    player:     id => API.state.players.find(p => p.id === id),
+    tournament: id => API.state.tournaments.find(t => t.id === id),
+    season:     id => API.state.seasons.find(s => s.id === id),
+    match:      id => API.state.matches.find(m => m.id === id),
+    award:      id => API.state.awards.find(a => a.id === id),
+
+    playersOf(teamId) { return API.state.players.filter(p => p.teamId === teamId); },
+    freeAgents()      { return API.state.players.filter(p => !p.teamId); },
+
+    teamsOf(tid) {
+      const t = API.tournament(tid);
+      return ((t && t.entrants) || []).map(id => API.team(id)).filter(Boolean);
+    },
+
+    seasonsOf(year) {
+      return API.state.seasons
+        .filter(s => s.year === year)
+        .sort((a, b) => a.round - b.round);
+    },
+
+    tournamentsOfSeason(sid) {
+      return API.state.tournaments
+        .filter(t => t.seasonId === sid)
+        .sort((a, b) => (a.no || 0) - (b.no || 0) ||
+                        (a.date || '').localeCompare(b.date || ''));
+    },
+
+    finalTournament(year) {
+      return API.state.tournaments.find(t => t.year === year && t.isFinal) || null;
+    },
+
+    seasonStatus(sid) {
+      const ts = API.tournamentsOfSeason(sid);
+      if (!ts.length) return 'upcoming';
+      if (ts.every(t => t.status === 'done')) return 'done';
+      if (ts.some(t => t.status === 'done' || t.status === 'ongoing')) return 'ongoing';
+      return 'upcoming';
+    },
+
+    seasonSpan(sid) {
+      const ds = API.tournamentsOfSeason(sid).map(t => t.date).filter(Boolean).sort();
+      return ds.length ? { start: ds[0], end: ds[ds.length - 1] } : null;
+    },
+
+    tournamentsOf(year) {
+      return API.state.tournaments
+        .filter(t => t.year === year)
+        .sort((a, b) => {
+          const ra = a.isFinal ? 999 : ((API.season(a.seasonId) || {}).round || 0);
+          const rb = b.isFinal ? 999 : ((API.season(b.seasonId) || {}).round || 0);
+          return ra - rb || (a.no || 0) - (b.no || 0) ||
+                 (a.date || '').localeCompare(b.date || '');
+        });
+    },
+
+    years() {
+      const set = new Set();
+      API.state.seasons.forEach(s => set.add(s.year));
+      API.state.tournaments.forEach(t => set.add(t.year));
+      return [...set].sort((a, b) => b - a);
+    },
+
+    nextTournament() {
+      return API.state.tournaments
+        .filter(t => t.status === 'upcoming' || t.status === 'ongoing')
+        .sort((a, b) => (a.date + (a.time || '')).localeCompare(b.date + (b.time || '')))[0] || null;
+    },
+
+    setTournamentStatus(tid, status) {
+      const t = API.tournament(tid);
+      if (!t) return;
+      t.status = status;
+      if (status === 'done') {
+        API.state.matches
+          .filter(m => m.tournamentId === tid && m.status !== 'done')
+          .forEach(m => {
+            if (m.homeScore !== '' && m.awayScore !== '') {
+              m.status = 'done';
+              m.winnerTeamId = API.autoWinnerTeam(m);
+            }
+          });
+      }
+      API.save();
+    },
+
+    fillSeason(sid) {
+      const s = API.season(sid);
+      if (!s) return { ok: false, msg: 'Улирал олдсонгүй' };
+
+      const n     = Math.max(1, Number(this.state.settings.subPerSeason) || 6);
+      const have  = API.tournamentsOfSeason(sid).map(t => t.no);
+      const start = s.startDate || todayIso();
+      const gap   = Math.max(1, Number(s.gapDays) || 7);
+      let added   = 0;
+
+      for (let i = 1; i <= n; i++) {
+        if (have.includes(i)) continue;
+        this.state.tournaments.push({
+          id: uid('t'), year: s.year, seasonId: sid, isFinal: false, no: i,
+          title: `${i}-р тэмцээн`,
+          date: addDays(start, (i - 1) * gap),
+          time: '18:00',
+          place: s.defPlace || '', game: s.defGame || '',
+          format: s.defFormat || 'Round Robin',
+          templateId: guessTemplateId(s.defGame || ''),
+          status: 'upcoming',
+          entrants: this.state.teams.map(t => t.id),
+          note: ''
+        });
+        added++;
+      }
+      this.save();
+      return { ok: true, added };
+    },
+
+    /* ============================================================
+       ОНОО БА ХҮСНЭГТ
+       ============================================================ */
+
+    points(w, d) {
+      const s = API.state.settings;
+      return w * (s.winPoints ?? 3) + d * (s.drawPoints ?? 1);
+    },
+
+    autoWinnerTeam(m) {
+      const hs = m.homeScore, as = m.awayScore;
+      if (hs === '' || as === '' || hs === null || as === null ||
+          hs === undefined || as === undefined) return null;
+      const h = Number(hs), a = Number(as);
+      if (isNaN(h) || isNaN(a)) return null;
+      if (h > a) return m.homeTeamId;
+      if (a > h) return m.awayTeamId;
+      return null;
+    },
+
+    buildTable(tids, opts) {
+      opts = opts || {};
+      const map = new Map();
+
+      const add = id => {
+        if (!id) return null;
+        if (map.has(id)) return map.get(id);
+        const tm = API.team(id);
+        if (!tm) return null;
+        const row = { teamId: tm.id, name: tm.name, icon: tm.icon, color: tm.color,
+                      played: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, titles: 0 };
+        map.set(id, row);
+        return row;
+      };
+
+      if (opts.allTeams) API.state.teams.forEach(t => add(t.id));
+      else tids.forEach(tid => ((API.tournament(tid) || {}).entrants || []).forEach(add));
+
+      API.state.matches
+        .filter(m => m.status === 'done' && tids.includes(m.tournamentId))
+        .forEach(m => {
+          const hs = Number(m.homeScore) || 0, as = Number(m.awayScore) || 0;
+          const h = add(m.homeTeamId), a = add(m.awayTeamId);
+          if (h) { h.played++; h.gf += hs; h.ga += as; if (hs > as) h.w++; else if (hs < as) h.l++; else h.d++; }
+          if (a) { a.played++; a.gf += as; a.ga += hs; if (as > hs) a.w++; else if (as < hs) a.l++; else a.d++; }
+        });
+
+      if (opts.countTitles) {
+        tids.forEach(tid => {
+          const t = API.tournament(tid);
+          if (t && t.status === 'done') {
+            const c = API.championOf(tid);
+            if (c && map.has(c)) map.get(c).titles++;
+          }
+        });
+      }
+
+      return [...map.values()]
+        .map(x => ({ ...x, gd: x.gf - x.ga, pts: API.points(x.w, x.d) }))
+        .sort((p, q) =>
+          q.pts - p.pts || q.gd - p.gd || q.gf - p.gf || p.name.localeCompare(q.name));
+    },
+
+    roundStandings(tid) { return API.buildTable([tid]); },
+
+    seasonStandingsOf(sid) {
+      const tids = API.tournamentsOfSeason(sid).map(t => t.id);
+      return API.buildTable(tids, { countTitles: true, allTeams: true });
+    },
+
+    seasonStandings(year) {
+      const tids = API.state.tournaments
+        .filter(t => t.year === year && !t.isFinal)
+        .map(t => t.id);
+      return API.buildTable(tids, { countTitles: true, allTeams: true });
+    },
+
+    championOf(tid) {
+      const done = API.state.matches.filter(m => m.tournamentId === tid && m.status === 'done');
+      if (!done.length) return null;
+      const fin = done.find(m => String(m.stage || '').trim() === 'Финал');
+      if (fin && fin.winnerTeamId) return fin.winnerTeamId;
+
+      const rows = API.roundStandings(tid).filter(r => r.played > 0);
+      return rows.length ? rows[0].teamId : null;
+    },
+
+    seasonChampionOf(sid) {
+      const rows = API.seasonStandingsOf(sid).filter(r => r.played > 0);
+      return rows.length ? rows[0].teamId : null;
+    },
+
+    bigChampion(year) {
+      const f = API.finalTournament(year);
+      return (f && f.status === 'done') ? API.championOf(f.id) : null;
+    },
+
+    matchesOf(tid) {
+      const order = { 'Хагас финал': 1, '3-р байр': 2, 'Финал': 3, 'Round Robin': 4 };
+      return API.state.matches
+        .filter(m => m.tournamentId === tid)
+        .sort((a, b) => (order[a.stage] || 9) - (order[b.stage] || 9));
+    },
+
+    /* ============================================================
+       ОГНООНЫ БАГ
+       ============================================================ */
+
+    teamAt(playerId, date) {
+      const p = API.player(playerId);
+      if (!p) return null;
+
+      const evs = API.state.transfers
+        .filter(t => t.playerId === playerId)
+        .sort((a, b) => (a.date || '').localeCompare(b.date || ''));
+
+      if (!evs.length) return p.teamId || null;
+
+      let team = evs[0].fromTeamId || null;
+      for (const e of evs) {
+        if ((e.date || '') <= (date || '')) team = e.toTeamId || null;
+        else break;
+      }
+      return team;
+    },
+
+    playersOfAt(teamId, date) {
+      if (!teamId) return [];
+      return API.state.players.filter(p => API.teamAt(p.id, date) === teamId);
+    },
+
+    tenureStart(playerId) {
+      const p = API.player(playerId);
+      if (!p) return '';
+      const evs = API.state.transfers
+        .filter(t => t.playerId === playerId && t.toTeamId === p.teamId)
+        .map(t => t.date || '')
+        .sort();
+      return evs.length ? evs[evs.length - 1] : (p.joined || '');
+    },
+
+    /* ============================================================
+       АХЛАГЧ
+       ============================================================ */
+
+    captainOf(teamId) {
+      const t = API.team(teamId);
+      if (!t || !t.captainId) return null;
+      return API.player(t.captainId);
+    },
+
+    isCaptain(playerId) {
+      return !!API.captainTeam(playerId);
+    },
+
+    captainTeam(playerId) {
+      if (!playerId) return null;
+      return API.state.teams.find(t => t.captainId === playerId) || null;
+    },
+
+    myCaptainTeam() {
+      const u = API.currentUser();
+      return (u && u.playerId) ? API.captainTeam(u.playerId) : null;
+    },
+
+    setCaptain(teamId, playerId) {
+      const t = API.team(teamId);
+      if (!t) return { ok: false, msg: 'Баг олдсонгүй' };
+      if (!playerId) { t.captainId = null; API.save(); return { ok: true }; }
+      const p = API.player(playerId);
+      if (!p) return { ok: false, msg: 'Тоглогч олдсонгүй' };
+      if (p.teamId !== teamId) return { ok: false, msg: 'Тоглогч энэ багт байхгүй' };
+      t.captainId = playerId;
+      API.save();
+      return { ok: true };
+    },
+
+    /* ============================================================
+       ШАГНАЛЫН ЭЗЭМШИЛ
+       ============================================================ */
+
+    awardOwner(a) {
+      if (!a) return null;
+      return API.player(a.ownerId || a.playerId);
+    },
+
+    ownerIdOf(a) {
+      return a ? (a.ownerId || a.playerId || null) : null;
+    },
+
+    awardsOwnedBy(playerId) {
+      if (!playerId) return [];
+      return API.state.awards.filter(a => API.ownerIdOf(a) === playerId);
+    },
+
+    awardsGivenTo(playerId) {
+      return API.state.awards.filter(a => a.playerId === playerId);
+    },
+
+    /* ---------- Дүрс (emoji) ---------- */
+
+    recentIcons() {
+      const s = API.state.settings;
+      return Array.isArray(s.recentIcons) ? s.recentIcons : [];
+    },
+
+    pushRecentIcon(ic) {
+      const v = String(ic || '').trim();
+      if (!v) return [];
+      const s = API.state.settings;
+      const list = Array.isArray(s.recentIcons) ? s.recentIcons : [];
+      s.recentIcons = [v, ...list.filter(x => x !== v)].slice(0, 12);
+      API.save();
+      return s.recentIcons;
+    },
+
+    /** Нэрний хажууд харуулах титэл (тохиргооны дагуу) */
+    playerTitleAwards(playerId) {
+      if (!playerId) return [];
+      const mode = (API.state.settings && API.state.settings.awardBadgeMode) || 'owned';
+      if (mode === 'off') return [];
+
+      const list = (mode === 'received')
+        ? API.awardsGivenTo(playerId)
+        : API.awardsOwnedBy(playerId);
+
+      return list.slice().sort((a, b) =>
+        (b.date || '').localeCompare(a.date || ''));
+    },
+
+    /* ============================================================
+       ХЭЛЭЛЦЭЭР
+       ============================================================ */
+
+    tradeRequests() {
+      return (API.state.tradeRequests || []).slice();
+    },
+
+    tradeRequest(id) {
+      return (API.state.tradeRequests || []).find(r => r.id === id);
+    },
+
+    /** Тухайн баг руу ирсэн хүсэлтүүд */
+    requestsTo(teamId, status) {
+      return API.tradeRequests()
+        .filter(r => r.toTeamId === teamId && (!status || r.status === status))
+        .sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''));
+    },
+
+    /** Тухайн багаас явуулсан хүсэлтүүд */
+    requestsFrom(teamId, status) {
+      return API.tradeRequests()
+        .filter(r => r.fromTeamId === teamId && (!status || r.status === status))
+        .sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''));
+    },
+
+    pendingInbox(teamId)  { return API.requestsTo(teamId, 'pending'); },
+    pendingOutbox(teamId) { return API.requestsFrom(teamId, 'pending'); },
+
+    tradeHistory(limit) {
+      const list = API.tradeRequests()
+        .filter(r => r.status !== 'pending')
+        .sort((a, b) => (b.resolvedAt || b.createdAt || '').localeCompare(a.resolvedAt || a.createdAt || ''));
+      return limit ? list.slice(0, limit) : list;
+    },
+
+    /* ---------- Хүсэлт үүсгэх ---------- */
+    createTradeRequest(data) {
+      const st = API.state;
+      if (!Array.isArray(st.tradeRequests)) st.tradeRequests = [];
+
+      const fromTeam = API.team(data.fromTeamId);
+      const toTeam   = API.team(data.toTeamId);
+      if (!fromTeam || !toTeam) return { ok: false, msg: 'Баг олдсонгүй' };
+      if (fromTeam.id === toTeam.id) return { ok: false, msg: 'Ижил баг руу хүсэлт илгээх боломжгүй' };
+      if (!fromTeam.captainId) return { ok: false, msg: 'Танай багт ахлагч товлогдоогүй' };
+      if (!toTeam.captainId)   return { ok: false, msg: 'Хүлээн авагч багт ахлагч товлогдоогүй' };
+
+      if (!data.isAdmin && data.actorPlayerId && data.actorPlayerId !== fromTeam.captainId) {
+        return { ok: false, msg: 'Зөвхөн багийн ахлагч хүсэлт илгээнэ' };
+      }
+
+      const offerPlayers = (data.offerPlayers || []).filter(id => {
+        const p = API.player(id);
+        return p && p.teamId === fromTeam.id && id !== fromTeam.captainId;
+      });
+      const wantPlayers = (data.wantPlayers || []).filter(id => {
+        const p = API.player(id);
+        return p && p.teamId === toTeam.id && id !== toTeam.captainId;
+      });
+      const offerAwards = (data.offerAwards || []).filter(id => {
+        const a = API.award(id);
+        return a && API.ownerIdOf(a) === fromTeam.captainId;
+      });
+      const wantAwards = (data.wantAwards || []).filter(id => {
+        const a = API.award(id);
+        return a && API.ownerIdOf(a) === toTeam.captainId;
+      });
+
+      if (!offerPlayers.length && !wantPlayers.length &&
+          !offerAwards.length && !wantAwards.length) {
+        return { ok: false, msg: 'Дор хаяж нэг тоглогч эсвэл шагнал сонгоно уу' };
+      }
+
+      const r = {
+        id: uid('trq'),
+        fromTeamId: fromTeam.id,
+        toTeamId: toTeam.id,
+        fromCaptainId: fromTeam.captainId,
+        toCaptainId: toTeam.captainId,
+        offerPlayers, offerAwards, wantPlayers, wantAwards,
+        note: String(data.note || '').slice(0, 500),
+        status: 'pending',
+        parentId: data.parentId || null,
+        counterId: null,
+        reason: '',
+        createdAt: nowIso(),
+        resolvedAt: null
+      };
+      st.tradeRequests.unshift(r);
+      API.save();
+      return { ok: true, id: r.id };
+    },
+
+    /* ---------- Солилцоог гүйцэтгэх ---------- */
+    _runSwap(r) {
+      const st = API.state;
+
+      const log = (pid, from, to) => {
+        st.transfers.unshift({
+          id: uid('tr'), playerId: pid,
+          fromTeamId: from, toTeamId: to,
+          date: todayIso(), year: new Date().getFullYear(),
+          note: 'Ахлагчийн хэлэлцээр'
+        });
+      };
+
+      (r.offerPlayers || []).forEach(pid => {
+        const p = API.player(pid);
+        if (!p) return;
+        const from = p.teamId;
+        p.teamId = r.toTeamId;
+        log(pid, from, r.toTeamId);
+      });
+
+      (r.wantPlayers || []).forEach(pid => {
+        const p = API.player(pid);
+        if (!p) return;
+        const from = p.teamId;
+        p.teamId = r.fromTeamId;
+        log(pid, from, r.fromTeamId);
+      });
+
+      (r.offerAwards || []).forEach(aid => {
+        const a = API.award(aid);
+        if (a) a.ownerId = r.toCaptainId;
+      });
+
+      (r.wantAwards || []).forEach(aid => {
+        const a = API.award(aid);
+        if (a) a.ownerId = r.fromCaptainId;
+      });
+    },
+
+    /* ---------- Зөвшөөрөх ---------- */
+    acceptTradeRequest(id, actorPlayerId, isAdmin) {
+      const r = API.tradeRequest(id);
+      if (!r) return { ok: false, msg: 'Хүсэлт олдсонгүй' };
+      if (r.status !== 'pending') return { ok: false, msg: 'Энэ хүсэлт идэвхгүй байна' };
+
+      const toTeam   = API.team(r.toTeamId);
+      const fromTeam = API.team(r.fromTeamId);
+      if (!toTeam || !fromTeam) return { ok: false, msg: 'Баг олдсонгүй' };
+
+      if (!isAdmin && toTeam.captainId !== actorPlayerId) {
+        return { ok: false, msg: 'Зөвхөн хүлээн авагч ахлагч зөвшөөрнө' };
+      }
+      if (toTeam.captainId !== r.toCaptainId) {
+        return { ok: false, msg: 'Хүлээн авагч багийн ахлагч солигдсон байна' };
+      }
+      if (fromTeam.captainId !== r.fromCaptainId) {
+        return { ok: false, msg: 'Илгээгч багийн ахлагч солигдсон байна' };
+      }
+
+      const okOffer = (r.offerPlayers || []).every(pid => {
+        const p = API.player(pid); return p && p.teamId === fromTeam.id;
+      });
+      const okWant = (r.wantPlayers || []).every(pid => {
+        const p = API.player(pid); return p && p.teamId === toTeam.id;
+      });
+      if (!okOffer || !okWant) return { ok: false, msg: 'Тоглогчдын баг өөрчлөгдсөн байна' };
+
+      const okOA = (r.offerAwards || []).every(aid => {
+        const a = API.award(aid); return a && API.ownerIdOf(a) === r.fromCaptainId;
+      });
+      const okWA = (r.wantAwards || []).every(aid => {
+        const a = API.award(aid); return a && API.ownerIdOf(a) === r.toCaptainId;
+      });
+      if (!okOA || !okWA) return { ok: false, msg: 'Шагналын эзэмшил өөрчлөгдсөн байна' };
+
+      API._runSwap(r);
+      r.status = 'accepted';
+      r.resolvedAt = nowIso();
+      API.save();
+      return { ok: true, players: (r.offerPlayers || []).length + (r.wantPlayers || []).length,
+               awards: (r.offerAwards || []).length + (r.wantAwards || []).length };
+    },
+
+    /* ---------- Татгалзах ---------- */
+    rejectTradeRequest(id, actorPlayerId, isAdmin, reason) {
+      const r = API.tradeRequest(id);
+      if (!r) return { ok: false, msg: 'Хүсэлт олдсонгүй' };
+      if (r.status !== 'pending') return { ok: false, msg: 'Энэ хүсэлт идэвхгүй байна' };
+
+      const toTeam = API.team(r.toTeamId);
+      if (!isAdmin && (!toTeam || toTeam.captainId !== actorPlayerId)) {
+        return { ok: false, msg: 'Зөвхөн хүлээн авагч ахлагч татгалзана' };
+      }
+
+      r.status = 'rejected';
+      r.reason = String(reason || '').slice(0, 300);
+      r.resolvedAt = nowIso();
+      API.save();
+      return { ok: true };
+    },
+
+    /* ---------- Цуцлах (илгээгч) ---------- */
+    cancelTradeRequest(id, actorPlayerId, isAdmin) {
+      const r = API.tradeRequest(id);
+      if (!r) return { ok: false, msg: 'Хүсэлт олдсонгүй' };
+      if (r.status !== 'pending') return { ok: false, msg: 'Энэ хүсэлт идэвхгүй байна' };
+
+      const fromTeam = API.team(r.fromTeamId);
+      if (!isAdmin && (!fromTeam || fromTeam.captainId !== actorPlayerId)) {
+        return { ok: false, msg: 'Зөвхөн илгээгч ахлагч цуцална' };
+      }
+
+      r.status = 'cancelled';
+      r.resolvedAt = nowIso();
+      API.save();
+      return { ok: true };
+    },
+
+    /* ---------- Эсрэг санал ---------- */
+    counterTradeRequest(id, actorPlayerId, terms, isAdmin) {
+      const r = API.tradeRequest(id);
+      if (!r) return { ok: false, msg: 'Хүсэлт олдсонгүй' };
+      if (r.status !== 'pending') return { ok: false, msg: 'Энэ хүсэлт идэвхгүй байна' };
+
+      const toTeam = API.team(r.toTeamId);
+      if (!isAdmin && (!toTeam || toTeam.captainId !== actorPlayerId)) {
+        return { ok: false, msg: 'Зөвхөн хүлээн авагч ахлагч эсрэг санал тавина' };
+      }
+
+      /* Хуучин хүсэлтийг хаах */
+      r.status = 'countered';
+      r.resolvedAt = nowIso();
+
+      /* Шинэ хүсэлт — чиглэл эсрэг */
+      const res = API.createTradeRequest({
+        fromTeamId: r.toTeamId,
+        toTeamId:   r.fromTeamId,
+        actorPlayerId,
+        isAdmin,
+        offerPlayers: terms.offerPlayers || [],
+        offerAwards:  terms.offerAwards  || [],
+        wantPlayers:  terms.wantPlayers  || [],
+        wantAwards:   terms.wantAwards   || [],
+        note: terms.note || '',
+        parentId: r.id
+      });
+
+      if (!res.ok) {
+        /* Бүтэлгүй бол хуучин хүсэлтийг сэргээх */
+        r.status = 'pending';
+        r.resolvedAt = null;
+        return res;
+      }
+
+      r.counterId = res.id;
+      API.save();
+      return { ok: true, id: res.id };
+    },
+
+    /* ============================================================
+       ТОГЛОЛТЫН СТАТ
+       ============================================================ */
+
+    perfOfMatch(matchId, playerId) {
+      const m = API.match(matchId);
+      if (!m || !Array.isArray(m.perfs)) return null;
+      return m.perfs.find(x => x.playerId === playerId) || null;
+    },
+
+    setMatchPerfs(matchId, list, templateId) {
+      const m = API.match(matchId);
+      if (!m) return { ok: false, msg: 'Тоглолт олдсонгүй' };
+
+      const tplId = templateId || API.templateIdOf(m.tournamentId);
+      const tpl = API.statTemplate(tplId) || API.statTemplates()[0];
+      const fields = tpl ? tpl.fields : [];
+
+      m.perfs = list.map(x => {
+        const rec = { playerId: x.playerId, teamId: x.teamId,
+                      mvp: !!x.mvp, note: x.note || '', templateId: tplId };
+        fields.forEach(f => { rec[f.key] = Math.max(0, Math.round(Number(x[f.key]) || 0)); });
+        return rec;
+      });
+      API.save();
+      return { ok: true, count: m.perfs.length };
+    },
+
+    clearMatchPerfs(matchId) {
+      const m = API.match(matchId);
+      if (!m) return;
+      m.perfs = [];
+      API.save();
+    },
+
+    playerPerf(playerId, year) {
+      const templates = API.statTemplates();
+      const rows = [];
+
+      API.state.matches.forEach(m => {
+        const rec = (m.perfs || []).find(x => x.playerId === playerId);
+        if (!rec) return;
+
+        const t = API.tournament(m.tournamentId);
+        if (year && (!t || t.year !== year)) return;
+
+        const tplId = rec.templateId
+          || (t && t.templateId)
+          || guessTemplateId(t ? t.game : '');
+        const tpl = templates.find(x => x.id === tplId) || templates[0];
+        if (!tpl) return;
+
+        const isHome = m.homeTeamId === rec.teamId;
+        const oppId  = isHome ? m.awayTeamId : m.homeTeamId;
+        const my     = Number(isHome ? m.homeScore : m.awayScore) || 0;
+        const op     = Number(isHome ? m.awayScore : m.homeScore) || 0;
+
+        const values = {};
+        tpl.fields.forEach(f => { values[f.key] = Number(rec[f.key]) || 0; });
+
+        rows.push({
+          matchId: m.id, match: m,
+          tournament: t,
+          season: t && t.seasonId ? API.season(t.seasonId) : null,
+          year: t ? t.year : 0,
+          date: t ? t.date : '',
+          stage: m.stage || '',
+          teamId: rec.teamId, team: API.team(rec.teamId),
+          opponent: API.team(oppId),
+          result: m.winnerTeamId === rec.teamId ? 'win' : (m.winnerTeamId ? 'loss' : 'draw'),
+          my, op,
+          templateId: tpl.id, template: tpl,
+          values,
+          mvp: !!rec.mvp,
+          note: rec.note || ''
+        });
+      });
+
+      rows.sort((a, b) => (b.date || '').localeCompare(a.date || '') ||
+                          String(b.matchId).localeCompare(String(a.matchId)));
+
+      const map = new Map();
+      rows.forEach(r => {
+        if (!map.has(r.templateId)) {
+          map.set(r.templateId, {
+            templateId: r.templateId, template: r.template,
+            rows: [], matchCount: 0, mvp: 0,
+            totals: {}, avg: {}, ratio: null, ratioLabel: null,
+            byYear: [], byTournament: []
+          });
+        }
+        const g = map.get(r.templateId);
+        g.rows.push(r);
+        g.matchCount++;
+        if (r.mvp) g.mvp++;
+        r.template.fields.forEach(f => {
+          g.totals[f.key] = (g.totals[f.key] || 0) + (r.values[f.key] || 0);
+        });
+      });
+
+      const byTemplate = [...map.values()].map(g => {
+        const fields = g.template.fields;
+
+        fields.forEach(f => {
+          g.avg[f.key] = g.matchCount ? g.totals[f.key] / g.matchCount : 0;
+        });
+        g.ratio = ratioOf(g.template, g.totals);
+        g.ratioLabel = g.template.ratio ? g.template.ratio.label : null;
+
+        const yMap = new Map();
+        const tMap = new Map();
+
+        g.rows.forEach(r => {
+          if (!yMap.has(r.year)) {
+            const t0 = {}; fields.forEach(f => t0[f.key] = 0);
+            yMap.set(r.year, { year: r.year, count: 0, mvp: 0, totals: t0 });
+          }
+          const gy = yMap.get(r.year);
+          gy.count++; if (r.mvp) gy.mvp++;
+          fields.forEach(f => gy.totals[f.key] += r.values[f.key] || 0);
+
+          const key = r.tournament ? r.tournament.id : '__none';
+          if (!tMap.has(key)) {
+            const t0 = {}; fields.forEach(f => t0[f.key] = 0);
+            tMap.set(key, { tournament: r.tournament, season: r.season, date: r.date,
+                            count: 0, mvp: 0, w: 0, d: 0, l: 0, totals: t0 });
+          }
+          const gt = tMap.get(key);
+          gt.count++; if (r.mvp) gt.mvp++;
+          if (r.result === 'win') gt.w++; else if (r.result === 'loss') gt.l++; else gt.d++;
+          fields.forEach(f => gt.totals[f.key] += r.values[f.key] || 0);
+        });
+
+        const finish = x => {
+          x.avg = {};
+          fields.forEach(f => { x.avg[f.key] = x.count ? x.totals[f.key] / x.count : 0; });
+          x.ratio = ratioOf(g.template, x.totals);
+          return x;
+        };
+
+        g.byYear = [...yMap.values()].map(finish).sort((a, b) => b.year - a.year);
+        g.byTournament = [...tMap.values()].map(finish)
+          .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+
+        return g;
+      }).sort((a, b) => b.matchCount - a.matchCount);
+
+      return {
+        rows, byTemplate,
+        matchCount: rows.length,
+        templateCount: byTemplate.length
+      };
+    },
+
+    rowRatio(template, values) {
+      return ratioOf(template, values);
+    },
+
+    tournamentLeaders(tid) {
+      const tpl = API.templateOf(tid);
+      const fields = tpl ? tpl.fields : [];
+      const out = [];
+
+      API.state.players.forEach(p => {
+        const perf = API.playerPerf(p.id);
+        const rs = perf.rows.filter(r => r.match && r.match.tournamentId === tid);
+        if (!rs.length) return;
+
+        const totals = {}; fields.forEach(f => totals[f.key] = 0);
+        let mvp = 0;
+        rs.forEach(r => {
+          fields.forEach(f => totals[f.key] += r.values[f.key] || 0);
+          if (r.mvp) mvp++;
+        });
+        const avg = {}; fields.forEach(f => avg[f.key] = totals[f.key] / rs.length);
+
+        out.push({
+          player: p,
+          team: API.team(rs[0].teamId),
+          matches: rs.length,
+          totals, avg, mvp,
+          ratio: ratioOf(tpl, totals),
+          ratioLabel: tpl && tpl.ratio ? tpl.ratio.label : null,
+          template: tpl
+        });
+      });
+
+      return out.sort((a, b) =>
+        (b.ratio == null ? -1 : b.ratio) - (a.ratio == null ? -1 : a.ratio) ||
+        (b.mvp) - (a.mvp) ||
+        a.player.name.localeCompare(b.player.name));
+    },
+
+    statLeaders(opts) {
+      opts = opts || {};
+      const templates = API.statTemplates();
+      const tplId = opts.templateId || (templates[0] && templates[0].id);
+      const tpl = templates.find(t => t.id === tplId) || templates[0];
+      if (!tpl) return [];
+
+      const list = API.state.players.map(p => {
+        const perf = API.playerPerf(p.id, opts.year || null);
+        const g = perf.byTemplate.find(x => x.templateId === tpl.id);
+        if (!g) return null;
+        return {
+          player: p,
+          team: API.team(p.teamId),
+          template: tpl,
+          matches: g.matchCount,
+          totals: g.totals,
+          avg: g.avg,
+          ratio: g.ratio,
+          ratioLabel: g.ratioLabel,
+          mvp: g.mvp
+        };
+      }).filter(Boolean);
+
+      const sortBy = opts.sort || 'ratio';
+
+      const val = x => {
+        if (sortBy === 'ratio') return x.ratio == null ? -1 : x.ratio;
+        if (sortBy === 'mvp') return x.mvp;
+        if (sortBy === 'matches') return x.matches;
+        const f = tpl.fields.find(y => y.key === sortBy);
+        const v = x.totals[sortBy] || 0;
+        return (f && f.lower) ? -v : v;
+      };
+
+      return list.sort((a, b) =>
+        val(b) - val(a) ||
+        (b.ratio == null ? -1 : b.ratio) - (a.ratio == null ? -1 : a.ratio) ||
+        (b.mvp) - (a.mvp) ||
+        a.player.name.localeCompare(b.player.name));
+    },
+
+    playerTitles(playerId) {
+      return API.state.tournaments
+        .filter(t => t.status === 'done')
+        .filter(t => API.championOf(t.id) === API.teamAt(playerId, t.date))
+        .sort((a, b) => (b.date || '').localeCompare(a.date || ''))
+        .map(t => ({
+          tournament: t,
+          team: API.team(API.championOf(t.id)),
+          season: t.seasonId ? API.season(t.seasonId) : null
+        }));
+    },
+
+    playerMatches(playerId) {
+      const out = [];
+      API.state.matches
+        .filter(m => m.status === 'done')
+        .forEach(m => {
+          const t = API.tournament(m.tournamentId);
+          const date = t ? t.date : '';
+          const team = API.teamAt(playerId, date);
+          if (!team) return;
+
+          let my = null, op = null, oppId = null;
+          if (m.homeTeamId === team)      { my = Number(m.homeScore) || 0; op = Number(m.awayScore) || 0; oppId = m.awayTeamId; }
+          else if (m.awayTeamId === team) { my = Number(m.awayScore) || 0; op = Number(m.homeScore) || 0; oppId = m.homeTeamId; }
+          else return;
+
+          out.push({
+            id: m.id, tournament: t, tournamentId: m.tournamentId,
+            stage: m.stage, teamId: team, opponent: API.team(oppId),
+            my, op, date,
+            result: my > op ? 'win' : (my < op ? 'loss' : 'draw')
+          });
+        });
+
+      return out.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+    },
+
+    playerStats(playerId) {
+      const p = API.player(playerId);
+      const matches = API.playerMatches(playerId);
+
+      const base = { played: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0 };
+      const byYear = new Map();
+
+      matches.forEach(m => {
+        base.played++;
+        base[m.result === 'win' ? 'w' : m.result === 'loss' ? 'l' : 'd']++;
+        base.gf += m.my; base.ga += m.op;
+
+        const y = (m.tournament && m.tournament.year) || 0;
+        if (!byYear.has(y)) byYear.set(y, { year: y, played: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0 });
+        const r = byYear.get(y);
+        r.played++;
+        r[m.result === 'win' ? 'w' : m.result === 'loss' ? 'l' : 'd']++;
+        r.gf += m.my; r.ga += m.op;
+      });
+
+      const fin = x => ({
+        ...x,
+        gd: x.gf - x.ga,
+        pts: API.points(x.w, x.d),
+        winRate: x.played ? Math.round(x.w * 100 / x.played) : 0
+      });
+
+      return {
+        player: p,
+        currentTeam: API.team(p ? p.teamId : null),
+        tenureStart: API.tenureStart(playerId),
+        matches,
+        titles: API.playerTitles(playerId),
+        awards: API.awardsGivenTo(playerId),
+        awardsHeld: API.awardsOwnedBy(playerId).filter(a => a.playerId !== playerId),
+        stats: fin(base),
+        years: [...byYear.values()].map(fin).sort((a, b) => b.year - a.year)
+      };
+    },
+
+    awardsOf(playerId) { return API.awardsGivenTo(playerId); },
+
+    allAwards() {
+      return API.state.awards.slice()
+        .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+    },
+
+    /* ============================================================
+       ШИЛЖИЛТИЙН ЦОНХ
+       ============================================================ */
+
+    transferWindow(year) {
+      const s  = API.state.settings;
+      const r2 = API.seasonsOf(year).find(x => x.round === 2);
+      if (!r2) return null;
+
+      const list = API.tournamentsOfSeason(r2.id).map(t => t.date).filter(Boolean).sort();
+      if (!list.length) return null;
+      const lastDate = list[list.length - 1];
+
+      const opensAt  = addDays(lastDate, s.transferGapDays ?? 3);
+      const closesAt = addDays(opensAt, (s.transferDays ?? 7) - 1);
+
+      const today = todayIso();
+      let status = 'closed';
+      if (today < opensAt) status = 'upcoming';
+      else if (today <= closesAt) status = 'open';
+
+      const ov = s.transferOverride;
+      if (ov === 'open' || ov === 'closed') status = ov;
+
+      return {
+        year, afterRound: 2, opensAt, closesAt, status,
+        daysLeft:  status === 'open'     ? diffDays(today, closesAt) + 1 : 0,
+        daysUntil: status === 'upcoming' ? diffDays(today, opensAt) : 0,
+        override: ov
+      };
+    },
+
+    currentTransferWindow() { return API.transferWindow(new Date().getFullYear()); },
+
+    isTransferOpen() {
+      const w = this.currentTransferWindow();
+      return !!w && w.status === 'open';
+    },
+
+    transferPlayer(playerId, toTeamId, note) {
+      const p = API.player(playerId);
+      if (!p) return { ok: false, msg: 'Тоглогч олдсонгүй' };
+
+      const from = p.teamId || null;
+      if (from === toTeamId) return { ok: false, msg: 'Аль хэдийн энэ багт байна' };
+      if (toTeamId && !API.team(toTeamId)) return { ok: false, msg: 'Баг олдсонгүй' };
+
+      /* Ахлагч байсан бол ахлагчийн эрхийг чөлөөлөх */
+      const oldTeam = API.captainTeam(playerId);
+      if (oldTeam) oldTeam.captainId = null;
+
+      p.teamId = toTeamId || null;
+      API.state.transfers.unshift({
+        id: uid('tr'), playerId,
+        fromTeamId: from, toTeamId: toTeamId || null,
+        date: todayIso(), year: new Date().getFullYear(),
+        note: note || ''
+      });
+      API.save();
+      return { ok: true };
+    },
+
+    transfersOf(playerId) {
+      return API.state.transfers
+        .filter(t => t.playerId === playerId)
+        .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+    },
+
+    teamTransfers(teamId) {
+      return API.state.transfers
+        .filter(t => t.fromTeamId === teamId || t.toTeamId === teamId)
+        .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+    },
+
+    teamMatches(teamId) {
+      return API.state.matches
+        .filter(m => m.status === 'done' && (m.homeTeamId === teamId || m.awayTeamId === teamId))
+        .map(m => {
+          const t      = API.tournament(m.tournamentId);
+          const isHome = m.homeTeamId === teamId;
+          const oppId  = isHome ? m.awayTeamId : m.homeTeamId;
+          const my     = Number(isHome ? m.homeScore : m.awayScore) || 0;
+          const op     = Number(isHome ? m.awayScore : m.homeScore) || 0;
+          return {
+            id: m.id, tournament: t, stage: m.stage,
+            opponent: API.team(oppId), my, op,
+            result: m.winnerTeamId === teamId ? 'win' : (m.winnerTeamId ? 'loss' : 'draw'),
+            date: t ? t.date : ''
+          };
+        })
+        .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+    }
+  };
+
+  return API;
+})();
+</file>
+
+<file path="js/server.js">
+const express = require('express');
+const fs = require('fs');
+const cors = require('cors');
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+app.use(express.static('.')); // index.html, app.js гэх мэт файлуудаа уншуулна
+
+// Утсуудаас дата авах
+app.get('/api/data', (req, res) => {
+  const data = fs.readFileSync('./data.json', 'utf8');
+  res.json(JSON.parse(data));
+});
+
+// Утсуудаас өөрчилсөн датаг хадгалах
+app.post('/api/data', (req, res) => {
+  fs.writeFileSync('./data.json', JSON.stringify(req.body, null, 2));
+  res.json({ message: 'Амжилттай хадгалагдлаа' });
+});
+
+app.listen(3000, '0.0.0.0', () => {
+  console.log('Сервер 3000 порт дээр ажиллаж байна...');
+});
+</file>
+
+<file path="js/syn.js">
+/* ============================================================
+   sync.js — Supabase realtime sync
+   data.js, app.js-ийг өөрчлөхгүйгээр ажиллана
+   ============================================================ */
+
+(function () {
+  'use strict';
+
+  const cfg = window.LEAGUE_CONFIG || {};
+  const STORE_KEY = 'nzuud_cup_v7';
+
+  const S = {
+    client: null, ready: false,
+    status: 'off', msg: '',
+    ver: 0, dirty: false, busy: false, suppress: false,
+    pushTimer: null, pollTimer: null, channel: null, retry: 0
+  };
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function enabled() {
+    return !!(cfg.supabaseUrl && cfg.supabaseKey && cfg.leagueId &&
+              String(cfg.leagueId).indexOf('CHANGE-ME') === -1 &&
+              String(cfg.supabaseUrl).indexOf('http') === 0);
+  }
+
+  function readState() {
+    try { return JSON.parse(localStorage.getItem(STORE_KEY) || 'null'); }
+    catch (e) { return null; }
+  }
+
+  function writeState(state) {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); }
+    catch (e) { console.warn('[sync] write:', e); }
+  }
+
+  function renderChip() {
+    const box = document.getElementById('syncChip');
+    if (!box) return;
+    if (!enabled()) { box.innerHTML = ''; return; }
+
+    const map = {
+      off:        ['sync-off',  'Синк унтраалттай'],
+      connecting: ['sync-wait', S.msg || 'Холбогдож байна…'],
+      online:     ['sync-ok',   S.msg || 'Синк хийгдсэн'],
+      error:      ['sync-err',  S.msg || 'Холболтын алдаа']
+    };
+    const m = map[S.status] || map.off;
+
+    box.innerHTML =
+      '<button class="sync-chip ' + m[0] + '" type="button" data-sync="pull"' +
+        ' title="' + esc(m[1]) + ' — дарах: дахин шалгах">' +
+        '<span class="sync-dot"></span>' +
+        '<span class="sync-txt">' + esc(m[1]) + '</span>' +
+      '</button>';
+  }
+
+  function setStatus(st, msg) {
+    if (S.status === st && S.msg === (msg || '')) return;
+    S.status = st; S.msg = msg || '';
+    renderChip();
+  }
+
+  function rerender() {
+    try { window.dispatchEvent(new Event('hashchange')); }
+    catch (e) {
+      const h = location.hash || '#/dashboard';
+      location.hash = '#/';
+      setTimeout(function () { location.hash = h; }, 20);
+    }
+  }
+
+  /* ---------- ТАТАХ ---------- */
+  async function pull(initial) {
+    if (!S.ready || S.busy) return;
+    S.busy = true;
+    try {
+      const vres = await S.client.from('league')
+        .select('version').eq('id', cfg.leagueId).maybeSingle();
+      if (vres.error) throw vres.error;
+
+      if (!vres.data) { S.busy = false; await push(true); return; }
+
+      const ver = Number(vres.data.version) || 0;
+      if (ver === S.ver) { setStatus('online', 'Синк хийгдсэн'); S.busy = false; return; }
+      if (S.dirty && !initial) { S.busy = false; schedulePush(0); return; }
+
+      const dres = await S.client.from('league')
+        .select('data,version').eq('id', cfg.leagueId).maybeSingle();
+      if (dres.error) throw dres.error;
+      if (!dres.data || !dres.data.data) { S.busy = false; await push(true); return; }
+
+      S.suppress = true;
+      writeState(dres.data.data);
+      if (window.DB && typeof window.DB.load === 'function') window.DB.load();
+      S.suppress = false;
+
+      S.ver = Number(dres.data.version) || 0;
+      S.dirty = false;
+      setStatus('online', 'Шинэчлэгдлээ');
+      rerender();
+
+    } catch (e) {
+      console.warn('[sync] pull:', e);
+      S.suppress = false;
+      setStatus('error', 'Серверт холбогдсонгүй');
+    } finally { S.busy = false; }
+  }
+
+  /* ---------- ИЛГЭЭХ ---------- */
+  function schedulePush(delay) {
+    if (!S.ready || S.suppress) return;
+    S.dirty = true;
+    setStatus('connecting', 'Хадгалж байна…');
+    clearTimeout(S.pushTimer);
+    S.pushTimer = setTimeout(function () { push(); },
+      typeof delay === 'number' ? delay : 1100);
+  }
+
+  async function push(force) {
+    if (!S.ready || S.busy || S.suppress) return;
+    const state = readState();
+    if (!state) return;
+    S.busy = true;
+    try {
+      const res = await S.client.from('league')
+        .upsert({ id: cfg.leagueId, data: state }, { onConflict: 'id' })
+        .select('version').maybeSingle();
+      if (res.error) throw res.error;
+      S.ver = Number(res.data && res.data.version) || (S.ver + 1);
+      S.dirty = false; S.retry = 0;
+      setStatus('online', 'Хадгалагдлаа');
+    } catch (e) {
+      console.warn('[sync] push:', e);
+      S.retry++;
+      setStatus('error', 'Хадгалж чадсангүй — дахин оролдоно');
+      clearTimeout(S.pushTimer);
+      const wait = Math.min(30000, 2000 * S.retry);
+      S.pushTimer = setTimeout(function () { push(true); }, wait);
+    } finally { S.busy = false; }
+  }
+
+  /* ---------- POLLING ---------- */
+  function startPolling() {
+    clearInterval(S.pollTimer);
+    S.pollTimer = setInterval(function () {
+      if (!S.ready || S.busy || S.dirty) return;
+      if (document.hidden) return;
+      pull();
+    }, 15000);
+  }
+
+  /* ---------- REALTIME ---------- */
+  function subscribe() {
+    if (!S.ready || S.channel) return;
+    try {
+      S.channel = S.client.channel('lg-' + cfg.leagueId)
+        .on('postgres_changes',
+          { event: '*', schema: 'public', table: 'league',
+            filter: 'id=eq.' + cfg.leagueId },
+          function () { if (!S.dirty && !S.busy) pull(); })
+        .subscribe();
+    } catch (e) { console.warn('[sync] subscribe:', e); }
+  }
+
+  /* ---------- DB.save-ыг боох ---------- */
+  function wrapSave() {
+    if (!window.DB || typeof window.DB.save !== 'function') return false;
+    if (window.DB.__syncWrapped) return true;
+    const orig = window.DB.save.bind(window.DB);
+    window.DB.save = function () { orig(); schedulePush(); };
+    window.DB.__syncWrapped = true;
+    return true;
+  }
+
+  /* ---------- ЭХЛҮҮЛЭХ ---------- */
+  function init() {
+    if (!enabled()) { S.status = 'off'; renderChip(); return; }
+    if (!window.supabase || typeof window.supabase.createClient !== 'function') {
+      setStatus('error', 'Supabase SDK ачаалагдаагүй'); return;
+    }
+    try {
+      S.client = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseKey, {
+        auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false }
+      });
+    } catch (e) {
+      console.warn('[sync] init:', e);
+      setStatus('error', 'Холбогдож чадсангүй'); return;
+    }
+    S.ready = true;
+    setStatus('connecting', 'Холбогдож байна…');
+    if (!wrapSave()) setTimeout(wrapSave, 300);
+    pull(true); subscribe(); startPolling(); renderChip();
+  }
+
+  /* ---------- ҮЙЛДЭЛ ---------- */
+  document.addEventListener('click', function (e) {
+    const el = e.target.closest('[data-sync="pull"]');
+    if (!el || !enabled()) return;
+    setStatus('connecting', 'Шалгаж байна…');
+    pull(true);
+  });
+
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden && S.ready && !S.dirty) pull();
+  });
+
+  window.addEventListener('online', function () { if (S.ready) pull(); });
+
+  /* ---------- БЭЛЭН ---------- */
+  function boot() {
+    if (!document.getElementById('syncChip')) {
+      const tr = document.querySelector('.top-right');
+      if (tr) {
+        const span = document.createElement('span');
+        span.id = 'syncChip';
+        tr.insertBefore(span, tr.firstChild);
+      }
+    }
+    renderChip();
+    init();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { setTimeout(boot, 200); });
+  } else {
+    setTimeout(boot, 200);
+  }
+
+  window.SYNC = {
+    enabled: enabled,
+    info: function () {
+      return { status: S.status, msg: S.msg, ver: S.ver, ready: S.ready, dirty: S.dirty };
+    },
+    pull: function () { return pull(true); },
+    push: function () { return push(true); }
+  };
+
+})();
+</file>
+
+<file path=".gitignore">
+# ===== Систем =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== Editor =====
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===== Лог =====
+*.log
+npm-debug.log*
+
+# ===== Node (хэрэв ашиглавал) =====
+node_modules/
+package-lock.json
+
+# ===== Нууц (хэрэв байвал) =====
+.env
+.env.local
+*.secret
+secrets.json
+
+# ===== Нөөц =====
+backup/
+*.bak
+</file>
+
+<file path="index.html">
+<!doctype html>
+<html lang="mn" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <title>Happy Golomt FL — Тэмцээн &amp; Оноо</title>
+    <meta
+      name="description"
+      content="Найзуудын лиг — улирал, тэмцээн, тоглолт бүрийн тоглогчийн статистик, шагнал, шилжилт"
+    />
+
+    <meta
+      name="theme-color"
+      content="#080a0f"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="#f6f7fb"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta name="color-scheme" content="dark light" />
+
+    <!-- Favicon (emoji SVG) -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%86%3C/text%3E%3C/svg%3E"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%86%3C/text%3E%3C/svg%3E"
+    />
+
+    <!-- Share preview -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Happy Golomt FL — Тэмцээн &amp; Оноо" />
+    <meta
+      property="og:description"
+      content="Найзуудын лиг — улирал, тэмцээн, тоглогчийн статистик"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- ===== ДЭЭД ЦЭС ===== -->
+    <header class="topbar" id="topbar">
+      <div class="wrap topbar-in">
+        <a class="brand" href="#/dashboard" aria-label="Нүүр хуудас">
+          <span class="brand-icon" aria-hidden="true">🏆</span>
+          <span class="brand-text">Happy Golomt<b>FL</b></span>
+        </a>
+
+        <nav class="tabs" id="mainNav" aria-label="Үндсэн цэс">
+          <a href="#/dashboard" data-tab="dashboard">Нүүр</a>
+          <a href="#/seasons" data-tab="seasons">Улирлууд</a>
+          <a href="#/tournaments" data-tab="tournaments">Тэмцээнүүд</a>
+          <a href="#/stats" data-tab="stats">Статистик</a>
+          <a href="#/trade" data-tab="trade">Шилжилт</a>
+          <a href="#/teams" data-tab="teams">Багууд</a>
+          <a href="#/players" data-tab="players">Тоглогчид</a>
+          <a href="#/admin" data-tab="admin">Админ</a>
+        </nav>
+
+        <div class="top-right">
+          <span id="syncChip"></span>
+          <span id="userChip"></span>
+          <button
+            class="icon-btn"
+            id="themeBtn"
+            type="button"
+            title="Гэрэл / Харанхуй горим"
+            aria-label="Гэрэл эсвэл харанхуй горим солих"
+          >
+            🌙
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== ҮНДСЭН АГУУЛГА ===== -->
+    <main id="app" class="wrap" role="main"></main>
+
+    <!-- ===== ХӨЛ ===== -->
+    <footer class="foot">
+      <div class="wrap foot-in">
+        <span>© <span id="year"></span> Happy Golomt FL</span>
+        <span class="muted"
+          >HTML · CSS · JS — бүх өгөгдөл хөтчид хадгалагдана</span
+        >
+      </div>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <noscript>
+      <div class="wrap" style="padding: 40px 0; text-align: center">
+        <h2>JavaScript унтраалттай байна</h2>
+        <p class="muted">Энэ сайт ажиллахын тулд JavaScript-ийг асаана уу.</p>
+      </div>
+    </noscript>
+
+    <!-- Supabase SDK (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.3/dist/umd/supabase.js"></script>
+
+    <!-- Дараалал чухал: config → data → app -->
+        <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.3/dist/umd/supabase.js"></script>
+
+    <!-- Дараалал чухал -->
+    <script src="js/config.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/sync.js"></script>
+  </body>
+</html>
+</file>
+
+</files>

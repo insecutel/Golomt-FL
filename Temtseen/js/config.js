@@ -5,15 +5,19 @@
 
 window.LEAGUE_CONFIG = {
 
-  /* Supabase → Project Settings → API → Project URL */
-  supabaseUrl: 'https://rsllkdbsjiqucmzdzydd.supabase.co/rest/v1/',
+  /* Supabase → Project Settings → API → Project URL
+     ⚠️ /rest/v1/ НЭМЭХГҮЙ — supabase-js өөрөө нэмдэг.
+     Буруу: https://xxx.supabase.co/rest/v1/
+     Зөв:   https://xxx.supabase.co                                  */
+  supabaseUrl: 'https://rsllkdbsjiqucmzdzydd.supabase.co',
 
   /* Supabase → Project Settings → API → anon public */
-  supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6...',
+  supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJzbGxrZGJzamlxdWNtemR6eWRkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk3NjU2MzMsImV4cCI6MjEwNTM0MTYzM30.7IaT-EzVE-jOwabsq6MBPjLyk8ONKOHjUGn4anD5uLI',
 
-  /* Лигийн ID — САНАМСАРГҮЙ, давтагдашгүй мөр байх ёстой.
-     Жишээ: 'golomt-fl-2026-a7f3k9x2'  ← өөрийнхөөрөө соль!
-     Энэ нь таны лигийг бусдаас тусгаарлана. */
-  leagueId: 'golomt-fl-main-CHANGE-ME-9f3k2'
+  /* Лигийн ID — САНАМСАРГҮЙ, давтагдашгүй мөр.
+     ⚠️ 'CHANGE-ME' гэсэн үг орсон бол sync БҮХЭЛДЭЭ УНТРАНА
+        (data.js → syncEnabled() шалгалт).
+     Дараах утга нь зөвхөн таны лигт зориулсан — өөр хүн таамаглахгүй. */
+  leagueId: 'golomt-fl-main-k7x3m9q2z4'
 
 };

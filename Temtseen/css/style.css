@@ -2301,3 +2301,764 @@ input[type="checkbox"]:disabled:checked { background-image: none; }
   .sync-txt { display: none; }
   .sync-chip { padding: 6px 10px; }
 }
+
+/* ============================================================
+   v8.3 — Тоглоом тус бүрийн шилдгүүд (топ карт)
+   ============================================================ */
+
+.tpl-tops-grid {
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  align-items: start;
+}
+
+.tpl-top-card {
+  padding: 18px 18px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Толгой ---------- */
+.tpl-top-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.tpl-top-head h3 {
+  margin: 0;
+  font-size: .98rem;
+  font-weight: 750;
+  letter-spacing: -.02em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tpl-top-icon {
+  display: grid;
+  place-items: center;
+  width: 34px; height: 34px;
+  flex: 0 0 34px;
+  border-radius: 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--line-2);
+  font-size: 1.05rem;
+}
+
+/* ---------- Жагсаалт ---------- */
+.tpl-top-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
+}
+
+/* ---------- Нэг мөр ---------- */
+.tpl-top {
+  display: grid;
+  grid-template-columns: 24px 34px minmax(0, 1fr);
+  align-items: center;
+  gap: 11px;
+  padding: 10px 12px;
+  border-radius: 11px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color var(--t-fast) var(--ease),
+              background var(--t-fast) var(--ease),
+              transform var(--t-fast) var(--ease);
+}
+.tpl-top:hover {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 6%, var(--surface-2));
+  transform: translateX(2px);
+  color: var(--text);
+}
+.tpl-top .avatar {
+  width: 34px; height: 34px;
+  font-size: .78rem;
+  flex: 0 0 34px;
+}
+
+/* ---------- Байр ---------- */
+.tpl-top-rank {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+/* ---------- Нэр + стат ---------- */
+.tpl-top-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.tpl-top-name {
+  font-weight: 700;
+  font-size: .93rem;
+  letter-spacing: -.012em;
+  line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---------- Стат мөр ---------- */
+.tpl-top-stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  font-size: .775rem;
+  color: var(--muted);
+  line-height: 1.35;
+}
+.tpl-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.tpl-stat-ic {
+  font-size: .85rem;
+  line-height: 1;
+}
+.tpl-stat.ratio {
+  color: var(--accent);
+  font-weight: 600;
+}
+.tpl-stat.ratio b {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -.02em;
+}
+.tpl-stat-lbl {
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  opacity: .8;
+}
+.tpl-stat.mvp {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ---------- Бүх жагсаалт товч ---------- */
+.tpl-top-more {
+  margin-top: 12px;
+  align-self: flex-start;
+}
+
+/* ---------- Мобайл ---------- */
+@media (max-width: 720px) {
+  .tpl-tops-grid {
+    grid-template-columns: 1fr;
+  }
+  .tpl-top {
+    grid-template-columns: 22px 32px minmax(0, 1fr);
+    gap: 9px;
+    padding: 9px 11px;
+  }
+  .tpl-top .avatar {
+    width: 32px; height: 32px;
+    font-size: .74rem;
+    flex: 0 0 32px;
+  }
+  .tpl-top-name { font-size: .89rem; }
+  .tpl-top-stats { font-size: .73rem; gap: 4px 8px; }
+  .tpl-top-rank { font-size: .92rem; }
+}
+
+@media (max-width: 460px) {
+  .tpl-top-stats { gap: 3px 7px; font-size: .7rem; }
+  .tpl-stat-ic { font-size: .8rem; }
+}
+
+/* ============================================================
+   v8.4 — Шагналын титэл (нэрний хажууд)
+   ============================================================ */
+
+.aw-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 6px;
+  min-width: 0;
+}
+
+.aw-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 9px;
+  border-radius: var(--r-full);
+  font-size: .695rem;
+  font-weight: 700;
+  line-height: 1.55;
+  letter-spacing: .005em;
+  white-space: nowrap;
+  max-width: 100%;
+  background: color-mix(in srgb, var(--gold) 13%, transparent);
+  border: 1px solid color-mix(in srgb, var(--gold) 36%, transparent);
+  color: var(--gold);
+  transition: transform var(--t-fast) var(--ease),
+              background var(--t-fast) var(--ease);
+}
+.aw-badge:hover {
+  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--gold) 20%, transparent);
+}
+.aw-badge .aw-ic {
+  font-size: .8rem;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+.aw-badge .aw-tx {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 130px;
+}
+.aw-badge.aw-more {
+  background: var(--surface-2);
+  border-color: var(--line-2);
+  color: var(--muted);
+  font-weight: 800;
+}
+
+/* ---------- Хүснэгтийн нүдэн доторх тоглогч ---------- */
+.cell-player {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+  min-width: 0;
+  max-width: 100%;
+}
+.cell-player .avatar { flex: 0 0 auto; }
+
+.cell-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.cell-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.cell-body .aw-badges { margin-top: 3px; }
+
+/* ---------- Нүүрний топ 3 (tpl-top) ---------- */
+.tpl-top-name { display: block; }
+.tpl-top-body .aw-badges { margin-top: 4px; gap: 3px; }
+.tpl-top-body .aw-badge {
+  font-size: .655rem;
+  padding: 1px 7px;
+}
+.tpl-top-body .aw-badge .aw-tx { max-width: 96px; }
+
+/* ---------- Мобайл ---------- */
+@media (max-width: 720px) {
+  .aw-badge { font-size: .665rem; padding: 2px 8px; }
+  .aw-badge .aw-tx { max-width: 104px; }
+  .cell-body .aw-badge .aw-tx { max-width: 90px; }
+}
+
+/* ============================================================
+   v8.5 — Титэл: давтамж + шатлал
+   ============================================================ */
+
+/* ---------- Тоо (×N) ---------- */
+.aw-n {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: .72rem;
+  letter-spacing: -.01em;
+  padding: 0 4px;
+  margin-left: 1px;
+  border-radius: var(--r-xs);
+  background: color-mix(in srgb, var(--gold) 22%, transparent);
+  line-height: 1.5;
+}
+
+/* ---------- Шатлал ---------- */
+
+/* 🥉 1 удаа — энгийн */
+.aw-badge.t1 { }
+
+/* 🥈 2 удаа — гэрэлтэй хүрээ */
+.aw-badge.t2 {
+  border-width: 1.5px;
+  border-color: color-mix(in srgb, var(--gold) 55%, transparent);
+  background: color-mix(in srgb, var(--gold) 16%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold) 12%, transparent);
+}
+.aw-badge.t2 .aw-n {
+  background: color-mix(in srgb, var(--gold) 32%, transparent);
+}
+
+/* 🥇 3-4 удаа — алтлаг сүүдэр */
+.aw-badge.t3 {
+  border-width: 1.5px;
+  border-color: color-mix(in srgb, var(--gold) 75%, transparent);
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--gold) 20%, transparent),
+    color-mix(in srgb, var(--gold) 11%, transparent));
+  box-shadow: 0 2px 12px color-mix(in srgb, var(--gold) 26%, transparent);
+  color: var(--gold);
+}
+.aw-badge.t3 .aw-n {
+  background: color-mix(in srgb, var(--gold) 42%, transparent);
+  color: #fff;
+}
+
+/* 👑 5+ удаа — домогт (shimmer) */
+.aw-badge.t4 {
+  position: relative;
+  overflow: hidden;
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    linear-gradient(120deg, #fbbf24, #f59e0b, #fde68a, #f59e0b, #fbbf24) border-box;
+  background-size: 100% 100%, 300% 100%;
+  color: var(--gold);
+  box-shadow: 0 3px 16px color-mix(in srgb, var(--gold) 34%, transparent);
+  animation: awShine 5s linear infinite;
+}
+.aw-badge.t4::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.28), transparent);
+  animation: awSweep 3.4s ease-in-out infinite;
+  pointer-events: none;
+}
+.aw-badge.t4 .aw-n {
+  background: var(--grad-gold);
+  color: #1a1305;
+  font-weight: 800;
+}
+@keyframes awShine {
+  0%   { background-position: 0 0, 0% 50%; }
+  100% { background-position: 0 0, 300% 50%; }
+}
+@keyframes awShine {
+  0%   { background-position: 0 0, 0% 50%; }
+  100% { background-position: 0 0, 300% 50%; }
+}
+@keyframes awSweep {
+  0%        { left: -100%; }
+  55%, 100% { left: 160%; }
+}
+
+/* ---------- Compact горим ---------- */
+.aw-badge .aw-ic { flex: 0 0 auto; }
+.aw-badges .aw-badge:has(.aw-ic:only-child) { padding: 2px 8px; }
+
+/* ---------- Хүснэгтэн доторх титэл бага зэрэг жижиг ---------- */
+.cell-body .aw-badge {
+  font-size: .665rem;
+  padding: 1px 7px;
+}
+.cell-body .aw-n { font-size: .665rem; padding: 0 3px; }
+.cell-body .aw-badge .aw-tx { max-width: 108px; }
+
+/* ---------- tpl-top дотор бүр жижиг ---------- */
+.tpl-top-body .aw-badge {
+  font-size: .645rem;
+  padding: 1px 7px;
+}
+.tpl-top-body .aw-n { font-size: .645rem; padding: 0 3px; }
+.tpl-top-body .aw-badge .aw-tx { max-width: 88px; }
+
+/* ---------- Хөдөлгөөн багасгах ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .aw-badge.t4 { animation: none; }
+  .aw-badge.t4::after { display: none; }
+}
+
+/* ---------- Мобайл ---------- */
+@media (max-width: 720px) {
+  .aw-badge { font-size: .665rem; padding: 2px 8px; }
+  .aw-badge .aw-tx { max-width: 100px; }
+  .aw-n { font-size: .665rem; }
+}
+
+/* ============================================================
+   v8.6 — Дүрс сонгох (emoji picker)
+   ============================================================ */
+
+/* ---------- Талбар ---------- */
+.icon-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-input {
+  flex: 0 0 auto;
+  width: 96px;
+  text-align: center;
+  font-size: 1.35rem;
+  line-height: 1.3;
+  padding: 8px 10px;
+  letter-spacing: .04em;
+}
+
+.icon-pick {
+  flex: 0 0 auto;
+  padding: 9px 13px;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+/* ---------- Шуурхай мөр ---------- */
+.icon-quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 9px;
+}
+.iq {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--line-2);
+  background: var(--surface-2);
+  font-size: 1.08rem;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform var(--t-fast) var(--ease),
+              border-color var(--t-fast) var(--ease),
+              background var(--t-fast) var(--ease);
+}
+.iq:hover {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface-2));
+  transform: translateY(-2px) scale(1.06);
+}
+.iq:active { transform: scale(.94); }
+
+/* ---------- Панел ---------- */
+.icon-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  display: none;
+  place-items: center;
+  padding: 18px;
+  background: color-mix(in srgb, var(--bg) 74%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.icon-panel.open {
+  display: grid;
+  animation: fadeUp .22s var(--ease-out);
+}
+
+.icon-panel-inner {
+  width: 100%;
+  max-width: 580px;
+  max-height: 84vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh-xl);
+  overflow: hidden;
+}
+
+.icon-panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--line);
+  flex: 0 0 auto;
+}
+.icon-panel-head b { font-size: .98rem; }
+
+.icon-panel-body {
+  overflow-y: auto;
+  padding: 16px 20px 22px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ---------- Категори ---------- */
+.icon-cat { margin-bottom: 18px; }
+.icon-cat:last-child { margin-bottom: 0; }
+
+.icon-cat-name {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--muted);
+  font-weight: 750;
+  margin-bottom: 9px;
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  gap: 6px;
+}
+
+.ig {
+  aspect-ratio: 1;
+  border-radius: 11px;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform var(--t-fast) var(--ease),
+              border-color var(--t-fast) var(--ease),
+              background var(--t-fast) var(--ease);
+}
+.ig:hover {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface-2));
+  transform: translateY(-2px) scale(1.07);
+}
+.ig:active { transform: scale(.92); }
+
+/* ---------- Хүснэгтэн дэх дүрс ---------- */
+td .aw-badge { vertical-align: middle; }
+
+/* ---------- Мобайл ---------- */
+@media (max-width: 720px) {
+  .icon-panel { padding: 10px; }
+  .icon-panel-inner { max-height: 88vh; border-radius: var(--r-lg); }
+  .icon-panel-body { padding: 14px 16px 18px; }
+  .icon-grid { grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); gap: 5px; }
+  .ig { font-size: 1.15rem; border-radius: 9px; }
+  .iq { width: 33px; height: 33px; font-size: 1rem; }
+  .icon-input { width: 82px; font-size: 1.2rem; }
+}
+
+@media (max-width: 460px) {
+  .icon-grid { grid-template-columns: repeat(auto-fill, minmax(38px, 1fr)); }
+  .ig { font-size: 1.08rem; }
+}
+
+/* ============================================================
+   v8.7 — Профайлын шагналын дэлгэц (тод, дээгүүр)
+   ============================================================ */
+
+/* ---------- Anchor ---------- */
+#awards { scroll-margin-top: calc(var(--nav-h) + 16px); }
+
+/* ---------- Панел ---------- */
+.awd-panel {
+  position: relative;
+  overflow: hidden;
+  padding: 22px;
+  border-radius: var(--r-lg);
+  border: 1px solid color-mix(in srgb, var(--gold) 32%, transparent);
+  background-color: var(--surface);
+  background-image:
+    linear-gradient(150deg, color-mix(in srgb, var(--gold) 10%, transparent), transparent 58%),
+    var(--grad-card);
+  box-shadow: 0 10px 34px color-mix(in srgb, var(--gold) 13%, transparent), var(--sh-sm);
+  transition: border-color var(--t) var(--ease), box-shadow var(--t) var(--ease);
+}
+.awd-panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--grad-gold);
+}
+.awd-panel:hover {
+  border-color: color-mix(in srgb, var(--gold) 50%, transparent);
+  box-shadow: 0 14px 44px color-mix(in srgb, var(--gold) 19%, transparent), var(--sh-md);
+}
+
+/* ---------- Толгой ---------- */
+.awd-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid color-mix(in srgb, var(--gold) 18%, transparent);
+}
+.awd-head-l {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+.awd-crown {
+  display: grid;
+  place-items: center;
+  width: 52px; height: 52px;
+  flex: 0 0 52px;
+  border-radius: 16px;
+  font-size: 1.65rem;
+  background: color-mix(in srgb, var(--gold) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--gold) 36%, transparent);
+  box-shadow: 0 4px 18px color-mix(in srgb, var(--gold) 20%, transparent);
+}
+.awd-title {
+  margin: 0 0 2px;
+  font-size: 1.16rem;
+  letter-spacing: -.03em;
+}
+.awd-sub {
+  margin: 0;
+  font-size: .845rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.awd-sub b { color: var(--gold); font-weight: 800; }
+
+.awd-count {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -.04em;
+  color: var(--gold);
+  background: color-mix(in srgb, var(--gold) 13%, transparent);
+  border: 1px solid color-mix(in srgb, var(--gold) 32%, transparent);
+  border-radius: var(--r-full);
+  padding: 6px 18px;
+  line-height: 1.2;
+}
+
+/* ---------- Бүлэг ---------- */
+.awd-group + .awd-group { margin-top: 20px; }
+.awd-group-name {
+  font-size: .715rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: .075em;
+  color: var(--muted);
+  margin-bottom: 11px;
+}
+
+/* ---------- Сүлжээ ---------- */
+.awd-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+}
+
+/* ---------- Нэг шагнал ---------- */
+.awd-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px 15px;
+  border-radius: 14px;
+  background: var(--surface-2);
+  border: 1px solid color-mix(in srgb, var(--gold) 20%, var(--line));
+  transition: transform var(--t-fast) var(--ease),
+              border-color var(--t-fast) var(--ease),
+              box-shadow var(--t-fast) var(--ease);
+}
+.awd-item:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--gold) 50%, transparent);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--gold) 14%, transparent);
+}
+.awd-item.traded {
+  border-color: color-mix(in srgb, var(--purple) 34%, transparent);
+  background: color-mix(in srgb, var(--purple) 6%, var(--surface-2));
+}
+
+.awd-ic {
+  display: grid;
+  place-items: center;
+  width: 44px; height: 44px;
+  flex: 0 0 44px;
+  border-radius: 13px;
+  font-size: 1.5rem;
+  line-height: 1;
+  background: color-mix(in srgb, var(--gold) 13%, transparent);
+  border: 1px solid color-mix(in srgb, var(--gold) 28%, transparent);
+}
+.awd-item.traded .awd-ic {
+  background: color-mix(in srgb, var(--purple) 13%, transparent);
+  border-color: color-mix(in srgb, var(--purple) 30%, transparent);
+}
+
+.awd-body { min-width: 0; flex: 1; }
+.awd-name {
+  font-weight: 750;
+  font-size: .93rem;
+  letter-spacing: -.015em;
+  line-height: 1.35;
+  color: var(--text);
+}
+.awd-note {
+  font-size: .805rem;
+  color: var(--text-2);
+  line-height: 1.45;
+  margin-top: 3px;
+}
+.awd-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  font-size: .755rem;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.awd-owner {
+  color: var(--purple);
+  font-weight: 700;
+}
+
+/* ---------- Хоосон ---------- */
+.awd-empty {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 4px 4px;
+}
+.awd-empty span { font-size: 1.8rem; }
+.awd-empty p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+/* ---------- Мобайл ---------- */
+@media (max-width: 720px) {
+  .awd-panel { padding: 17px; }
+  .awd-head { padding-bottom: 13px; margin-bottom: 14px; }
+  .awd-crown { width: 44px; height: 44px; flex: 0 0 44px; font-size: 1.4rem; border-radius: 13px; }
+  .awd-title { font-size: 1.04rem; }
+  .awd-count { font-size: 1.25rem; padding: 5px 14px; }
+  .awd-grid { grid-template-columns: 1fr; gap: 8px; }
+  .awd-item { padding: 11px 13px; gap: 10px; }
+  .awd-ic { width: 40px; height: 40px; flex: 0 0 40px; font-size: 1.35rem; border-radius: 12px; }
+  .awd-name { font-size: .89rem; }
+}
+
+@media (max-width: 460px) {
+  .awd-panel { padding: 14px; }
+  .awd-head-l { gap: 11px; }
+  .awd-crown { width: 40px; height: 40px; flex: 0 0 40px; font-size: 1.25rem; }
+}

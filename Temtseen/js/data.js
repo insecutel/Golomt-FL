@@ -45,7 +45,7 @@ window.DB = (function () {
     },
     {
       id: 'tpl_football',
-      name: 'Хөлбөмбөг / Футзал',
+      name: 'Хөлбөмбөг',
       icon: '⚽',
       fields: [
         { key: 'goals',   label: 'Гол',     icon: '⚽' },
@@ -293,7 +293,19 @@ window.DB = (function () {
       { id:'aw2', playerId:'p6', ownerId:'p6', icon:'⭐', title:'Шилдэг шилжилт',
         note:'Шинэ багтаа шууд нөлөөлсөн', date:`${year}-05-01` },
       { id:'aw3', playerId:'p3', ownerId:'p3', icon:'🔥', title:'Шилдэг довтлогч',
-        note:'Хамгийн олон оноо', date:`${year}-04-12` }
+        note:'Хамгийн олон оноо', date:`${year}-04-12` },
+
+      /* --- Давтамж харуулах демо --- */
+      { id:'aw4', playerId:'p1', ownerId:'p1', icon:'🥇', title:'2-р улирлын MVP',
+        note:'Дараалан хоёр дахь', date:`${year}-06-15` },
+      { id:'aw5', playerId:'p1', ownerId:'p1', icon:'🥇', title:'3-р улирлын MVP',
+        note:'Гурав дахь', date:`${year}-08-20` },
+      { id:'aw6', playerId:'p1', ownerId:'p1', icon:'🏆', title:'Жилийн MVP',
+        note:'Улирлын их аварга', date:`${year}-12-01` },
+      { id:'aw7', playerId:'p2', ownerId:'p2', icon:'⭐', title:'1-р улирлын шилдэг шилжилт',
+        note:'', date:`${year}-04-11` },
+      { id:'aw8', playerId:'p2', ownerId:'p2', icon:'⭐', title:'2-р улирлын шилдэг шилжилт',
+        note:'', date:`${year}-06-16` }
     ];
 
     const teamAtSeed = (pid, date) => {
@@ -371,9 +383,14 @@ window.DB = (function () {
         subPerSeason: 6,
         transferGapDays: 3,
         transferDays: 7,
-        transferOverride: null,
+         transferOverride: null,
         finalQualifiers: 4,
         loginRequired: true,
+        awardBadgeMode: 'owned',      // 'owned' | 'received' | 'off'
+        awardBadgeStyle: 'group',     // 'each' | 'group' | 'compact'
+        awardBadgeMax: 3,             // хамгийн ихдээ хэдэн титэл
+        awardBadgeMerge: '',          // нэгтгэх түлхүүр үгс (таслалаар)
+        recentIcons: ['🏅','🥇','⭐','🔥','👑'],   // сүүлд хэрэглэсэн дүрсүүд
         statTemplates: clone(DEFAULT_TEMPLATES),
         users
       },
@@ -628,10 +645,28 @@ window.DB = (function () {
       s.settings = s.settings || {};
       const ds = def.settings;
 
-      ['title','theme','winPoints','drawPoints','lossPoints','subPerSeason',
-       'transferGapDays','transferDays','finalQualifiers','loginRequired'].forEach(k => {
+            ['title','theme','winPoints','drawPoints','lossPoints','subPerSeason',
+       'transferGapDays','transferDays','finalQualifiers','loginRequired',
+       'awardBadgeMode','awardBadgeStyle','awardBadgeMax','awardBadgeMerge'].forEach(k => {
         if (s.settings[k] === undefined || s.settings[k] === null) s.settings[k] = ds[k];
       });
+
+      /* Сүүлд хэрэглэсэн дүрсүүд */
+      if (!Array.isArray(s.settings.recentIcons)) {
+        s.settings.recentIcons = ['🏅','🥇','⭐','🔥','👑'];
+      }
+      s.settings.recentIcons = s.settings.recentIcons
+        .filter(x => typeof x === 'string' && x.trim())
+        .slice(0, 12);
+      if (!s.settings.recentIcons.length) {
+        s.settings.recentIcons = ['🏅','🥇','⭐','🔥','👑'];
+      }
+
+      /* theme нормчлол */
+      if (s.settings.theme !== 'dark' && s.settings.theme !== 'light') {
+        s.settings.theme = null;
+      }
+
       if (s.settings.transferOverride === undefined) s.settings.transferOverride = null;
 
       if (s.settings.adminPass) {
@@ -861,6 +896,9 @@ window.DB = (function () {
             subPerSeason: 6, transferGapDays: 3, transferDays: 7,
             transferOverride: null, finalQualifiers: 4,
             loginRequired: true,
+            awardBadgeMode: 'owned', awardBadgeStyle: 'group',
+            awardBadgeMax: 3, awardBadgeMerge: '',
+            recentIcons: ['🏅','🥇','⭐','🔥','👑'],
             statTemplates: clone(DEFAULT_TEMPLATES),
             users: keepUsers
           },
@@ -1392,6 +1430,37 @@ window.DB = (function () {
 
     awardsGivenTo(playerId) {
       return API.state.awards.filter(a => a.playerId === playerId);
+    },
+
+    /* ---------- Дүрс (emoji) ---------- */
+
+    recentIcons() {
+      const s = API.state.settings;
+      return Array.isArray(s.recentIcons) ? s.recentIcons : [];
+    },
+
+    pushRecentIcon(ic) {
+      const v = String(ic || '').trim();
+      if (!v) return [];
+      const s = API.state.settings;
+      const list = Array.isArray(s.recentIcons) ? s.recentIcons : [];
+      s.recentIcons = [v, ...list.filter(x => x !== v)].slice(0, 12);
+      API.save();
+      return s.recentIcons;
+    },
+
+    /** Нэрний хажууд харуулах титэл (тохиргооны дагуу) */
+    playerTitleAwards(playerId) {
+      if (!playerId) return [];
+      const mode = (API.state.settings && API.state.settings.awardBadgeMode) || 'owned';
+      if (mode === 'off') return [];
+
+      const list = (mode === 'received')
+        ? API.awardsGivenTo(playerId)
+        : API.awardsOwnedBy(playerId);
+
+      return list.slice().sort((a, b) =>
+        (b.date || '').localeCompare(a.date || ''));
     },
 
     /* ============================================================
